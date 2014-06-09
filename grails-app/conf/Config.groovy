@@ -117,6 +117,24 @@ log4j.main = {
 }
 /**
 //configuration options for database rev eng plugin
+//switch on and off when generating domains
+//make sure to turn off runtime hibernate libraries when running this plugin
 grails.plugin.reveng.packageName = 'unity'
 grails.plugin.reveng.includeTables = ['users']
 **/
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.p1.SecUser'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.p1.SecUserSecRole'
+grails.plugin.springsecurity.authority.className = 'com.p1.SecRole'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+
