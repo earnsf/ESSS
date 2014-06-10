@@ -244,3 +244,13 @@
 2014-06-10 16:53:39,413 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.Users
 2014-06-10 16:53:39,417 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.Users
 2014-06-10 16:53:39,420 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.Users
+2014-06-10 16:57:07,203 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-10 16:57:07,216 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-10 16:57:07,908 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-10 16:57:07,912 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-10 16:57:08,656 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Generating [index] view for domain class [p1.First]
+2014-06-10 16:57:08,760 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Generating [edit] view for domain class [p1.First]
+2014-06-10 16:57:08,778 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Generating [_form] view for domain class [p1.First]
+2014-06-10 16:57:08,839 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Generating [show] view for domain class [p1.First]
+2014-06-10 16:57:08,909 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Generating [create] view for domain class [p1.First]
+2014-06-10 16:57:08,948 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Controller generated at [/Users/georgeqwu/Documents/workspace-ggts/p1/grails-app/controllers/p1/FirstController.groovy]
