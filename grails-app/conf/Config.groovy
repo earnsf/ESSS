@@ -131,6 +131,9 @@ grails.plugin.reveng.includeTables = ['users']
 **/
 
 
+
+
+
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.p1.SecUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.p1.SecUserSecRole'
