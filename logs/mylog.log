@@ -254,3 +254,44 @@
 2014-06-10 16:57:08,839 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Generating [show] view for domain class [p1.First]
 2014-06-10 16:57:08,909 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Generating [create] view for domain class [p1.First]
 2014-06-10 16:57:08,948 [main] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Controller generated at [/Users/georgeqwu/Documents/workspace-ggts/p1/grails-app/controllers/p1/FirstController.groovy]
+2014-06-10 16:59:24,708 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-10 16:59:24,729 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-10 16:59:26,092 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-10 16:59:26,096 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-10 16:59:29,923 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring root WebApplicationContext
+2014-06-10 16:59:33,275 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2014-06-10 16:59:34,454 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-06-10 16:59:34,466 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-06-10 16:59:34,537 [localhost-startStop-1] WARN  pool.ConnectionPool  - maxActive is smaller than 1, setting maxActive to: 100
+2014-06-10 16:59:35,299 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/georgeqwu/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2014-06-10 16:59:37,212 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@3adcbc57: startup date [Tue Jun 10 16:59:34 PDT 2014]; parent: Root WebApplicationContext]
+2014-06-10 16:59:39,797 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-06-10 16:59:39,801 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-06-10 16:59:39,806 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-06-10 16:59:39,929 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'grails'
+2014-06-10 16:59:39,977 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2014-06-10 16:59:46,307 [http-bio-8080-exec-10] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'gsp'
+2014-06-10 16:59:46,307 [http-bio-8080-exec-10] INFO  [localhost].[/p1]  - GSP servlet initialized
+2014-06-10 16:59:46,458 [http-bio-8080-exec-10] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 16:59:48,793 [http-bio-8080-exec-9] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 16:59:48,942 [http-bio-8080-exec-9] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 16:59:49,057 [http-bio-8080-exec-9] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 16:59:49,185 [http-bio-8080-exec-9] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 16:59:49,265 [http-bio-8080-exec-9] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 16:59:49,336 [http-bio-8080-exec-9] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 16:59:49,410 [http-bio-8080-exec-9] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-10 17:00:13,023 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecRole
+2014-06-10 17:00:13,030 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecRole
+2014-06-10 17:00:13,033 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecRole
+2014-06-10 17:00:13,037 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUser
+2014-06-10 17:00:13,040 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUser
+2014-06-10 17:00:13,043 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUser
+2014-06-10 17:00:13,047 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUserSecRole
+2014-06-10 17:00:13,050 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUserSecRole
+2014-06-10 17:00:13,055 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUserSecRole
+2014-06-10 17:00:13,060 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in p1.First
+2014-06-10 17:00:13,063 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in p1.First
+2014-06-10 17:00:13,067 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in p1.First
+2014-06-10 17:00:13,070 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.Users
+2014-06-10 17:00:13,074 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.Users
+2014-06-10 17:00:13,077 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.Users
