@@ -488,3 +488,102 @@ java.lang.NullPointerException: Cannot invoke method matchAll() on null object
 2014-06-11 11:35:55,004 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.Users
 2014-06-11 11:35:55,009 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.Users
 2014-06-11 11:35:55,015 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.Users
+2014-06-11 11:38:56,845 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-11 11:38:56,873 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-11 11:38:58,230 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-11 11:38:58,236 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-11 11:39:02,776 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring root WebApplicationContext
+2014-06-11 11:39:06,848 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2014-06-11 11:39:08,348 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-06-11 11:39:08,361 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-06-11 11:39:08,444 [localhost-startStop-1] WARN  pool.ConnectionPool  - maxActive is smaller than 1, setting maxActive to: 100
+2014-06-11 11:39:09,410 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/georgeqwu/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2014-06-11 11:39:11,663 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@114035d: startup date [Wed Jun 11 11:39:08 PDT 2014]; parent: Root WebApplicationContext]
+2014-06-11 11:39:14,727 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-06-11 11:39:14,731 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-06-11 11:39:14,736 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-06-11 11:39:14,997 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'grails'
+2014-06-11 11:39:15,061 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2014-06-11 11:40:06,222 [Thread-13] INFO  compiler.GrailsProjectWatcher  - File [/Users/georgeqwu/Documents/workspace-ggts/p1/grails-app/conf/UrlMappings.groovy] changed. Applying changes to application.
+2014-06-11 11:40:06,703 [Thread-8] INFO  compiler.GrailsProjectWatcher  - File [/Users/georgeqwu/Documents/workspace-ggts/p1/grails-app/conf/UrlMappings.groovy] changed. Applying changes to application.
+2014-06-11 11:40:25,293 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecRole
+2014-06-11 11:40:25,300 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecRole
+2014-06-11 11:40:25,304 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecRole
+2014-06-11 11:40:25,311 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUser
+2014-06-11 11:40:25,314 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUser
+2014-06-11 11:40:25,318 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUser
+2014-06-11 11:40:25,322 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUserSecRole
+2014-06-11 11:40:25,328 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUserSecRole
+2014-06-11 11:40:25,333 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUserSecRole
+2014-06-11 11:40:25,339 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in p1.First
+2014-06-11 11:40:25,342 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in p1.First
+2014-06-11 11:40:25,345 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in p1.First
+2014-06-11 11:40:25,349 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.Users
+2014-06-11 11:40:25,353 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.Users
+2014-06-11 11:40:25,356 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.Users
+2014-06-11 11:40:43,612 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-11 11:40:43,644 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-11 11:40:45,138 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-11 11:40:45,143 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-11 11:40:49,975 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring root WebApplicationContext
+2014-06-11 11:40:54,861 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2014-06-11 11:40:56,054 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-06-11 11:40:56,071 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-06-11 11:40:56,178 [localhost-startStop-1] WARN  pool.ConnectionPool  - maxActive is smaller than 1, setting maxActive to: 100
+2014-06-11 11:40:57,309 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/georgeqwu/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2014-06-11 11:40:59,341 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@2ca45305: startup date [Wed Jun 11 11:40:55 PDT 2014]; parent: Root WebApplicationContext]
+2014-06-11 11:41:02,275 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-06-11 11:41:02,280 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-06-11 11:41:02,285 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-06-11 11:41:02,530 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'grails'
+2014-06-11 11:41:02,581 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2014-06-11 11:41:08,882 [http-bio-8080-exec-4] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'gsp'
+2014-06-11 11:41:08,883 [http-bio-8080-exec-4] INFO  [localhost].[/p1]  - GSP servlet initialized
+2014-06-11 11:41:28,894 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecRole
+2014-06-11 11:41:28,896 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecRole
+2014-06-11 11:41:28,899 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecRole
+2014-06-11 11:41:28,903 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUser
+2014-06-11 11:41:28,906 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUser
+2014-06-11 11:41:28,909 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUser
+2014-06-11 11:41:28,913 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUserSecRole
+2014-06-11 11:41:28,916 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUserSecRole
+2014-06-11 11:41:28,919 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUserSecRole
+2014-06-11 11:41:28,923 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in p1.First
+2014-06-11 11:41:28,926 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in p1.First
+2014-06-11 11:41:28,929 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in p1.First
+2014-06-11 11:41:28,933 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.Users
+2014-06-11 11:41:28,936 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.Users
+2014-06-11 11:41:28,939 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.Users
+2014-06-11 11:42:47,776 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-11 11:42:47,804 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-11 11:42:48,963 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-11 11:42:48,969 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-11 11:42:53,172 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring root WebApplicationContext
+2014-06-11 11:42:57,150 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2014-06-11 11:42:58,696 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-06-11 11:42:58,707 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-06-11 11:42:58,781 [localhost-startStop-1] WARN  pool.ConnectionPool  - maxActive is smaller than 1, setting maxActive to: 100
+2014-06-11 11:42:59,540 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/georgeqwu/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2014-06-11 11:43:01,561 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@23ec93cf: startup date [Wed Jun 11 11:42:58 PDT 2014]; parent: Root WebApplicationContext]
+2014-06-11 11:43:04,307 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-06-11 11:43:04,311 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-06-11 11:43:04,316 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-06-11 11:43:04,561 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'grails'
+2014-06-11 11:43:04,611 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2014-06-11 11:43:06,450 [http-bio-8080-exec-4] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'gsp'
+2014-06-11 11:43:06,450 [http-bio-8080-exec-4] INFO  [localhost].[/p1]  - GSP servlet initialized
+2014-06-11 11:44:53,492 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecRole
+2014-06-11 11:44:53,493 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecRole
+2014-06-11 11:44:53,496 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecRole
+2014-06-11 11:44:53,500 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUser
+2014-06-11 11:44:53,504 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUser
+2014-06-11 11:44:53,507 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUser
+2014-06-11 11:44:53,511 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUserSecRole
+2014-06-11 11:44:53,514 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUserSecRole
+2014-06-11 11:44:53,517 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUserSecRole
+2014-06-11 11:44:53,521 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in p1.First
+2014-06-11 11:44:53,524 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in p1.First
+2014-06-11 11:44:53,528 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in p1.First
+2014-06-11 11:44:53,531 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.Users
+2014-06-11 11:44:53,534 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.Users
+2014-06-11 11:44:53,538 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.Users

@@ -7,11 +7,10 @@ import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN'])
+@Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
 class FirstController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-	@Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond First.list(params), model:[firstInstanceCount: First.count()]
