@@ -1,6 +1,6 @@
 package unity
 
-class Users {
+class User {
 
 	String vistashareRole
 	Integer vistashareUserId
