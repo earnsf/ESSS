@@ -7,11 +7,11 @@ import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
+@Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
 class SecUserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond SecUser.list(params), model:[secUserInstanceCount: SecUser.count()]
@@ -20,12 +20,14 @@ class SecUserController {
     def show(SecUser secUserInstance) {
         respond secUserInstance
     }
-
+	
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
     def create() {
         respond new SecUser(params)
     }
 
     @Transactional
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
     def save(SecUser secUserInstance) {
         if (secUserInstance == null) {
             notFound()
@@ -53,6 +55,7 @@ class SecUserController {
 		
     }
 
+	/**
     def edit(SecUser secUserInstance) {
         respond secUserInstance
     }
@@ -79,6 +82,7 @@ class SecUserController {
             '*'{ respond secUserInstance, [status: OK] }
         }
     }
+    **/
 
     @Transactional
     def delete(SecUser secUserInstance) {
