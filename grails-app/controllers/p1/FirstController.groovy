@@ -12,6 +12,7 @@ class FirstController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     def index(Integer max) {
+		log.info 'first.index()'
         params.max = Math.min(max ?: 10, 100)
         respond First.list(params), model:[firstInstanceCount: First.count()]
     }
