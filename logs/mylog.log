@@ -962,3 +962,186 @@ Possible solutions: create(), create(com.p1.SecUser, com.p1.SecRole), create(com
 2014-06-24 16:15:35,071 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.User
 2014-06-24 16:15:35,074 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.User
 2014-06-24 16:15:35,077 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.User
+2014-06-25 10:57:34,357 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-25 10:57:34,384 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-25 10:57:35,671 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-06-25 10:57:35,676 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-06-25 10:57:40,693 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring root WebApplicationContext
+2014-06-25 10:57:46,288 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2014-06-25 10:57:47,551 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-06-25 10:57:47,564 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-06-25 10:57:47,647 [localhost-startStop-1] WARN  pool.ConnectionPool  - maxActive is smaller than 1, setting maxActive to: 100
+2014-06-25 10:57:48,644 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/georgeqwu/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2014-06-25 10:57:49,821 [localhost-startStop-1] INFO  sql.DatabaseMetaData  - HHH000262: Table not found: registration_code
+2014-06-25 10:57:49,902 [localhost-startStop-1] INFO  sql.DatabaseMetaData  - HHH000262: Table not found: registration_code
+2014-06-25 10:57:49,903 [localhost-startStop-1] INFO  sql.DatabaseMetaData  - HHH000262: Table not found: registration_code
+2014-06-25 10:57:50,905 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@78f28bba: startup date [Wed Jun 25 10:57:47 PDT 2014]; parent: Root WebApplicationContext]
+2014-06-25 10:57:55,104 [localhost-startStop-1] WARN  intercept.AnnotationFilterInvocationDefinition  - replaced rule for '/secuser/save' with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY] with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY]
+2014-06-25 10:57:55,105 [localhost-startStop-1] WARN  intercept.AnnotationFilterInvocationDefinition  - replaced rule for '/secuser/save.*' with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY] with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY]
+2014-06-25 10:57:55,105 [localhost-startStop-1] WARN  intercept.AnnotationFilterInvocationDefinition  - replaced rule for '/secuser/save/**' with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY] with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY]
+2014-06-25 10:57:55,161 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-06-25 10:57:55,167 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-06-25 10:57:55,272 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-06-25 10:57:55,354 [localhost-startStop-1] INFO  conf.BootStrap  - begin boostrap
+2014-06-25 10:57:55,655 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'grails'
+2014-06-25 10:57:55,715 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2014-06-25 10:58:23,979 [http-bio-8080-exec-4] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'gsp'
+2014-06-25 10:58:23,980 [http-bio-8080-exec-4] INFO  [localhost].[/p1]  - GSP servlet initialized
+2014-06-25 10:58:24,131 [http-bio-8080-exec-10] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-06-25 10:58:57,810 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in grails.plugin.springsecurity.ui.RegistrationCode
+2014-06-25 10:58:57,813 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in grails.plugin.springsecurity.ui.RegistrationCode
+2014-06-25 10:58:57,818 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in grails.plugin.springsecurity.ui.RegistrationCode
+2014-06-25 10:58:57,822 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecRole
+2014-06-25 10:58:57,826 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecRole
+2014-06-25 10:58:57,829 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecRole
+2014-06-25 10:58:57,833 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUser
+2014-06-25 10:58:57,836 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUser
+2014-06-25 10:58:57,839 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUser
+2014-06-25 10:58:57,843 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUserSecRole
+2014-06-25 10:58:57,846 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUserSecRole
+2014-06-25 10:58:57,850 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUserSecRole
+2014-06-25 10:58:57,853 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in p1.First
+2014-06-25 10:58:57,856 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in p1.First
+2014-06-25 10:58:57,859 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in p1.First
+2014-06-25 10:58:57,863 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.User
+2014-06-25 10:58:57,866 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.User
+2014-06-25 10:58:57,872 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.User
+2014-07-15 09:32:03,769 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-07-15 09:32:03,793 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-07-15 09:32:05,051 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-07-15 09:32:05,054 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-07-15 09:32:09,399 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring root WebApplicationContext
+2014-07-15 09:32:13,548 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2014-07-15 09:32:14,891 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-07-15 09:32:14,908 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-07-15 09:32:14,990 [localhost-startStop-1] WARN  pool.ConnectionPool  - maxActive is smaller than 1, setting maxActive to: 100
+2014-07-15 09:32:15,158 [localhost-startStop-1] ERROR pool.ConnectionPool  - Unable to create initial connections of pool.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-07-15 09:32:15,224 [localhost-startStop-1] ERROR pool.ConnectionPool  - Unable to create initial connections of pool.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-07-15 09:32:15,290 [localhost-startStop-1] ERROR pool.ConnectionPool  - Unable to create initial connections of pool.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2014-07-15 09:32:15,310 [localhost-startStop-1] ERROR context.GrailsContextLoaderListener  - Error initializing the application: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'hibernateProperties' while setting bean property 'hibernateProperties'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hibernateProperties': Cannot resolve reference to bean 'dialectDetector' while setting bean property 'properties' with key [hibernate.dialect]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dialectDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'hibernateProperties' while setting bean property 'hibernateProperties'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hibernateProperties': Cannot resolve reference to bean 'dialectDetector' while setting bean property 'properties' with key [hibernate.dialect]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dialectDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'hibernateProperties' while setting bean property 'hibernateProperties'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hibernateProperties': Cannot resolve reference to bean 'dialectDetector' while setting bean property 'properties' with key [hibernate.dialect]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dialectDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'hibernateProperties' while setting bean property 'hibernateProperties'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hibernateProperties': Cannot resolve reference to bean 'dialectDetector' while setting bean property 'properties' with key [hibernate.dialect]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dialectDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hibernateProperties': Cannot resolve reference to bean 'dialectDetector' while setting bean property 'properties' with key [hibernate.dialect]; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dialectDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	... 4 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dialectDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	... 4 more
+Caused by: org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	... 4 more
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	... 4 more
+2014-07-15 09:33:54,382 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-07-15 09:33:54,410 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-07-15 09:33:56,197 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-07-15 09:33:56,203 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-07-15 09:34:00,100 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring root WebApplicationContext
+2014-07-15 09:34:04,177 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+2014-07-15 09:34:05,489 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-07-15 09:34:05,502 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-07-15 09:34:05,579 [localhost-startStop-1] WARN  pool.ConnectionPool  - maxActive is smaller than 1, setting maxActive to: 100
+2014-07-15 09:34:07,005 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/georgeqwu/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2014-07-15 09:34:09,585 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@749559c1: startup date [Tue Jul 15 09:34:05 PDT 2014]; parent: Root WebApplicationContext]
+2014-07-15 09:34:13,207 [localhost-startStop-1] WARN  intercept.AnnotationFilterInvocationDefinition  - replaced rule for '/secuser/save' with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY] with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY]
+2014-07-15 09:34:13,207 [localhost-startStop-1] WARN  intercept.AnnotationFilterInvocationDefinition  - replaced rule for '/secuser/save.*' with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY] with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY]
+2014-07-15 09:34:13,207 [localhost-startStop-1] WARN  intercept.AnnotationFilterInvocationDefinition  - replaced rule for '/secuser/save/**' with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY] with tokens [ROLE_ADMIN, ROLE_USER, IS_AUTHENTICATED_FULLY]
+2014-07-15 09:34:13,248 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-07-15 09:34:13,253 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-07-15 09:34:13,346 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-07-15 09:34:13,410 [localhost-startStop-1] INFO  conf.BootStrap  - begin boostrap
+2014-07-15 09:34:13,660 [localhost-startStop-1] INFO  [localhost].[/p1]  - Initializing Spring FrameworkServlet 'grails'
+2014-07-15 09:34:13,749 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+2014-07-15 09:38:01,200 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in grails.plugin.springsecurity.ui.RegistrationCode
+2014-07-15 09:38:01,202 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in grails.plugin.springsecurity.ui.RegistrationCode
+2014-07-15 09:38:01,206 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in grails.plugin.springsecurity.ui.RegistrationCode
+2014-07-15 09:38:01,210 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecRole
+2014-07-15 09:38:01,214 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecRole
+2014-07-15 09:38:01,217 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecRole
+2014-07-15 09:38:01,220 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUser
+2014-07-15 09:38:01,223 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUser
+2014-07-15 09:38:01,226 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUser
+2014-07-15 09:38:01,230 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in com.p1.SecUserSecRole
+2014-07-15 09:38:01,233 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in com.p1.SecUserSecRole
+2014-07-15 09:38:01,237 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in com.p1.SecUserSecRole
+2014-07-15 09:38:01,240 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in p1.First
+2014-07-15 09:38:01,243 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in p1.First
+2014-07-15 09:38:01,246 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in p1.First
+2014-07-15 09:38:01,250 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormValidationApi in unity.User
+2014-07-15 09:38:01,254 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property staticGormStaticApi in unity.User
+2014-07-15 09:38:01,257 [Thread-7] INFO  domain.GrailsDomainClassCleaner  - Clearing static property instanceGormInstanceApi in unity.User
