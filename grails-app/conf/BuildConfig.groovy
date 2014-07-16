@@ -64,6 +64,8 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.6'
         compile ":asset-pipeline:1.8.7"
 		// plugin to engineer domain classes from database
+		// for some reason this is derpy and doesn't work in conjunction to hibernate, so
+			//we have to comment this out when not using it. Look in config for more settings!
 		//compile ':db-reverse-engineer:0.5'
 		// security plugin
 		compile ":spring-security-core:2.0-RC3"
@@ -75,6 +77,10 @@ grails.project.dependency.resolution = {
 		
 		//spring security ui
 		compile ":spring-security-ui:1.0-RC2"
+		
+		//added to try to fix java.lang.NoClassDefFoundError: net/sf/ehcache/config/CacheConfiguration error
+		//http://stackoverflow.com/questions/24164351/grails-2-4-throws-ehcache-class-not-found-error
+		//compile "net.sf.ehcache:ehcache-core:2.4.8"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.5.3" // or ":hibernate:3.6.10.15"

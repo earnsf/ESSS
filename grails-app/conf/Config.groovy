@@ -125,13 +125,13 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
-/**
+
 //configuration options for database rev eng plugin
 //switch on and off when generating domains
 //make sure to turn off runtime hibernate libraries when running this plugin
-grails.plugin.reveng.packageName = 'unity'
-grails.plugin.reveng.includeTables = ['users']
-**/
+//grails.plugin.reveng.packageName = 'unity'
+//grails.plugin.reveng.includeTables = ['users']
+
 
 
 
