@@ -106,8 +106,13 @@ log4j.main = {
     //}
 	
 	appenders {
+<<<<<<< HEAD
+		// file name:'file', file:'/Users/georgeqwu/Documents/workspace-ggts/p1/logs/mylog.log'
+		file name:'file', file:'/Users/philjay/ESSS/logs/mylog.log'
+=======
 		file name:'file', file:'/Users/georgeqwu/Documents/workspace-ggts/p1/logs/mylog.log'
 		//file name:'file', file:'~/ESSS/logs/mylog.log'
+>>>>>>> 0991ce0cb34a2f224040f8e916898c6d53f9261d
 	}
 	root {
 		info 'stdout', 'file'
