@@ -45,3 +45,11 @@
 2014-07-16 12:07:22,534 [http-bio-8080-exec-2] INFO  [localhost].[/p1]  - GSP servlet initialized
 2014-07-16 12:07:22,750 [http-bio-8080-exec-4] INFO  springsecurity.LoginController  - inside auth() of LoginController
 2014-07-16 12:42:05,211 [http-bio-8080-exec-3] INFO  springsecurity.LoginController  - inside auth() of LoginController
+2014-07-16 12:44:50,588 [Thread-10] INFO  compiler.GrailsProjectWatcher  - File [/Users/philjay/ESSS/grails-app/conf/Config.groovy] changed. Applying changes to application.
+2014-07-16 12:44:50,891 [Thread-10] ERROR compiler.GrailsProjectWatcher  - Compilation Error: startup failed:
+/Users/philjay/ESSS/grails-app/conf/Config.groovy: 109: unexpected token: << @ line 109, column 1.
+   <<<<<<< HEAD
+   ^
+
+1 error
+
