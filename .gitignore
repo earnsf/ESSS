@@ -30,4 +30,4 @@ stacktrace.log
 hs_err_pid*
 
 # don't need logs, for now
-**/logs/mylog.log
+/**/logs/mylog.log
