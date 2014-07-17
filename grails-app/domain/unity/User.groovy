@@ -2,10 +2,11 @@ package unity
 
 import java.util.Set;
 
-import com.p1.SecRole;
 
-class Users {
+class User {
 
+	transient springSecurityService
+	
 	String vistashareRole
 	String typeEnum
 	Integer vistashareUserId
@@ -65,8 +66,9 @@ class Users {
 	Boolean esssEnabled = true
 
 	static mapping = {
+		table "users"
 		version false
-		esssPassword column: '`Password`'
+		esssPassword column: '`password`' // sets the column name to password
 	}
 	
 	static transients = ['springSecurityService']
@@ -129,23 +131,20 @@ class Users {
 		esssEnabled nullable: true
 	}
 	
-	
-	Set<SecRole> getAuthorities() {
-		SecUserSecRole.findAllByUsers(this).collect { it.secRole }
-	}
-
 	def beforeInsert() {
 		encodePassword()
 	}
 
+	/** Encodes password if it has been modified */
 	def beforeUpdate() {
-		if (isDirty('password')) {
+		if (isDirty('password')) { // isDirty checks if a domain class instance has been modified
 			encodePassword()
 		}
 	}
-
+	
+	/** Encodes the password */
 	protected void encodePassword() {
-		esssPassword = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(esssPassword) : esssPassword
+		esssPassword = springSecurityService.passwordEncoder ? springSecurityService.encodePassword(esssPassword) : esssPassword
 	}
 }
 

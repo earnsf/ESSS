@@ -21,7 +21,7 @@ class SecUser {
 	static mapping = {
 		password column: '`password`'
 	}
-
+	
 	Set<SecRole> getAuthorities() {
 		SecUserSecRole.findAllBySecUser(this).collect { it.secRole }
 	}
@@ -30,13 +30,15 @@ class SecUser {
 		encodePassword()
 	}
 
+	/** Encodes password if it has been modified */
 	def beforeUpdate() {
-		if (isDirty('password')) {
+		if (isDirty('password')) { // isDirty checks if a domain class instance has been modified
 			encodePassword()
 		}
 	}
-
+	
+	/** Encodes the password */
 	protected void encodePassword() {
-		password = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(password) : password
+		 password = springSecurityService.passwordEncoder ? springSecurityService.encodePassword(password) : password
 	}
 }
