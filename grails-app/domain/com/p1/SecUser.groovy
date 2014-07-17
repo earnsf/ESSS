@@ -22,7 +22,7 @@ class SecUser {
 		password column: '`password`'
 	}
 
-	Set<SecRole> getAuthorities() {
+	Set<SecRole> ggetAuthorities() {
 		SecUserSecRole.findAllBySecUser(this).collect { it.secRole }
 	}
 

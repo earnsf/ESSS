@@ -1,5 +1,9 @@
 package unity
 
+import java.util.Set;
+
+import com.p1.SecRole;
+
 class Users {
 
 	String vistashareRole
@@ -58,11 +62,14 @@ class Users {
 	String esssPassword
 	Boolean esssAccountExpired
 	Boolean esssAccountLocked
-	Boolean esssEnabled
+	Boolean esssEnabled = true
 
 	static mapping = {
 		version false
+		esssPassword column: '`Password`'
 	}
+	
+	static transients = ['springSecurityService']
 
 	static constraints = {
 		vistashareRole nullable: true, maxSize: 512
@@ -114,11 +121,32 @@ class Users {
 		emergencyContactId nullable: true
 		emergencyContactType nullable: true, maxSize: 128
 		childRefToPrimParent nullable: true
-		esssEmail nullable: true, maxSize: 64
+		esssEmail blank: false, unique: true
 		esssVersion nullable: true
-		esssPassword nullable: true
+		esssPassword blank: false
 		esssAccountExpired nullable: true
 		esssAccountLocked nullable: true
 		esssEnabled nullable: true
 	}
+	
+	
+	Set<SecRole> getAuthorities() {
+		SecUserSecRole.findAllByUsers(this).collect { it.secRole }
+	}
+
+	def beforeInsert() {
+		encodePassword()
+	}
+
+	def beforeUpdate() {
+		if (isDirty('password')) {
+			encodePassword()
+		}
+	}
+
+	protected void encodePassword() {
+		esssPassword = springSecurityService?.passwordEncoder ? springSecurityService.encodePassword(esssPassword) : esssPassword
+	}
 }
+
+
