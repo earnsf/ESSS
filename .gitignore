@@ -33,3 +33,7 @@ hs_err_pid*
 # don't need logs, for now
 /**/logs/mylog.log
 
+# ignore sql files
+*.sql
+*.gz
+

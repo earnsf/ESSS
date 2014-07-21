@@ -2,149 +2,154 @@ package unity
 
 import java.util.Set;
 
+import unity.*;
+
 
 class User {
 
 	transient springSecurityService
-	
-	String vistashareRole
-	String typeEnum
-	Integer vistashareUserId
+
+	String vistashare_role
+	String type_enum
+	Integer vistashare_user_id
 	String salutation
-	String firstName
-	String middleName
-	String lastName
+	String first_name
+	String middle_name
+	String last_name
 	Date dob
-	byte[] ssnAes
-	String ssnLastFour
-	String ssnOrItin
-	String preferredAddress
-	String preferredCity
-	String preferredState
-	String preferredZipCode
-	String preferredAddressType
+	byte[] ssn_aes
+	String ssn_last_four
+	String ssn_or_itin
+	String preferred_address
+	String preferred_city
+	String preferred_state
+	String preferred_zip_code
+	String preferred_address_type
 	String county
 	String country
-	String homePhone
-	String workPhone
-	String mobilePhone
-	String alternatePhone
+	String home_phone
+	String work_phone
+	String mobile_phone
+	String alternate_phone
 	String fax
-	String vistashareEmail
-	String alternateEmail
-	String alternateAddress
-	String alternateCity
-	String alternateState
-	String alternateZipCode
-	String alternateAddressType
-	String alternateCountry
-	Boolean doNotCall
-	Boolean doNotEmail
-	Integer emailPrefCode
-	Boolean doNotMail
-	String doNotMailReason
+	String vistashare_email
+	String alternate_email
+	String alternate_address
+	String alternate_city
+	String alternate_state
+	String alternate_zipCode
+	String alternate_address_type
+	String alternate_country
+	Boolean do_not_call
+	Boolean do_not_email
+	Integer email_pref_code
+	Boolean do_not_mail
+	String do_not_mail_reason
 	Boolean banned
-	String alertNotes
+	String alert_notes
 	String gender
-	Integer householdLanguageId
-	Boolean serviceableInEnglish
-	Boolean serviceableInSpanish
-	Boolean serviceableInCantonese
-	Boolean idChecked
-	Date idCheckedDate
-	Integer spouseId
-	Boolean isEmergencyContact
-	Boolean isChild
-	Integer emergencyContactId
-	String emergencyContactType
-	Integer childRefToPrimParent
-	String esssEmail
-	Long esssVersion
-	String esssPassword
-	Boolean esssAccountExpired
-	Boolean esssAccountLocked
-	Boolean esssEnabled = true
+	Integer household_language_id
+	Boolean serviceable_in_english
+	Boolean serviceable_in_spanish
+	Boolean serviceable_in_cantonese
+	Boolean id_checked
+	Date id_checked_date
+	Integer spouse_id
+	Boolean is_emergency_contact
+	Boolean is_child
+	Integer emergency_contact_id
+	String emergency_contact_type
+	Integer child_ref_to_prim_parent
+	String esss_email
+	String esss_password
+	Boolean esss_account_expired = false
+	Boolean esss_account_locked = false
+	Boolean esss_enabled = true
 
 	static mapping = {
 		table "users"
 		version false
-		esssPassword column: '`password`' // sets the column name to password
 	}
-	
+
 	static transients = ['springSecurityService']
 
 	static constraints = {
-		vistashareRole nullable: true, maxSize: 512
-		typeEnum maxSize: 9
-		vistashareUserId nullable: true, unique: true
+		vistashare_role nullable: true, maxSize: 512
+		type_enum maxSize: 9
+		vistashare_user_id nullable: true, unique: true
 		salutation nullable: true, maxSize: 6
-		firstName maxSize: 32
-		middleName nullable: true, maxSize: 32
-		lastName maxSize: 64
+		first_name maxSize: 32
+		middle_name nullable: true, maxSize: 32
+		last_name maxSize: 64
 		dob nullable: true
-		ssnAes nullable: true
-		ssnLastFour nullable: true, maxSize: 4
-		ssnOrItin nullable: true, maxSize: 4
-		preferredAddress nullable: true, maxSize: 256
-		preferredCity nullable: true, maxSize: 32
-		preferredState nullable: true, maxSize: 32
-		preferredZipCode nullable: true, maxSize: 12
-		preferredAddressType nullable: true, maxSize: 16
+		ssn_aes nullable: true
+		ssn_last_four nullable: true, maxSize: 4
+		ssn_or_itin nullable: true, maxSize: 4
+		preferred_address nullable: true, maxSize: 256
+		preferred_city nullable: true, maxSize: 32
+		preferred_state nullable: true, maxSize: 32
+		preferred_zip_code nullable: true, maxSize: 12
+		preferred_address_type nullable: true, maxSize: 16
 		county nullable: true, maxSize: 32
 		country nullable: true, maxSize: 32
-		homePhone nullable: true, maxSize: 32
-		workPhone nullable: true, maxSize: 32
-		mobilePhone nullable: true, maxSize: 32
-		alternatePhone nullable: true, maxSize: 32
+		home_phone nullable: true, maxSize: 32
+		work_phone nullable: true, maxSize: 32
+		mobile_phone nullable: true, maxSize: 32
+		alternate_phone nullable: true, maxSize: 32
 		fax nullable: true, maxSize: 16
-		vistashareEmail nullable: true, maxSize: 64
-		alternateEmail nullable: true, maxSize: 64
-		alternateAddress nullable: true, maxSize: 256
-		alternateCity nullable: true, maxSize: 32
-		alternateState nullable: true, maxSize: 2
-		alternateZipCode nullable: true, maxSize: 12
-		alternateAddressType nullable: true, maxSize: 16
-		alternateCountry nullable: true, maxSize: 32
-		doNotCall nullable: true
-		doNotEmail nullable: true
-		emailPrefCode nullable: true
-		doNotMail nullable: true
-		doNotMailReason nullable: true, maxSize: 128
+		vistashare_email nullable: true, maxSize: 64
+		alternate_email nullable: true, maxSize: 64
+		alternate_address nullable: true, maxSize: 256
+		alternate_city nullable: true, maxSize: 32
+		alternate_state nullable: true, maxSize: 2
+		alternate_zipCode nullable: true, maxSize: 12
+		alternate_address_type nullable: true, maxSize: 16
+		alternate_country nullable: true, maxSize: 32
+		do_not_call nullable: true
+		do_not_email nullable: true
+		email_pref_code nullable: true
+		do_not_mail nullable: true
+		do_not_mail_reason nullable: true, maxSize: 128
 		banned nullable: true
-		alertNotes nullable: true, maxSize: 4096
+		alert_notes nullable: true, maxSize: 4096
 		gender nullable: true, maxSize: 8
-		householdLanguageId nullable: true
-		serviceableInEnglish nullable: true
-		serviceableInSpanish nullable: true
-		serviceableInCantonese nullable: true
-		idChecked nullable: true
-		idCheckedDate nullable: true
-		spouseId nullable: true
-		emergencyContactId nullable: true
-		emergencyContactType nullable: true, maxSize: 128
-		childRefToPrimParent nullable: true
-		esssEmail blank: false, unique: true
-		esssVersion nullable: true
-		esssPassword blank: false
-		esssAccountExpired nullable: true
-		esssAccountLocked nullable: true
-		esssEnabled nullable: true
+		household_language_id nullable: true
+		serviceable_in_english nullable: true
+		serviceable_in_spanish nullable: true
+		serviceable_in_cantonese nullable: true
+		id_checked nullable: true
+		id_checked_date nullable: true
+		spouse_id nullable: true
+		emergency_contact_id nullable: true
+		emergency_contact_type nullable: true, maxSize: 128
+		child_ref_to_prim_parent nullable: true
+		esss_email blank: true, unique: true
+		esss_password blank: false
+		esss_account_expired nullable: false
+		esss_account_locked nullable: false
+		esss_enabled nullable: true
+		is_emergency_contact nullable: false
+		is_child nullable: false
 	}
-	
+
 	def beforeInsert() {
 		encodePassword()
 	}
 
+	Set<Role> getAuthorities() {
+		UserRole.findAllByUser(this).collect { it.role }
+	}
+
 	/** Encodes password if it has been modified */
 	def beforeUpdate() {
-		if (isDirty('password')) { // isDirty checks if a domain class instance has been modified
+		if (isDirty('esss_password')) { // isDirty checks if a domain class instance has been modified
 			encodePassword()
 		}
 	}
-	
+
 	/** Encodes the password */
 	protected void encodePassword() {
-		esssPassword = springSecurityService.passwordEncoder ? springSecurityService.encodePassword(esssPassword) : esssPassword
+		esss_password = springSecurityService.passwordEncoder ? springSecurityService.encodePassword(esss_password) : esss_password
 	}
 }
 

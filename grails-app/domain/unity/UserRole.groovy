@@ -92,6 +92,7 @@ class UserRole implements Serializable {
 
 	static mapping = {
 		id composite: ['role', 'user']
+		table "esss_sec_user_sec_role"
 		version false
 	}
 }

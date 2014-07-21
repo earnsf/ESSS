@@ -1,20 +1,25 @@
-import com.p1.*
+import unity.*
 
 class BootStrap {
 
     def init = { servletContext ->
 		
 		log.info 'begin bootstrap'
-		def userRole = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
-		def adminRole = SecRole.findByAuthority('ROLE_ADMIN') ?: new SecRole(authority: 'ROLE_ADMIN').save(failOnError: true)
-		
-		def adminUser = SecUser.findByUsername('admin') ?: new SecUser(
-			username: 'admin',
-			password: 'password').save(failOnError: true)
+		def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
+		def adminRole = Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
+		log.info 'finished creating roles'
+		def adminUser = User.findByEsss_email('georgeqwu@gmail.com') ?: new User(
+			first_name: 'TestUser',
+			last_name: '07212014',
+			type_enum: 'fin_serv',
+			is_emergency_contact: false,
+			is_child: false,
+			esss_email: 'georgeqwu@gmail.com',
+			esss_password: 'password').save(failOnError: true)
 
 		if (!adminUser.authorities.contains(adminRole)) {
-			log.info 'creating adminUser, adminRole in SecUserSecRole'
-			SecUserSecRole.create adminUser, adminRole
+			log.info 'creating adminUser, adminRole in UserRole'
+			UserRole.create adminUser, adminRole
 		}
     }
     def destroy = {

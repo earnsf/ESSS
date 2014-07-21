@@ -6,6 +6,8 @@ class Role {
 
 	static mapping = {
 		cache true
+		table "esss_sec_role"
+		version false
 	}
 
 	static constraints = {
