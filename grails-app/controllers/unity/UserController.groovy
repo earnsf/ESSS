@@ -4,20 +4,21 @@ import static org.springframework.http.HttpStatus.*
 
 import unity.User;
 import grails.transaction.Transactional
-
+import grails.plugin.springsecurity.annotation.Secured
 /**
  * Only takes in account SAVE or POST method. We don't need different roles.
  *
  */
 
 @Transactional(readOnly = true)
+@Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
 class UserController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	
     def index(Integer max) {
-		params.max = Math.min(max ?: 10, 100)
-		respond User.list(params), model:[UserInstanceCount: User.count()]
+		//params.max = Math.min(max ?: 10, 100)
+		//respond User.list(params), model:[userInstanceCount: User.count()]
 	}
 	
 	// For BACK END viewing, probably won't call it.

@@ -4,7 +4,6 @@ import java.util.Set;
 
 import unity.*;
 
-
 class User {
 
 	transient springSecurityService
@@ -60,15 +59,22 @@ class User {
 	Integer emergency_contact_id
 	String emergency_contact_type
 	Integer child_ref_to_prim_parent
-	String esss_email
-	String esss_password
-	Boolean esss_account_expired = false
-	Boolean esss_account_locked = false
-	Boolean esss_enabled = true
+	String username
+	String password
+	boolean enabled = true
+	boolean accountExpired
+	boolean accountLocked
+	boolean passwordExpired
 
 	static mapping = {
 		table "users"
 		version false
+		username column: 'esss_email'
+		password column: 'esss_password'
+		enabled column: 'esss_enabled'
+		accountLocked column: 'esss_account_locked'
+		passwordExpired column: 'esss_password_expired'
+		
 	}
 
 	static transients = ['springSecurityService']
@@ -123,11 +129,12 @@ class User {
 		emergency_contact_id nullable: true
 		emergency_contact_type nullable: true, maxSize: 128
 		child_ref_to_prim_parent nullable: true
-		esss_email blank: true, unique: true
-		esss_password blank: false
-		esss_account_expired nullable: false
-		esss_account_locked nullable: false
-		esss_enabled nullable: true
+		username blank: true, unique: true
+		password blank: false
+		accountExpired nullable: false
+		accountLocked nullable: false
+		enabled nullable: true
+		passwordExpired nullable: false
 		is_emergency_contact nullable: false
 		is_child nullable: false
 	}
@@ -149,7 +156,7 @@ class User {
 
 	/** Encodes the password */
 	protected void encodePassword() {
-		esss_password = springSecurityService.passwordEncoder ? springSecurityService.encodePassword(esss_password) : esss_password
+		password = springSecurityService.passwordEncoder ? springSecurityService.encodePassword(password) : password
 	}
 }
 

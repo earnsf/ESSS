@@ -9,8 +9,5 @@ class UrlMappings {
 
         "/"(controller:'User')
         "500"(view:'/error')
-		
-		// This calls the UserController
-		// "/"(controller:'User')
 	}
 }
