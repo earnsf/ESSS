@@ -28,10 +28,21 @@ class BootStrap {
 		if (user) {
 			user.username = user.vistashare_email
 			user.password = 'password'
-			user.encodePassword()
-
+			user.accountExpired = false
+			user.accountLocked = false
+			user.enabled = true
+			user.passwordExpired = false
+			log.info user.password
+			//user.encodePassword()
+			log.info 'setting things for shiningfish'
 		}
-		user.save flush:true
+		user.save (flush:true, failOnError: true)
+		def finduser = User.findByUsername('Shiningfish26@gmail.com')
+		if (finduser)
+			log.info "Success"
+		else
+			log.info "failure"
+		log.info 'success save'
 		if (!user.authorities.contains(adminRole)) {
 			UserRole.create user, adminRole
 		}
