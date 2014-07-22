@@ -16,7 +16,7 @@ class User {
 	String middle_name
 	String last_name
 	Date dob
-	byte[] ssn_aes
+	//byte[] ssn_aes
 	String ssn_last_four
 	String ssn_or_itin
 	String preferred_address
@@ -36,7 +36,7 @@ class User {
 	String alternate_address
 	String alternate_city
 	String alternate_state
-	String alternate_zipCode
+	String alternate_zip_code
 	String alternate_address_type
 	String alternate_country
 	Boolean do_not_call
@@ -61,24 +61,26 @@ class User {
 	Integer child_ref_to_prim_parent
 	String username
 	String password
-	boolean enabled = true
-	boolean accountExpired = false
-	boolean accountLocked = false
-	boolean passwordExpired = false
+	Boolean accountExpired
+	Boolean accountLocked
+	Boolean enabled
+	Boolean passwordExpired
 
 	static mapping = {
 		table "users"
 		version false
-		username column: 'esss_email'
-		password column: 'esss_password'
-		enabled column: 'esss_enabled'
-		accountLocked column: 'esss_account_locked'
-		passwordExpired column: 'esss_password_expired'
+		username column: 'esss_email', sqlType: 'varchar', length: 64
+		password column: 'esss_password', sqlType: 'varchar', length: 255
+		accountExpired column: 'esss_account_expired', sqlType: 'bit', length: 1
+		accountLocked column: 'esss_account_locked', sqlType: 'bit', length: 1
+		enabled column: 'esss_enabled', sqlType: 'bit', length: 1
+		passwordExpired column: 'esss_password_expired', sqlType: 'bit', length: 1
 		
 	}
 
 	static transients = ['springSecurityService']
-
+	
+	/**
 	static constraints = {
 		vistashare_role nullable: true, maxSize: 512
 		type_enum maxSize: 9
@@ -129,11 +131,14 @@ class User {
 		emergency_contact_id nullable: true
 		emergency_contact_type nullable: true, maxSize: 128
 		child_ref_to_prim_parent nullable: true
-		username blank: true, unique: true
+		username blank: false, unique: true
 		password blank: false
 		is_emergency_contact nullable: false
 		is_child nullable: false
 	}
+	**/
+	
+	static constraints = {}
 
 	def beforeInsert() {
 		encodePassword()

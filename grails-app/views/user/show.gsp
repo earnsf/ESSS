@@ -462,47 +462,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.esss_email}">
+				<g:if test="${userInstance?.username}">
 				<li class="fieldcontain">
-					<span id="esss_email-label" class="property-label"><g:message code="user.esss_email.label" default="Esssemail" /></span>
+					<span id="username-label" class="property-label"><g:message code="user.username.label" default="Username" /></span>
 					
-						<span class="property-value" aria-labelledby="esss_email-label"><g:fieldValue bean="${userInstance}" field="esss_email"/></span>
+						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${userInstance}" field="username"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.esss_password}">
+				<g:if test="${userInstance?.password}">
 				<li class="fieldcontain">
-					<span id="esss_password-label" class="property-label"><g:message code="user.esss_password.label" default="Essspassword" /></span>
+					<span id="password-label" class="property-label"><g:message code="user.password.label" default="Password" /></span>
 					
-						<span class="property-value" aria-labelledby="esss_password-label"><g:fieldValue bean="${userInstance}" field="esss_password"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.esss_account_expired}">
-				<li class="fieldcontain">
-					<span id="esss_account_expired-label" class="property-label"><g:message code="user.esss_account_expired.label" default="Esssaccountexpired" /></span>
-					
-						<span class="property-value" aria-labelledby="esss_account_expired-label"><g:formatBoolean boolean="${userInstance?.esss_account_expired}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.esss_account_locked}">
-				<li class="fieldcontain">
-					<span id="esss_account_locked-label" class="property-label"><g:message code="user.esss_account_locked.label" default="Esssaccountlocked" /></span>
-					
-						<span class="property-value" aria-labelledby="esss_account_locked-label"><g:formatBoolean boolean="${userInstance?.esss_account_locked}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${userInstance?.esss_enabled}">
-				<li class="fieldcontain">
-					<span id="esss_enabled-label" class="property-label"><g:message code="user.esss_enabled.label" default="Esssenabled" /></span>
-					
-						<span class="property-value" aria-labelledby="esss_enabled-label"><g:formatBoolean boolean="${userInstance?.esss_enabled}" /></span>
+						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${userInstance}" field="password"/></span>
 					
 				</li>
 				</g:if>
@@ -521,6 +494,42 @@
 					<span id="is_child-label" class="property-label"><g:message code="user.is_child.label" default="Ischild" /></span>
 					
 						<span class="property-value" aria-labelledby="is_child-label"><g:formatBoolean boolean="${userInstance?.is_child}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.accountExpired}">
+				<li class="fieldcontain">
+					<span id="accountExpired-label" class="property-label"><g:message code="user.accountExpired.label" default="Account Expired" /></span>
+					
+						<span class="property-value" aria-labelledby="accountExpired-label"><g:formatBoolean boolean="${userInstance?.accountExpired}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.accountLocked}">
+				<li class="fieldcontain">
+					<span id="accountLocked-label" class="property-label"><g:message code="user.accountLocked.label" default="Account Locked" /></span>
+					
+						<span class="property-value" aria-labelledby="accountLocked-label"><g:formatBoolean boolean="${userInstance?.accountLocked}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.enabled}">
+				<li class="fieldcontain">
+					<span id="enabled-label" class="property-label"><g:message code="user.enabled.label" default="Enabled" /></span>
+					
+						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${userInstance?.enabled}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.passwordExpired}">
+				<li class="fieldcontain">
+					<span id="passwordExpired-label" class="property-label"><g:message code="user.passwordExpired.label" default="Password Expired" /></span>
+					
+						<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${userInstance?.passwordExpired}" /></span>
 					
 				</li>
 				</g:if>

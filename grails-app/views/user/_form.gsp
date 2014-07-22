@@ -443,48 +443,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'esss_email', 'error')} required">
-	<label for="esss_email">
-		<g:message code="user.esss_email.label" default="Esssemail" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
+	<label for="username">
+		<g:message code="user.username.label" default="Username" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="esss_email" required="" value="${userInstance?.esss_email}"/>
+	<g:textField name="username" required="" value="${userInstance?.username}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'esss_password', 'error')} required">
-	<label for="esss_password">
-		<g:message code="user.esss_password.label" default="Essspassword" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required">
+	<label for="password">
+		<g:message code="user.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="esss_password" required="" value="${userInstance?.esss_password}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'esss_account_expired', 'error')} ">
-	<label for="esss_account_expired">
-		<g:message code="user.esss_account_expired.label" default="Esssaccountexpired" />
-		
-	</label>
-	<g:checkBox name="esss_account_expired" value="${userInstance?.esss_account_expired}" />
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'esss_account_locked', 'error')} ">
-	<label for="esss_account_locked">
-		<g:message code="user.esss_account_locked.label" default="Esssaccountlocked" />
-		
-	</label>
-	<g:checkBox name="esss_account_locked" value="${userInstance?.esss_account_locked}" />
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'esss_enabled', 'error')} ">
-	<label for="esss_enabled">
-		<g:message code="user.esss_enabled.label" default="Esssenabled" />
-		
-	</label>
-	<g:checkBox name="esss_enabled" value="${userInstance?.esss_enabled}" />
+	<g:textField name="password" required="" value="${userInstance?.password}"/>
 
 </div>
 
@@ -503,6 +476,42 @@
 		
 	</label>
 	<g:checkBox name="is_child" value="${userInstance?.is_child}" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountExpired', 'error')} ">
+	<label for="accountExpired">
+		<g:message code="user.accountExpired.label" default="Account Expired" />
+		
+	</label>
+	<g:checkBox name="accountExpired" value="${userInstance?.accountExpired}" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountLocked', 'error')} ">
+	<label for="accountLocked">
+		<g:message code="user.accountLocked.label" default="Account Locked" />
+		
+	</label>
+	<g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'enabled', 'error')} ">
+	<label for="enabled">
+		<g:message code="user.enabled.label" default="Enabled" />
+		
+	</label>
+	<g:checkBox name="enabled" value="${userInstance?.enabled}" />
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passwordExpired', 'error')} ">
+	<label for="passwordExpired">
+		<g:message code="user.passwordExpired.label" default="Password Expired" />
+		
+	</label>
+	<g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
 
 </div>
 

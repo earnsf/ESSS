@@ -3,7 +3,7 @@ import unity.*
 class BootStrap {
 
     def init = { servletContext ->
-		
+		/**
 		log.info 'begin bootstrap'
 		def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
 		def adminRole = Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
@@ -21,6 +21,7 @@ class BootStrap {
 			log.info 'creating adminUser, adminRole in UserRole'
 			UserRole.create adminUser, adminRole
 		}
+		**/
     }
     def destroy = {
     }

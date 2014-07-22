@@ -1,71 +1,107 @@
 package unity
 
-import static org.springframework.http.HttpStatus.*
 
-import unity.User;
+
+import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
-/**
- * Only takes in account SAVE or POST method. We don't need different roles.
- *
- */
 
 @Transactional(readOnly = true)
-//@Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+@Secured(['IS_AUTHENTICATED_FULLY'])
 class UserController {
 
-	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-	
-    def index() {
-		log.info 'in UserController.index()'
-		//params.max = Math.min(max ?: 10, 100)
-		//respond User.list(params), model:[userInstanceCount: User.count()]
-		//render (view: 'index', model: [userInstanceList: User.list(params), userInstanceCount: User.count()])
-		render (view: 'index', model: [userInstanceList: User.list(params)])
-		log.info 'finished UserController.index()'
-	}
-	
-	// For BACK END viewing, probably won't call it.
-	def show(User userInstance) {
-		respond userInstance
-	}
-	
-	def create() {
-		respond new User(params)
-	}
-	
-	@Transactional
-	def save(User userInstance) {
-		if (userInstance == null) {
-			notFound()
-			return
-		}
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-		if (userInstance.hasErrors()) {
-			respond userInstance.errors, view:'create'
-			return
-		}
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond User.list(params), model:[userInstanceCount: User.count()]
+		//respond User.list(params)
+    }
 
-		userInstance.save flush:true // saves a new domain class instance or updates a modified one
+    def show(User userInstance) {
+        respond userInstance
+    }
 
-		request.withFormat {
-			form multipartForm {
-				flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
-				redirect userInstance
-			}
-			'*' { respond userInstance, [status: CREATED] }
-		}
-	}
-	
+    def create() {
+        respond new User(params)
+    }
 
-	protected void notFound() {
-		request.withFormat {
-			form multipartForm {
-				flash.message = message(code: 'default.not.found.message', args: [message(code: 'user.label', default: 'User'), params.id])
-				redirect action: "index", method: "GET"
-			}
-			'*'{ render status: NOT_FOUND }
-		}
-	}
-	
+    @Transactional
+    def save(User userInstance) {
+        if (userInstance == null) {
+            notFound()
+            return
+        }
+
+        if (userInstance.hasErrors()) {
+            respond userInstance.errors, view:'create'
+            return
+        }
+
+        userInstance.save flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
+                redirect userInstance
+            }
+            '*' { respond userInstance, [status: CREATED] }
+        }
+    }
+
+    def edit(User userInstance) {
+        respond userInstance
+    }
+
+    @Transactional
+    def update(User userInstance) {
+        if (userInstance == null) {
+            notFound()
+            return
+        }
+
+        if (userInstance.hasErrors()) {
+            respond userInstance.errors, view:'edit'
+            return
+        }
+
+        userInstance.save flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'User.label', default: 'User'), userInstance.id])
+                redirect userInstance
+            }
+            '*'{ respond userInstance, [status: OK] }
+        }
+    }
+
+    @Transactional
+    def delete(User userInstance) {
+
+        if (userInstance == null) {
+            notFound()
+            return
+        }
+
+        userInstance.delete flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'User.label', default: 'User'), userInstance.id])
+                redirect action:"index", method:"GET"
+            }
+            '*'{ render status: NO_CONTENT }
+        }
+    }
+
+    protected void notFound() {
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'user.label', default: 'User'), params.id])
+                redirect action: "index", method: "GET"
+            }
+            '*'{ render status: NOT_FOUND }
+        }
+    }
 }
