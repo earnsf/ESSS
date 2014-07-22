@@ -1,11 +1,13 @@
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+
 import unity.*
 
 class BootStrap {
 
     def init = { servletContext ->
-		/**
+		
 		log.info 'begin bootstrap'
-		def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
+		// def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
 		def adminRole = Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
 		log.info 'finished creating roles'
 		def adminUser = User.findByUsername('test@earn.org') ?: new User(
@@ -21,7 +23,20 @@ class BootStrap {
 			log.info 'creating adminUser, adminRole in UserRole'
 			UserRole.create adminUser, adminRole
 		}
-		**/
+		log.info 'creating user role'
+		def user = User.findByVistashare_email('Shiningfish26@gmail.com')
+		if (user) {
+			user.username = user.vistashare_email
+			user.password = 'password'
+			user.encodePassword()
+
+		}
+		user.save flush:true
+		if (!user.authorities.contains(adminRole)) {
+			UserRole.create user, adminRole
+		}
+			
+			
     }
     def destroy = {
     }
