@@ -11,14 +11,18 @@ import grails.plugin.springsecurity.annotation.Secured
  */
 
 @Transactional(readOnly = true)
-@Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+//@Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
 class UserController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	
-    def index(Integer max) {
+    def index() {
+		log.info 'in UserController.index()'
 		//params.max = Math.min(max ?: 10, 100)
 		//respond User.list(params), model:[userInstanceCount: User.count()]
+		//render (view: 'index', model: [userInstanceList: User.list(params), userInstanceCount: User.count()])
+		render (view: 'index', model: [userInstanceList: User.list(params)])
+		log.info 'finished UserController.index()'
 	}
 	
 	// For BACK END viewing, probably won't call it.

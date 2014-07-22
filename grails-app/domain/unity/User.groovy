@@ -62,9 +62,9 @@ class User {
 	String username
 	String password
 	boolean enabled = true
-	boolean accountExpired
-	boolean accountLocked
-	boolean passwordExpired
+	boolean accountExpired = false
+	boolean accountLocked = false
+	boolean passwordExpired = false
 
 	static mapping = {
 		table "users"
@@ -131,10 +131,6 @@ class User {
 		child_ref_to_prim_parent nullable: true
 		username blank: true, unique: true
 		password blank: false
-		accountExpired nullable: false
-		accountLocked nullable: false
-		enabled nullable: true
-		passwordExpired nullable: false
 		is_emergency_contact nullable: false
 		is_child nullable: false
 	}
@@ -149,7 +145,7 @@ class User {
 
 	/** Encodes password if it has been modified */
 	def beforeUpdate() {
-		if (isDirty('esss_password')) { // isDirty checks if a domain class instance has been modified
+		if (isDirty('password')) { // isDirty checks if a domain class instance has been modified
 			encodePassword()
 		}
 	}
