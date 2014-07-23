@@ -79,7 +79,7 @@ class User {
 	}
 
 	static transients = ['springSecurityService']
-	
+
 
 	static constraints = {
 		vistashare_role nullable: true, maxSize: 512
@@ -137,6 +137,7 @@ class User {
 		is_child nullable: false
 	}
 	
+
 	def beforeInsert() {
 		encodePassword()
 	}
@@ -155,6 +156,7 @@ class User {
 	/** Encodes the password */
 	protected void encodePassword() {
 		password = springSecurityService.passwordEncoder ? springSecurityService.encodePassword(password) : password
+		log.info 'password encode success'
 	}
 }
 
