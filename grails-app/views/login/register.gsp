@@ -100,21 +100,8 @@
 			</p>
 
 			<p>
-				<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
-				<input type='password' class='text_' name='j_password' id='password' value='password'/>
-			</p>
-
-			<p id="remember_me_holder">
-				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
-			</p>
-
-			<p>
 				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 			</p>
-		</form>
-		<form action="/p1/register">
-			<input type="submit" value="Register"/>
 		</form>
 	</div>
 </div>

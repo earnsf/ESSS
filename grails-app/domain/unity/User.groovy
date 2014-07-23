@@ -80,7 +80,7 @@ class User {
 
 	static transients = ['springSecurityService']
 	
-	/**
+
 	static constraints = {
 		vistashare_role nullable: true, maxSize: 512
 		type_enum maxSize: 9
@@ -90,7 +90,7 @@ class User {
 		middle_name nullable: true, maxSize: 32
 		last_name maxSize: 64
 		dob nullable: true
-		ssn_aes nullable: true
+		// ssn_aes nullable: true
 		ssn_last_four nullable: true, maxSize: 4
 		ssn_or_itin nullable: true, maxSize: 4
 		preferred_address nullable: true, maxSize: 256
@@ -110,7 +110,7 @@ class User {
 		alternate_address nullable: true, maxSize: 256
 		alternate_city nullable: true, maxSize: 32
 		alternate_state nullable: true, maxSize: 2
-		alternate_zipCode nullable: true, maxSize: 12
+		alternate_zip_code nullable: true, maxSize: 12
 		alternate_address_type nullable: true, maxSize: 16
 		alternate_country nullable: true, maxSize: 32
 		do_not_call nullable: true
@@ -136,10 +136,7 @@ class User {
 		is_emergency_contact nullable: false
 		is_child nullable: false
 	}
-	**/
 	
-	static constraints = {}
-
 	def beforeInsert() {
 		encodePassword()
 	}

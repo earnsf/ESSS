@@ -254,12 +254,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'alternate_zipCode', 'error')} ">
-	<label for="alternate_zipCode">
-		<g:message code="user.alternate_zipCode.label" default="Alternatezip Code" />
+<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'alternate_zip_code', 'error')} ">
+	<label for="alternate_zip_code">
+		<g:message code="user.alternate_zip_code.label" default="Alternatezip Code" />
 		
 	</label>
-	<g:textField name="alternate_zipCode" maxlength="12" value="${userInstance?.alternate_zipCode}"/>
+	<g:textField name="alternate_zip_code" maxlength="12" value="${userInstance?.alternate_zip_code}"/>
 
 </div>
 

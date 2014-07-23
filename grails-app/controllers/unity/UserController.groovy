@@ -7,21 +7,22 @@ import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
-@Secured(['IS_AUTHENTICATED_FULLY'])
+//@Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
 class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond User.list(params), model:[userInstanceCount: User.count()]
-		//respond User.list(params)
+        //params.max = Math.min(max ?: 10, 100)
+        //respond User.list(params), model:[userInstanceCount: User.count()]
+		redirect action: 'create'
     }
 
+	
     def show(User userInstance) {
         respond userInstance
     }
-
+	@Secured('permitAll')
     def create() {
         respond new User(params)
     }
