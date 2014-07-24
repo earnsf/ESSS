@@ -87,22 +87,36 @@
 <body>
 <div id='login'>
 	<div class='inner'>
-		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
+		<div class='fheader'><g:message code="Please Verify the following information"/></div>
 
 		<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
 		</g:if>
 
-		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+		<g:form controller="user" action="verify_creds" method='POST' class='cssform' autocomplete='off'>
 			<p>
-				<label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
-				<input type='text' class='text_' name='j_username' id='username' value='Shiningfish26@gmail.com'/>
+				<label for='firstname'><g:message code="First Name"/>:</label>
+				<input type='text' name='firstname' class='text'/>
 			</p>
-
 			<p>
-				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
+				<label for='lastname'><g:message code="Last Name"/>:</label>
+				<input type='text' name='lastname' class='text'/>
 			</p>
-		</form>
+			<p>
+				<input type='hidden' name='email' class='text' value='${params.email}'/>
+			</p>
+			<p>
+				<label for='DOB'><g:message code="Date of Birth"/>:</label>
+				<input type='date' name='DOB' class='text'/>
+			</p>
+			<p>
+				<label for='ssn'><g:message code="Last Four Digits of SSN"/>:</label>
+				<input type='text' name='ssn' class='text' maxlength="4"/>
+			</p>
+			<p>
+				<input type='submit' id="submit" value='Verify'/>
+			</p>
+		</g:form>
 	</div>
 </div>
 <script type='text/javascript'>

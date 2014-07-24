@@ -87,34 +87,31 @@
 <body>
 <div id='login'>
 	<div class='inner'>
-		<div class='fheader'><g:message code="springSecurity.login.header"/></div>
+		<div class='fheader'><g:message code="Please fill in the following information"/></div>
+		<div class='fheader'><g:message code="Leave Username' as is if you want to keep your VistaShare email"/></div>
 
 		<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
 		</g:if>
 
-		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+		<g:form controller="user" action="register_user" method='POST' class='cssform' autocomplete='off'>
 			<p>
-				<label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
-				<input type='text' class='text_' name='j_username' id='username' value='${params.email}'/>
+				<label for='email'><g:message code="Username"/>:</label>
+				<input type='email' name='username' class='text'value='${params.email}' required/>
+				<input type='hidden' name='email' class='text' value='${params.email}'/>
+			</p>
+			<p>
+				<label for='password'><g:message code="New Password"/>:</label>
+				<input type='password' name='password' class='text' required/>
+			</p>
+			<p>
+				<label for='confirm password'><g:message code="Confirm Password"/>:</label>
+				<input type='password' name='confirmed_password' class='text' required/>
 			</p>
 
 			<p>
-				<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
-				<input type='password' class='text_' name='j_password' id='password'/>
+				<input type='submit' id="submit" value='Verify'/>
 			</p>
-
-			<p id="remember_me_holder">
-				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
-			</p>
-
-			<p>
-				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
-			</p>
-		</form>
-		<g:form action="register" controller="user">
-			<input type="submit" value="Register"/>
 		</g:form>
 	</div>
 </div>
