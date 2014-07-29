@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EARN Web Page Header</title>
+</head>
+
+<link rel="stylesheet" type="text/css" media="all" href="http://earn.org/static/css/earn.css" />
+<link rel="stylesheet" href="http://earn.org/static/css/uniform.default.css" type="text/css" />
+<link rel="stylesheet" href="http://earn.org/static/css/wygwam.css" type="text/css" />
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://earn.org/js/earn"></script>
+<script type="text/javascript" src="http://earn.org/static/js/pretty_date.js"></script>
+<script type="text/javascript" src="http://earn.org/static/js/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4300117-4']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+<style>
+    #events {
+        border: 1px solid #dedede;
+    }
+
+    #previewTabs {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+        #previewTabs td {
+            white-space: nowrap;
+            width: 1%;
+            border-right: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+            background: #fafafa;
+        }
+
+            #previewTabs td a {
+                display: block;
+                padding: 12px 15px;
+                font-size: 13px;
+                font-weight: bold;
+                color: #a8a8a8;
+                text-transform: uppercase;
+            }
+
+            #previewTabs td.last {
+                width: 99%;
+                border-right: none;
+            }
+
+            #previewTabs td.active {
+                border-bottom: 1px solid #fff;
+                background: #fff;
+            }
+
+                #previewTabs td.active a {
+                    color: #53ab45;
+                }
+</style>
+
+<script>
+    function showPreviewTab(i) {
+
+        var tds = $('#previewTabRow td');
+        var content = $('#previewContentWrapper').children('div');
+        tds.removeClass('active');
+        $(tds[i]).addClass('active').css('cursor', 'select');
+        $('#previewContentWrapper').fadeOut(100, function () {
+            content.hide();
+            $(content[i]).show();
+            $(this).fadeIn(400);
+        });
+    }
+
+
+</script>
+
+        <body>
+            <div id="outer">
+                <div id="header">
+                    <div style="float: left">
+                        <a href="/"><img src="http://earn.org/static/img/logo.png" alt="logo" /></a>
+                    </div>
+                    <div style="float: right; width: 400px; height: 50px;position: relative">
+                        <div id="header_lang_links" style="float:right;margin-top: 10px;">
+                            <div id="topSearchWrapper">
+                                <form onsubmit="try {searchControl.execute(this.searchBox.value)} catch(e) {window.location=('/search?search=#'+escape(this.searchBox.value));} return false;">
+                                    <div id="topSearchBoxWrapper"><input name="searchBox" type="text" id="topSearchBox" value="" /></div>
+                                    <input type="submit" class="buttonSearch" value="" />
+                                    <br clear="both" />
+                                </form>
+                            </div>
+                            <div id="topLanguageLinks">
+
+                                <a href="/espanol">Español</a>
+                                <a href="/chinese1">中文</a>
+                            </div>
+                        </div>
+                        <div id="header_buttons" style="float:right;margin-top: 9px">
+                            <div style="text-align: center;">
+                                <a href="javascript:void(0)" class="addthis_button" onclick="" onmouseover="$('#topButtonDesc').attr('class','share')"
+                                   addthis:ui_offset_top="-30"
+                                   addthis:ui_offset_left="-270"><img class="st_sharethis_custom" src="http://earn.org/static/img/button/top_share.png" /></a>
+                                <a target="_blank" href="/how_you_can_help/how_to_give/" onclick="" onmouseover="$('#topButtonDesc').attr('class','donate')"><img src="http://earn.org/static/img/button/top_donate.png" /></a>
+                                <a href="/about/contact_us/" onclick="" onmouseover="$('#topButtonDesc').attr('class','contact')"><img src="http://earn.org/static/img/button/top_contact.png" /></a>
+                            </div>
+                            <div id="topButtonDesc" class="donate"></div>
+                        </div>
+                    </div>
+                    <br clear="both" />
+                </div>
+                <div id="menu">
+                    <a href="http://earn.org/financial_services"><img src="http://earn.org/static/img/menu_services.png" alt="Financial Services" /></a>
+                    <a href="http://earn.org/policy_innovation"><img src="http://earn.org/static/img/menu_policy.png" alt="Policy &amp; Innovation" /></a>
+                    <a href="http://earn.org/how_you_can_help"><img src="http://earn.org/static/img/menu_help.png" alt="How You Can Help" /></a>
+                    <a href="http://earn.org/about_earn"><img src="http://earn.org/static/img/menu_about.png" alt="About" /></a>
+                    <a href="http://earn.org/earn_news"><img src="http://earn.org/static/img/menu_news.png" alt="News" /></a>
+                    <br clear="both" />
+                </div>
+                <div id="featuredFlash">
+                    <object width="920" height="424">
+                        <param name="movie" value="http://earn.org/static/img/bubbles.swf?ver=10002&service=/site/home_bubbles"></param>
+                        <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
+                        <embed src="http://earn.org/static/img/bubbles.swf?ver=10002&amp;service=/site/home_bubbles"
+                               type="application/x-shockwave-flash"
+                               allowscriptaccess="always"
+                               allowfullscreen="true"
+                               width="920" height="424"></embed>
+                    </object>
+                </div>
+</body>
+</html>
