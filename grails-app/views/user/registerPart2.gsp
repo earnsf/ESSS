@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<meta name='layout' content='main'/>
@@ -87,13 +88,13 @@
 <body>
 <div id='login'>
 	<div class='inner'>
-		<div class='fheader'><g:message code="Please Verify the following information"/></div>
+		<div class='fheader'><g:message code="VistaShare email found."/><br></br><g:message code="Please Verify the following information"/></div>
 
 		<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
 		</g:if>
 
-		<g:form controller="user" action="verify_creds" method='POST' class='cssform' autocomplete='off'>
+		<g:form controller="user" action="registerPart3" method='POST' class='cssform' autocomplete='off'>
 			<p>
 				<label for='firstname'><g:message code="First Name"/>:</label>
 				<input type='text' name='firstname' class='text'/>

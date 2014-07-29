@@ -95,7 +95,7 @@
 
 		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
 			<p>
-				<label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
+				<label for='username'><g:message code="Email"/>:</label>
 				<input type='text' class='text_' name='j_username' id='username' value='${params.email}'/>
 			</p>
 
@@ -105,18 +105,23 @@
 			</p>
 
 			<p id="remember_me_holder">
-				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
+				<input type='hidden' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+				
 			</p>
 
 			<p>
 				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 			</p>
 		</form>
-		<g:form action="register" controller="user">
-			<input type="submit" value="Register"/>
-		</g:form>
 	</div>
+			<g:form action="register" controller="user">
+			<p>
+			</p>
+			<p>
+			<label for='Register'><g:message code="First time here?"/> </label>
+			<input type="submit" value="Register"/>
+			</p>
+		</g:form>
 </div>
 <script type='text/javascript'>
 	<!--

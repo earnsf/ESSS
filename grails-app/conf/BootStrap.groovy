@@ -33,7 +33,6 @@ class BootStrap {
 			user.enabled = true
 			user.passwordExpired = false
 			log.info user.password
-			//user.encodePassword()
 			log.info 'setting things for shiningfish'
 		}
 		user.save (flush:true, failOnError: true)

@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<meta name='layout' content='main'/>
@@ -87,17 +88,32 @@
 <body>
 <div id='login'>
 	<div class='inner'>
-		<div class='fheader'><g:message code="Congratulations! Welcome back!"/><br></div>
-			<g:form controller="login" action="auth" method='POST' class='cssform' autocomplete='off'>
+		<div class='fheader'><g:message code="Verified information. Please fill in the following fields."/></div>
+		<div class='fheader'><g:message code="Leave 'Username' as is if you want to keep your VistaShare email"/></div>
+
+		<g:if test='${flash.message}'>
+			<div class='login_message'>${flash.message}</div>
+		</g:if>
+
+		<g:form controller="user" action="registerFinish" method='POST' class='cssform' autocomplete='off'>
 			<p>
-				<label for='Ready'><g:message code="Ready to Login?"/>:</label>
+				<label for='email'><g:message code="Email: ${params.email}"/></label>
 				<input type='hidden' name='email' class='text' value='${params.email}'/>
 			</p>
+			
 			<p>
-				<input type='submit' id="submit" value='Login'/>
+				<label for='password'><g:message code="New Password"/>:</label>
+				<input type='password' name='password' class='text' required/>
+			</p>
+			<p>
+				<label for='confirm password'><g:message code="Confirm Password"/>:</label>
+				<input type='password' name='confirmed_password' class='text' required/>
+			</p>
+	
+			<p>
+				<input type='submit' id="submit" value='Verify'/>
 			</p>
 		</g:form>
-			
 	</div>
 </div>
 <script type='text/javascript'>

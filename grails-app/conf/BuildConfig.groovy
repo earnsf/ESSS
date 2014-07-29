@@ -78,6 +78,10 @@ grails.project.dependency.resolution = {
 		//spring security ui
 		compile ":spring-security-ui:1.0-RC2"
 		
+		
+		// dependency for cache-header
+		compile ":cache-headers:1.1.7"
+		
 		//added to try to fix java.lang.NoClassDefFoundError: net/sf/ehcache/config/CacheConfiguration error
 		//http://stackoverflow.com/questions/24164351/grails-2-4-throws-ehcache-class-not-found-error
 		//compile "net.sf.ehcache:ehcache-core:2.4.8"

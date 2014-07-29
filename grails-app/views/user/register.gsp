@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<meta name='layout' content='main'/>
@@ -93,10 +94,10 @@
 			<div class='login_message'>${flash.message}</div>
 		</g:if>
 
-		<g:form controller="user" action="verify_email" method='POST' class='cssform' autocomplete='off'>
+		<g:form controller="user" action="registerPart2" method='POST' class='cssform' autocomplete='off'>
 			<p>
 				<label for='username'><g:message code="Email"/>:</label>
-				<input type='text' name='email' class='text' value='${params.email}'/>
+				<input type='text' name='email' class='text' value=''/>
 			</p>
 			<p>
 				<input type='submit' id="submit" value='Verify'/>
