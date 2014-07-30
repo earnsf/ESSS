@@ -88,6 +88,7 @@ class UserController {
 			def msg = g.message(code: "Login exists for this email. Please sign in.")
 			flash.message = msg
 			redirect action: 'auth', controller: 'login', params: [email: params.email]
+			return
 		}
 		if (user && user.vistashare_email != "") {
 			log.info "verified email"
