@@ -15,7 +15,17 @@ class UserController {
 	def springSecurityService
 	
 	def homepage() {
-		render(view:"homepage")
+		log.info 'in homepage()'
+		if (springSecurityService.isLoggedIn()) {
+			def cur_id = springSecurityService.currentUser.id
+			log.info('username: ' + cur_id)
+			def curAccount = Account.findByEarnUserId(cur_id)
+			log.info('got account, citibank id: ' + curAccount.externalAccountId)
+			render(view:"homepage", model: [account: curAccount])
+		} else {
+			log.info 'not logged in'
+		}
+		
 	}
 
     def index(Integer max) {

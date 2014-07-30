@@ -1,7 +1,8 @@
 package unity
 
-class Accounts {
+class Account {
 
+	Integer id
 	Integer earnUserId
 	Integer childEarnUserId
 	Integer vistashareUserId
@@ -45,7 +46,9 @@ class Accounts {
 	String administrativePartnerEmail
 
 	static mapping = {
+		table "accounts"
 		version false
+		//earnUserId column: 'earn_user_id'
 	}
 
 	static constraints = {
