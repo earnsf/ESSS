@@ -13,6 +13,10 @@ class UserController {
 	static _auth = []
 	
 	def springSecurityService
+	
+	def homepage() {
+		render(view:"homepage")
+	}
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

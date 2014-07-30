@@ -11,7 +11,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        "/"(controller:'User')
+        "/"(controller:'User',action:'homepage')
 		// "/register"(view:"/user/register")
         "500"(view:'/error')
 	}
