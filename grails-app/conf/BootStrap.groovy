@@ -17,7 +17,11 @@ class BootStrap {
 			is_emergency_contact: false,
 			is_child: false,
 			username: 'test@earn.org',
-			password: 'password').save(failOnError: true)
+			password: 'password',
+			accountExpired: false,
+			accountLocked: false,
+			enabled: true,
+			passwordExpired: false).save(failOnError: true)
 
 		if (!adminUser.authorities.contains(adminRole)) {
 			log.info 'creating adminUser, adminRole in UserRole'
