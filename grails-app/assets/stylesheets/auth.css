@@ -1,0 +1,226 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 600 1.125em/1.38 'Open Sans';
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.element {
+  position: absolute;
+  top: 71px;
+  left: 5.1298945783%;
+  z-index: 1;
+  width: 91.605839416%;
+  height: NaN;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  background-color: rgba(0, 0, 0, 0.68);
+}
+
+.forgotpw {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 5;
+  width: 28.102189781%;
+  height: 39px;
+  margin: 27px 0 0 3.69327%;
+  border-radius: 3px;
+  background-color: rgb(162, 162, 162);
+  font-size: 0.778em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: #000000;
+}
+
+.forgotpw:hover {
+  background-color: rgb(135, 135, 135);
+}
+
+.loginbox {
+  position: relative;
+  float: left;
+  clear: both;
+  width: 49.7724027882%;
+  height: 327px;
+  margin: 79px 0 0 25.9057697152%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 6px;
+  background-color: rgb(230, 230, 230);
+}
+
+.paswword {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 3;
+  width: 40.9652435511%;
+  height: 34px;
+  margin: 22px 0 0 1.0625360046%;
+  padding: 0 10px;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 3px;
+  background-color: rgb(251, 249, 249);
+  font-size: 0.778em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.paswword:focus {
+  background-color: rgb(207, 240, 216);
+}
+
+.registerbox {
+  position: relative;
+  float: left;
+  width: 69.4179894179%;
+  height: 131px;
+  margin: 56px 0 0 16.5113%;
+  border: 1px dashed rgb(204, 204, 204);
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+}
+
+.registerbox .text {
+  width: 89.7817488546%;
+  min-height: 47px;
+  margin: 17px 0 0 5.9160859465%;
+  font-size: 1em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.regpluslogin {
+  /* float: left; */
+  clear:both;
+  
+  width: 100%;
+  height: auto;
+  margin-left:0 auto;
+  padding:10px 10px;
+  overflow:auto;
+  
+}
+
+.signin {
+  display: block;
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 4;
+  width: 23.905109489%;
+  height: 39px;
+  margin: 27px 0 0 34.7884529219%;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: #ffffff;
+}
+
+._button:hover,
+.signin:hover {
+  background-color: rgb(76, 172, 104);
+}
+
+.text {
+  float: left;
+}
+
+.username {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 2;
+  width: 40.9652435511%;
+  height: 34px;
+  margin: 20px 0 0 1.0625360046%;
+  padding: 0 10px;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 3px;
+  background-color: rgb(251, 249, 249);
+  font-size: 0.778em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.username:active,
+.username:hover {
+  border-color: rgb(204, 204, 204);
+}
+
+.username:focus {
+  border-color: rgb(204, 204, 204);
+  background-color: rgb(207, 240, 216);
+}
+
+._button {
+  display: block;
+  float: left;
+  clear: both;
+  width: 23.9329268292%;
+  height: 40px;
+  margin: 10px 0 0 36.53455%;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.text-2 {
+  position: relative;
+  z-index: 0;
+  width: 28.313253012%;
+  min-height: 47px;
+  margin: 26px 0 0 5.12066%;
+  font-size: 1.222em;
+  font-weight: 700;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.text-3 {
+  clear: both;
+  width: 76.700452604%;
+  min-height: 21px;
+  margin: 25px 0 0 12.2671701977%;
+  font-size: 0.778em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(255, 0, 0);
+}
+
+.text-4 {
+  position: relative;
+  clear: both;
+  z-index: 7;
+  width: 18.9911040145%;
+  min-height: 34px;
+  margin: 20px 0 0 14.73789%;
+  font-size: 0.889em;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.text-5 {
+  position: relative;
+  clear: both;
+  z-index: 8;
+  width: 18.9895072992%;
+  min-height: 34px;
+  margin: 22px 0 0 14.73789%;
+  font-size: 0.889em;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
