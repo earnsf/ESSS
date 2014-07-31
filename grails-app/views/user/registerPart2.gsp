@@ -97,22 +97,22 @@
 		<g:form controller="user" action="registerPart3" method='POST' class='cssform' autocomplete='off'>
 			<p>
 				<label for='firstname'><g:message code="First Name"/>:</label>
-				<input type='text' name='firstname' class='text'/>
+				<input type='text' name='firstname' class='text' required/>
 			</p>
 			<p>
 				<label for='lastname'><g:message code="Last Name"/>:</label>
-				<input type='text' name='lastname' class='text'/>
+				<input type='text' name='lastname' class='text' required/>
 			</p>
 			<p>
 				<input type='hidden' name='email' class='text' value='${params.email}'/>
 			</p>
 			<p>
 				<label for='DOB'><g:message code="Date of Birth"/>:</label>
-				<input type='date' name='DOB' class='text'/>
+				<input type='date' name='DOB' class='text' required/>
 			</p>
 			<p>
 				<label for='ssn'><g:message code="Last Four Digits of SSN"/>:</label>
-				<input type='text' name='ssn' class='text' maxlength="4"/>
+				<input type='text' name='ssn' class='text' maxlength="4" required/>
 			</p>
 			<p>
 				<input type='submit' id="submit" value='Verify'/>
