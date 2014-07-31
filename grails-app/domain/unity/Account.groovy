@@ -49,6 +49,7 @@ class Account {
 	String firstName
 	String lastName
 	
+	static transients = ['firstName', 'lastName']
 
 	static mapping = {
 		table "accounts"

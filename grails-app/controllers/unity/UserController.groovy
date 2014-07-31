@@ -4,6 +4,9 @@ import grails.plugin.springsecurity.SpringSecurityService
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
+import java.util.Date
+import java.text.SimpleDateFormat
+
 
 @Transactional(readOnly = true)
 class UserController {
@@ -35,6 +38,10 @@ class UserController {
 					closedList.add(i)
 				} else {
 					openList.add(i)
+					//reformat dates
+					log.info(i.earnAccountOpenedDate)
+//					SimpleDateFormat dt = new SimpleDateFormat("MM/dd/yy")
+//					log.info(dt.parse("2013-01-11"))
 					if (i.accountType == 'TripleBoost') {
 						def curChild = User.findById(i.childEarnUserId)
 						if (curChild) {
