@@ -9,11 +9,13 @@
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="homepage-grid.css"/>
   <asset:stylesheet src="homepage.css"/>
+
 </head>
 <body class="body homepage clearfix">
 <%--   <header class="_container clearfix">
     <asset:image class="logo" src="earn_logo(2).png"/>
   </header> --%>
+  
   <div id ="wrap">
   <div class="mainbody clearfix">
     <h2 class="welcome">Welcome, George Wu</h2>
