@@ -8,7 +8,7 @@ class User {
 
 	transient springSecurityService
 	
-	String id
+	Integer id
 	String vistashare_role
 	String type_enum
 	Integer vistashare_user_id

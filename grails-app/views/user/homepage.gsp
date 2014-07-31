@@ -17,20 +17,20 @@
   </header> --%>
   <div id ="wrap">
   <div class="mainbody clearfix">
-    <c:out value="${account.earnUserId}" />
-    <h2 class="welcome">Welcome, George Wu</h2>
+    <h2 class="welcome">Welcome, ${name}</h2>
     <div class="sidebar clearfix">
       <a class="edit_profile" href="#">Edit Profile</a>
       <a class="req_withdrawl" href="#">Request Withdrawl</a>
       <a class="faq" href="#">FAQ</a>
       <a class="contact_us" href="#">Contact Us</a>
     </div>
+    <g:each var="cur_account" in="${openList}">
     <div class="accounts clearfix">
       <div class="top clearfix">
         <p class="account_brand">TripleBoost Account for:</p>
-        <p class="name">Anthony&nbsp;Wu</p>
+        <p class="name">${cur_account.firstName}&nbsp;${cur_account.lastName}</p>
         <p class="account_num">ACCOUNT #</p>
-        <p class="last_four">xxxx<c:out value="${account.earnUserId}" /></p>
+        <p class="last_four">xxxxx${cur_account.externalAccountId.toString()[-4..-1]}</p>
       </div>
       <p class="status">STATUS</p>
       <p class="c_status">Open</p>
@@ -46,12 +46,14 @@
       <p class="c_totalfunds">$900.00</p>
       <a class="req_withdrawl_acct" href="#">Request a Withdrawl</a>
     </div>
+    </g:each>
+    <g:each var="cur_account" in="${closedList}">
     <div class="accounts_closed clearfix">
       <div class="top clearfix">
         <p class="account_brand">IDA Account for:</p>
-        <p class="name">George Wu</p>
+        <p class="name">${cur_account.firstName}&nbsp;${cur_account.lastName}</p>
         <p class="account_num">ACCOUNT #</p>
-        <p class="last_four">xxxxxxxx</p>
+        <p class="last_four">xxxxxxxxx</p>
       </div>
       <p class="status">STATUS</p>
       <p class="c_status_closed">Closed</p>
@@ -61,6 +63,7 @@
       <p class="c_opendate">xx/xx/xx</p>
       <p class="c_expdate">xx/xx/xx</p>
     </div>
+    </g:each>
   </div>
   </div>
   <!-- <footer class="_element"></footer> -->

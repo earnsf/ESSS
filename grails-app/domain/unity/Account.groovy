@@ -44,6 +44,11 @@ class Account {
 	String administrativePartnerZipCode
 	String administrativePartnerPhone
 	String administrativePartnerEmail
+	
+	//added fields that aren't from this table, testing out first
+	String firstName
+	String lastName
+	
 
 	static mapping = {
 		table "accounts"

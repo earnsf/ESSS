@@ -19,9 +19,50 @@ class UserController {
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
 			log.info('username: ' + cur_id)
-			def curAccount = Account.findByEarnUserId(cur_id)
-			log.info('got account, citibank id: ' + curAccount.externalAccountId)
-			render(view:"homepage", model: [account: curAccount])
+			def account = Account.findByEarnUserId(cur_id)
+			log.info('got account, citibank id: ' + account.externalAccountId)
+			def user = User.findById(cur_id)
+			
+			
+			
+			
+			def accountList = Account.findAllByEarnUserId(cur_id)
+			def closedList = []
+			def openList = []
+			log.info('found ' + accountList.size() + ' accounts for user with id 2320')
+			for (i in accountList) {
+				if (i.vistashareAccountStatus == 'Closed') {
+					closedList.add(i)
+				} else {
+					openList.add(i)
+					if (i.accountType == 'TripleBoost') {
+						def curChild = User.findById(i.childEarnUserId)
+						if (curChild) {
+							i.firstName = curChild.first_name
+							i.lastName = curChild.last_name
+							log.info('found child name, ' + i.firstName + ' ' + i.lastName)
+						} else {
+							log.info 'could not find child by id ' + i.childEarnUserId
+						}
+					} else {
+						def curUser = User.findById(i.earnUserId)
+						if (curUser) {
+							i.firstName = curUser.first_name
+							i.lastName = curUser.last_name
+							log.info('found user name, ' + i.firstName + ' ' + i.lastName)
+						} else {
+							log.info 'could not find user by id ' + i.earnUserId
+						}
+					}
+				}
+			}
+			log.info('finished populating lists')
+			log.info(closedList.size() + ' closed accounts')
+			log.info(openList.size() + ' open accounts')
+			
+			
+			
+			render(view:"homepage", model: [openList:openList, closedList:closedList, name:user.first_name + ' ' + user.last_name])
 		} else {
 			log.info 'not logged in'
 		}

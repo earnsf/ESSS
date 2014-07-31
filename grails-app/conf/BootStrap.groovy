@@ -27,7 +27,7 @@ class BootStrap {
 			log.info 'creating adminUser, adminRole in UserRole'
 			UserRole.create adminUser, adminRole
 		}
-		log.info 'creating user role'
+		log.info 'creating user role for Shiningfish'
 		def user = User.findByVistashare_email('Shiningfish26@gmail.com')
 		if (user) {
 			user.username = user.vistashare_email
@@ -48,6 +48,22 @@ class BootStrap {
 		log.info 'success save'
 		if (!user.authorities.contains(adminRole)) {
 			UserRole.create user, adminRole
+		}
+		//s.saiga@aol.com
+		def user2 = User.findById(2320)
+		if (user2) {
+			user2.username = user2.vistashare_email
+			user2.password = 'password'
+			user2.accountExpired = false
+			user2.accountLocked = false
+			user2.enabled = true
+			user2.passwordExpired = false
+			log.info user2.password
+			log.info 'setting things for Saiga Fam'
+		}
+		user2.save (flush:true, failOnError: true)
+		if (!user2.authorities.contains(adminRole)) {
+			UserRole.create user2, adminRole
 		}
 			
 			
