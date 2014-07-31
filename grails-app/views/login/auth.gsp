@@ -12,8 +12,10 @@
 <body class="body index clearfix">
   <div class="regpluslogin">
     <div class="registerbox clearfix">
-      <p class="text">EARN has changed systems. If this is your first time on our new system, click here to register.</p>
-      <button class="_button">Register      </button>
+      <g:form action="register" controller="user">
+          <p class="text">EARN has changed systems. If this is your first time on our new system, click here to register.</p>
+          <button class="_button">Register      </button>
+        </g:form>
     </div>
     <div class="loginbox clearfix">
       <form action='${postUrl}' method='POST' class='cssform' autocomplete='off'>
