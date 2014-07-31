@@ -1,7 +1,8 @@
-<!doctype html>
+<%@ page import="unity.Account" %>
 <html>
 <head>
   <meta name="layout" content="main">
+  <g:set var="entityName" value="${message(code: 'account.label', default: 'Account')}" />
   <meta charset="utf-8">
   <%-- <meta name="viewport" content="initial-scale=1.0"> --%>
   <title>homepage</title>
@@ -18,6 +19,7 @@
   
   <div id ="wrap">
   <div class="mainbody clearfix">
+    <c:out value="${account.earnUserId}" />
     <h2 class="welcome">Welcome, George Wu</h2>
     <div class="sidebar clearfix">
       <a class="edit_profile" href="#">Edit Profile</a>
@@ -30,7 +32,7 @@
         <p class="account_brand">TripleBoost Account for:</p>
         <p class="name">Anthony&nbsp;Wu</p>
         <p class="account_num">ACCOUNT #</p>
-        <p class="last_four">xxxx1436</p>
+        <p class="last_four">xxxx<c:out value="${account.earnUserId}" /></p>
       </div>
       <p class="status">STATUS</p>
       <p class="c_status">Open</p>
