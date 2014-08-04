@@ -43,8 +43,8 @@
       <p class="c_incen_balance">$600.00</p>
       <p class="open_date">ACCT OPEN DATE</p>
       <p class="exp_date">ACCT EXPIR DATE</p>
-      <p class="c_opendate">04/12/12</p>
-      <p class="c_expdate">06/30/14</p>
+      <p class="c_opendate">${cur_account.earnAccountOpenedDateString}</p>
+      <p class="c_expdate">${cur_account.earnAccountDeadlineString}</p>
       <div class="total_funds_div"><p class="total_funds">Total Funds</p></div>
       <div class="c_total_funds_div"><p class="c_totalfunds">$900.00</p></div>
       <div class="total_funds_hover clearfix">

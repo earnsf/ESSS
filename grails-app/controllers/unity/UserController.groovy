@@ -4,9 +4,6 @@ import grails.plugin.springsecurity.SpringSecurityService
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
-import java.util.Date
-import java.text.SimpleDateFormat
-
 
 @Transactional(readOnly = true)
 class UserController {
@@ -40,10 +37,8 @@ class UserController {
 					closedList.add(i)
 				} else {
 					openList.add(i)
-					//reformat dates
-					log.info(i.earnAccountOpenedDate)
-//					SimpleDateFormat dt = new SimpleDateFormat("MM/dd/yy")
-//					log.info(dt.parse("2013-01-11"))
+					i.earnAccountOpenedDateString = parseDate(i.earnAccountOpenedDate.toString())
+					i.earnAccountDeadlineString = parseDate(i.earnAccountDeadline.toString())
 					if (i.accountType == 'TripleBoost') {
 						def curChild = User.findById(i.childEarnUserId)
 						if (curChild) {
@@ -352,5 +347,13 @@ class UserController {
 			}
 			'*'{ render status: NOT_FOUND }
 		}
+	}
+	
+	def parseDate(String input) {
+		def dateOnly = input[0..9]
+		def year = dateOnly[0..3]
+		def month = dateOnly[5..6]
+		def date = dateOnly[8..9]
+		return (month+'/'+date+'/'+year)
 	}
 }

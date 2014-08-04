@@ -48,8 +48,10 @@ class Account {
 	//added fields that aren't from this table, testing out first
 	String firstName
 	String lastName
+	String earnAccountOpenedDateString
+	String earnAccountDeadlineString
 	
-	static transients = ['firstName', 'lastName']
+	static transients = ['firstName', 'lastName', 'earnAccountOpenedDateString', 'earnAccountDeadlineString']
 
 	static mapping = {
 		table "accounts"
