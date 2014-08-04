@@ -4,6 +4,7 @@ import grails.plugin.springsecurity.SpringSecurityService
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
+import Service.*
 
 @Transactional(readOnly = true)
 class UserController {
@@ -15,9 +16,13 @@ class UserController {
 	static registerAttempts = [:]
 	
 	def springSecurityService
+	def HelperServices
+	def DataService
 	
 	def homepage() {
 		log.info 'in homepage()'
+		//HelperServices.serviceMethod()
+		DataService.serviceMethod()
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
 			log.info('username: ' + cur_id)
@@ -37,8 +42,8 @@ class UserController {
 					closedList.add(i)
 				} else {
 					openList.add(i)
-					i.earnAccountOpenedDateString = parseDate(i.earnAccountOpenedDate.toString())
-					i.earnAccountDeadlineString = parseDate(i.earnAccountDeadline.toString())
+					i.earnAccountOpenedDateString = DataService.parseDate(i.earnAccountOpenedDate.toString())
+					i.earnAccountDeadlineString = DataService.parseDate(i.earnAccountDeadline.toString())
 					if (i.accountType == 'TripleBoost') {
 						def curChild = User.findById(i.childEarnUserId)
 						if (curChild) {
@@ -63,6 +68,11 @@ class UserController {
 			log.info('finished populating lists')
 			log.info(closedList.size() + ' closed accounts')
 			log.info(openList.size() + ' open accounts')
+			
+			//next get transactions
+			def tranList = Transaction.findAllByEarnUserId(cur_id)
+			log.info(tranList.size() + ' transactions found for user ' + cur_id.toString())
+			
 			
 			
 			
@@ -349,11 +359,5 @@ class UserController {
 		}
 	}
 	
-	def parseDate(String input) {
-		def dateOnly = input[0..9]
-		def year = dateOnly[0..3]
-		def month = dateOnly[5..6]
-		def date = dateOnly[8..9]
-		return (month+'/'+date+'/'+year)
-	}
+	
 }
