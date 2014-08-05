@@ -21,7 +21,11 @@
   <div class="mainbody clearfix">
     <h2 class="welcome">Welcome, ${name}</h2>
     <div class="sidebar clearfix">
-      <a class="edit_profile" href="#">Edit Profile</a>
+      <%--<a class="edit_profile" href="#">Edit Profile</a>
+      --%>
+      <g:form action="editProfile" controller="user">
+      <button class="edit_profile">Edit Profile</button>
+      </g:form>
       <a class="req_withdrawl" href="#">Request Withdrawl</a>
       <a class="faq" href="https://earn.zendesk.com/hc/en-us/categories/200128880-TripleBoost-Account">FAQ</a>
       <a class="contact_us" href="#">Contact Us</a>
