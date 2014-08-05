@@ -104,7 +104,7 @@
                     
                     <br clear="both" />
                 </div>
-                <div id="menu">
+                <%--<div id="menu">
                     <a href="http://earn.org/financial_services"><img src="http://earn.org/static/img/menu_services.png" alt="Financial Services" /></a>
                     <a href="http://earn.org/policy_innovation"><img src="http://earn.org/static/img/menu_policy.png" alt="Policy &amp; Innovation" /></a>
                     <a href="http://earn.org/how_you_can_help"><img src="http://earn.org/static/img/menu_help.png" alt="How You Can Help" /></a>
@@ -112,7 +112,7 @@
                     <a href="http://earn.org/earn_news"><img src="http://earn.org/static/img/menu_news.png" alt="News" /></a>
                     <br clear="both" />
                 </div>
-<form name="submitForm" method="POST" action="${createLink(controller: 'logout')}">
+--%><form name="submitForm" method="POST" action="${createLink(controller: 'logout')}">
 		<input type="hidden" name="" value=""> 
 		<a HREF="javascript:document.submitForm.submit()">Logout</a>
 		</form> 
