@@ -16,62 +16,19 @@ class UserController {
 	static registerAttempts = [:]
 	
 	def springSecurityService
-	def HelperServices
 	def DataService
 	
 	def homepage() {
 		log.info 'in homepage()'
-		//HelperServices.serviceMethod()
-		DataService.serviceMethod()
+		
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
-			log.info('username: ' + cur_id)
-			def account = Account.findByEarnUserId(cur_id)
-			log.info('got account, citibank id: ' + account.externalAccountId)
-			def user = User.findById(cur_id)
+			def user = DataService.getUser(cur_id)
+			def accountLists = DataService.getAccounts(cur_id)
+			def openList = accountLists[0]
+			def closedList = accountLists[1]
 			
 			
-			
-			
-			def accountList = Account.findAllByEarnUserId(cur_id)
-			def closedList = []
-			def openList = []
-			log.info('found ' + accountList.size() + ' accounts for user with id 2320')
-			for (i in accountList) {
-				if (i.vistashareAccountStatus == 'Closed') {
-					closedList.add(i)
-				} else {
-					openList.add(i)
-					i.earnAccountOpenedDateString = DataService.parseDate(i.earnAccountOpenedDate.toString())
-					i.earnAccountDeadlineString = DataService.parseDate(i.earnAccountDeadline.toString())
-					if (i.accountType == 'TripleBoost') {
-						def curChild = User.findById(i.childEarnUserId)
-						if (curChild) {
-							i.firstName = curChild.first_name
-							i.lastName = curChild.last_name
-							log.info('found child name, ' + i.firstName + ' ' + i.lastName)
-						} else {
-							log.info 'could not find child by id ' + i.childEarnUserId
-						}
-					} else {
-						def curUser = User.findById(i.earnUserId)
-						if (curUser) {
-							i.firstName = curUser.first_name
-							i.lastName = curUser.last_name
-							log.info('found user name, ' + i.firstName + ' ' + i.lastName)
-						} else {
-							log.info 'could not find user by id ' + i.earnUserId
-						}
-					}
-				}
-			}
-			log.info('finished populating lists')
-			log.info(closedList.size() + ' closed accounts')
-			log.info(openList.size() + ' open accounts')
-			
-			//next get transactions
-			def tranList = Transaction.findAllByEarnUserId(cur_id)
-			log.info(tranList.size() + ' transactions found for user ' + cur_id.toString())
 			
 			
 			

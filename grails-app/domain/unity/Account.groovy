@@ -50,8 +50,11 @@ class Account {
 	String lastName
 	String earnAccountOpenedDateString
 	String earnAccountDeadlineString
+	Double transactionSaverFunds
+	Double transactionIncentiveBalance
+	Double totalFunds
 	
-	static transients = ['firstName', 'lastName', 'earnAccountOpenedDateString', 'earnAccountDeadlineString']
+	static transients = ['firstName', 'lastName', 'earnAccountOpenedDateString', 'earnAccountDeadlineString', 'transactionSaverFunds', 'transactionIncentiveBalance', 'totalFunds']
 
 	static mapping = {
 		table "accounts"

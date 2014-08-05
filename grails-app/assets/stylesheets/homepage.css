@@ -348,15 +348,29 @@ body {
   display: block;
   position: absolute;
   bottom: 8px;
-  right: 7.3393485915%;
+  right: 20px;
   z-index: 6;
   width: 21.9767825704%;
   min-height: 12px;
   font-size: 1.091em;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.38;
   text-align: center;
-  color: rgb(70, 70, 70);
+  color: rgb(55, 57, 203);
+}
+
+.req_trans_acct {
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  right: 150px;
+  z-index: 6;
+  width: 21.9767825704%;
+  min-height: 12px;
+  font-size: 1.091em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(55, 57, 203);
 }
 
 .saver_balance {
@@ -498,6 +512,7 @@ body {
 .faq:hover,
 .req_withdrawl:hover,
 .req_withdrawl_acct:hover,
+.req_trans_acct:hover,
 .whynot:hover {
   text-decoration: underline;
 }

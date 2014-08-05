@@ -38,19 +38,20 @@
       <p class="c_status">Open</p>
       
       <p class="saver_balance">Saver Funds Balance</p>
-      <p class="c_saver_balance">$300.00</p>
+      <p class="c_saver_balance"><g:formatNumber number="${cur_account.transactionSaverFunds}" type="currency" currencyCode="USD" /></p>
       <p class="incen_balance">Incentives Balance</p>
-      <p class="c_incen_balance">$600.00</p>
+      <p class="c_incen_balance"><g:formatNumber number="${cur_account.transactionIncentiveBalance}" type="currency" currencyCode="USD" /></p>
       <p class="open_date">ACCT OPEN DATE</p>
       <p class="exp_date">ACCT EXPIR DATE</p>
       <p class="c_opendate">${cur_account.earnAccountOpenedDateString}</p>
       <p class="c_expdate">${cur_account.earnAccountDeadlineString}</p>
       <div class="total_funds_div"><p class="total_funds">Total Funds</p></div>
-      <div class="c_total_funds_div"><p class="c_totalfunds">$900.00</p></div>
+      <div class="c_total_funds_div"><p class="c_totalfunds"><g:formatNumber number="${cur_account.totalFunds}" type="currency" currencyCode="USD" /></p></div>
       <div class="total_funds_hover clearfix">
         <p class="total_funds_hover_text">Available funds for withdrawl only if eligible        </p>
       </div>
       <a class="req_withdrawl_acct" href="#">Request a Withdrawl</a>
+      <a class="req_trans_acct" href="#">View Transactions</a>
     </div>
     </g:each>
     <g:each var="cur_account" in="${closedList}">
