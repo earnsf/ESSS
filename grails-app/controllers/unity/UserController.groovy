@@ -258,8 +258,12 @@ class UserController {
 			UserRole.create user, adminRole
 		}
 	}
-
-
+	@Secured('permitAll')
+	def editProfile() {
+		
+	}
+	
+	
 	def show(User userInstance) {
 		respond userInstance
 	}
