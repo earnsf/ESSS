@@ -507,7 +507,7 @@ body {
   z-index: 61;
   width: 30.3361368825%;
   height: 21px;
-  margin: 6px 0 0 4.54559%;
+  margin: 6px 0 0 5.54559%;
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
@@ -548,6 +548,16 @@ body {
   font-weight: 300;
   line-height: 1.38;
   color: rgb(255, 0, 0);
+}
+
+.successmessage {
+  width: 79.2406845753%;
+  min-height: 23px;
+  margin: 17px 0 0 6.74371%;
+  font-size: 1.077em;
+  font-weight: 300;
+  line-height: 1.38;
+  color: rgb(59, 184, 94);
 }
 
 .home {
@@ -696,11 +706,11 @@ body {
   z-index: 83;
   width: 36.1623616236%;
   height: 23px;
-  margin: 9px 0 0 1.20426%;
+  margin: 9px 0 0 1.5%;
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
-  font-size: 1em;
+  font-size: 0.923em;;
   font-weight: 300;
   color: rgb(0, 0, 0);
   white-space: normal;
@@ -736,7 +746,7 @@ body {
   position: relative;
   float: left;
   z-index: 92;
-  width: 13.7037037037%;
+  width: 11.7037037037%;
   height: 23px;
   margin: 1px 0 0 3.30089%;
   padding-left: 10px;
@@ -746,7 +756,7 @@ body {
   background-repeat: no-repeat;
   background-size: auto auto;
   background-position: right center;
-  font-size: 1em;
+  font-size: 0.923em;;
   font-weight: 400;
   line-height: 1.38;
   color: rgb(0, 0, 0);
@@ -761,7 +771,7 @@ body {
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
-  font-size: 1em;
+  font-size: 0.923em;
   font-weight: 300;
   color: rgb(0, 0, 0);
   white-space: normal;
@@ -778,7 +788,7 @@ body {
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
-  font-size: 1em;
+  font-size: 0.923em;;
   font-weight: 300;
   color: rgb(0, 0, 0);
   white-space: normal;
@@ -790,9 +800,23 @@ body {
   font-size: 1em;
   font-weight: 400;
   line-height: 1.38;
+  z-index: 84;
+  width: 6.4814814814%;
+  margin: -2px 0 0 20.80746%;
   color: rgb(0, 0, 0);
 }
 
+.newzipcodelabel {
+  position: relative;
+  z-index: 88;
+  width: 10.332103321%;
+  min-height: 20px;
+  margin: 4px 0 0 49.38632%;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
 .newemail {
   position: relative;
   clear: both;
@@ -814,7 +838,7 @@ body {
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
-  font-size: 1em;
+  font-size: 0.923em;;
   font-weight: 300;
   color: rgb(0, 0, 0);
   white-space: normal;
@@ -863,7 +887,7 @@ body {
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
-  font-size: 1em;
+  font-size: 0.923em;
   font-weight: 300;
   color: rgb(0, 0, 0);
   white-space: normal;
@@ -936,7 +960,7 @@ body {
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
-  font-size: 1em;
+  font-size: 0.923em;
   font-weight: 300;
   color: rgb(0, 0, 0);
   white-space: normal;
@@ -953,7 +977,7 @@ body {
   padding: 0 10px;
   border: 1px solid rgb(167, 166, 166);
   background-color: rgb(242, 242, 242);
-  font-size: 1em;
+  font-size: 0.923em;
   font-weight: 300;
   color: rgb(0, 0, 0);
   white-space: normal;
@@ -1251,8 +1275,8 @@ body {
   z-index: 55;
   width: 41.1530815109%;
   min-height: 23px;
-  margin: -28px 0 0 28.33029%;
-  font-size: 1em;
+  margin: -28px 0 0 29.33029%;
+  font-size: 1.077em;
   line-height: 1.38;
   color: rgba(0, 0, 0, 0.63);
 }
@@ -1281,26 +1305,3 @@ body {
   background-color: rgba(0, 0, 0, 0.09);
 }
 
-.text-34 {
-  z-index: 75;
-  margin-left: 4.11529%;
-  color: rgba(0, 0, 0, 0.63);
-}
-
-.text-35 {
-  z-index: 81;
-  margin-left: 9.41462%;
-  color: rgb(0, 0, 0);
-}
-
-.text-40 {
-  z-index: 84;
-  width: 6.4814814814%;
-  margin: -2px 0 0 20.80746%;
-}
-
-.text-42 {
-  z-index: 88;
-  width: 10.332103321%;
-  margin: 4px 0 0 49.38632%;
-}

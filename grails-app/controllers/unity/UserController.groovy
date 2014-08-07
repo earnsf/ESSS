@@ -1,5 +1,7 @@
 package unity
 
+import org.apache.commons.validator.Msg;
+
 import grails.plugin.springsecurity.SpringSecurityService
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -40,6 +42,74 @@ class UserController {
 		
 	}
 
+	def editProfile() {
+		log.info "in edit profile"
+		def cur_id = springSecurityService.currentUser.id
+		def user = DataService.getUser(cur_id)
+		def numbers = DataService.getPhoneNumbers(cur_id)
+		def address = DataService.getAddress(cur_id)
+		render(view:"editProfile", model: [user: user, numbers: numbers, address: address])
+		
+	}
+	
+	
+	@Transactional
+	def saveEmail() {
+
+		log.info "Trying to change email to " + params.email
+		def vista_user = User.findByVistashare_email(params.email)
+		def penny_user = User.findByUsername(params.email)
+		def msg
+		def emailPattern = /[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})/
+		if (vista_user || penny_user) {
+			msg = g.message(code: "That email exists. Please try another email.")
+		} else if (params.email == "" || !(params.email ==~ emailPattern)) {
+			msg = g.message(code: "Invalid entry. Please try again.")
+		} else {
+			msg = g.message(code: "Successfully saved email.")
+			flash.successmessage = msg
+			log.info "Changing email..."
+			def cur_id = springSecurityService.currentUser.id
+			def user = DataService.getUser(cur_id)
+			user.username = params.email
+			user.save (flush: true, failOnError: true)
+			render (view: "save")
+			return
+		}
+		flash.errormessage = msg
+		render (view: "save")
+		
+	}
+	
+	@Transactional
+	def savePassword() {
+		log.info "Trying to change password"
+		def cur_id = springSecurityService.currentUser.id
+		def user = DataService.getUser(cur_id)
+		def msg
+		if (springSecurityService.passwordEncoder.isPasswordValid(user.password, params.currpassword, null)) {
+			if (params.newpassword == params.confirmpassword) {
+				log.info "Changing password..."
+				user.password = params.newpassword
+				user.save (flush: true, failOnError: true)
+				msg = g.message(code: "Successfully changed password.")
+				flash.successmessage = msg
+				render (view: "save")
+				return
+			} else {
+				msg = g.message(code: "Passwords do not match.")
+			}
+		} else {
+			msg = g.message(code: "Incorrect password. Please try again.")
+		}
+		
+		flash.errormessage = msg
+		render (view: "save")
+		
+		
+		
+	}
+	
 	def index(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
 		respond User.list(params), model:[userInstanceCount: User.count()]
@@ -105,6 +175,12 @@ class UserController {
 	def verify_email(params) {
 		log.info "Trying to verify email"
 		def user = User.findByVistashare_email(params.email)
+		if (!user) {
+			def msg = g.message(code: "Sorry, we were not able to find a user with VistaShare email: ${params.email}")
+			flash.message = msg
+			redirect action: 'register'
+			return
+		}
 		def locked_email = user.vistashare_email + "_accountLocked"
 		def esss_user = User.findByUsername(params.email)
 		if (esss_user && esss_user.username != locked_email) {
@@ -124,10 +200,6 @@ class UserController {
 				registerAttempts[params.email] = 1
 			}
 			return
-		} else {
-			def msg = g.message(code: "Sorry, we were not able to find a user with VistaShare email: ${params.email}")
-			flash.message = msg
-			redirect action: 'register'
 		}
 	}
 	
@@ -227,11 +299,6 @@ class UserController {
 			UserRole.create user, adminRole
 		}
 	}
-	@Secured('permitAll')
-	def editProfile() {
-		
-	}
-	
 	
 	def show(User userInstance) {
 		respond userInstance
