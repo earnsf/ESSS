@@ -19,7 +19,7 @@
   
   <div id ="wrap">
 	  <div class="mainbody clearfix">
-	    <h2 class="welcome">Welcome, ${name}</h2>
+	    <h2 class="welcome">Oops, register your email, please</h2>
 	    <div class="emailunconfirmed clearfix">
       	<p class="emailunconfirmed_text">Sorry, it looks like your email hasn't been verified yet. Please check your email and click the link. If you need help, blah blah.      </p>
     	</div>
