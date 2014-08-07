@@ -70,65 +70,101 @@ class UserController {
 	
 	@Transactional
 	def saveEmail() {
-
 		log.info "Trying to change email to " + params.email
-		def vista_user = User.findByVistashare_email(params.email)
-		def penny_user = User.findByUsername(params.email)
-		def msg
-		def emailPattern = /[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})/
-		if (vista_user || penny_user) {
-			msg = g.message(code: "That email exists. Please try another email.")
-		} else if (params.email == "" || !(params.email ==~ emailPattern)) {
-			msg = g.message(code: "Invalid entry. Please try again.")
-		} else {
-			msg = g.message(code: "Successfully saved email.")
-			flash.successmessage = msg
-			log.info "Changing email..."
-			def cur_id = springSecurityService.currentUser.id
-			def user = DataService.getUser(cur_id)
-			user.username = params.email
-			user.save (flush: true, failOnError: true)
-			render (view: "save")
-			return
-		}
-		flash.errormessage = msg
-		render (view: "save")
 		
+		if (DataService.user_exists(params)) {
+			flash.errormessage = g.message(code: "That email exists. Please try another email.")
+		} else if (DataService.is_invalid(params)) {
+			flash.errormessage = g.message(code: "Invalid entry. Please try again.")
+		} else {
+			DataService.change_email(params)
+			flash.successmessage = g.message(code: "Successfully saved email.")
+		}	
+		render (view: "save")
 	}
 	
 	@Transactional
 	def savePassword() {
 		log.info "Trying to change password"
-		def cur_id = springSecurityService.currentUser.id
-		def user = DataService.getUser(cur_id)
-		def msg
-		if (springSecurityService.passwordEncoder.isPasswordValid(user.password, params.currpassword, null)) {
-			if (params.newpassword == params.confirmpassword) {
-				log.info "Changing password..."
-				user.password = params.newpassword
-				user.save (flush: true, failOnError: true)
-				msg = g.message(code: "Successfully changed password.")
-				flash.successmessage = msg
-				render (view: "save")
-				return
+		if (DataService.is_correct_password(params)) {
+			if (DataService.passwords_match(params)) {
+				DataService.change_password(params)
+				flash.successmessage = g.message(code: "Successfully saved password.")
 			} else {
-				msg = g.message(code: "Passwords do not match.")
+				flash.errormessage = g.message(code: "Passwords do not match.")
 			}
 		} else {
-			msg = g.message(code: "Incorrect password. Please try again.")
+			flash.errormessage = g.message(code: "Incorrect password. Please try again.")
 		}
-		
-		flash.errormessage = msg
 		render (view: "save")
-		
-		
-		
 	}
 	
+	@Transactional
+	def saveHomeNumber() {
+		log.info "Trying to save home number"
+		if (DataService.is_valid_number(params)) {
+			DataService.change_number("home", params)
+			flash.successmessage = g.message(code: "Successfully saved home number.")
+		} else {
+			flash.errormessage = g.message(code: "Invalid home number. Try again.")
+		}
+
+		render (view: "save")	
+	}
+	
+	@Transactional
+	def saveWorkNumber() {
+		log.info "Trying to save work number"
+		if (DataService.is_valid_number(params)) {
+			DataService.change_number("work", params)
+			flash.successmessage = g.message(code: "Successfully saved work number.")
+		} else {
+			flash.errormessage = g.message(code: "Invalid work number. Try again.")
+		}
+
+		render (view: "save")	
+	}
+	
+	@Transactional
+	def saveMobileNumber() {
+		log.info "Trying to save mobile number"
+		if (DataService.is_valid_number(params)) {
+			DataService.change_number("mobile", params)
+			flash.successmessage = g.message(code: "Successfully saved mobile number.")
+		} else {
+			flash.errormessage = g.message(code: "Invalid mobile number. Try again.")
+		}
+		render (view: "save")	
+	}
+	
+	@Transactional
+	def saveAlternateNumber() {
+		log.info "Trying to save alternate number"
+		if (DataService.is_valid_number(params)) {
+			DataService.change_number("alternate", params)
+			flash.successmessage = g.message(code: "Successfully saved alternate home number.")
+		} else {
+			flash.errormessage = g.message(code: "Invalid alternate number. Try again.")
+		}
+		render (view: "save")	
+	}
+	
+	@Transactional
+	def saveAddress() {
+		log.info "Trying to save address"
+		if (DataService.existAll(params)) {
+			DataService.change_address(params)
+			flash.successmessage = g.message(code: "Successfully saved address.")
+		} else {
+			flash.errormessage = g.message(code: "Invalid or incomplete address. Try again.")
+		}
+		render (view: "save")
+	}
 	def index(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
 		respond User.list(params), model:[userInstanceCount: User.count()]
 	}
+	
 	
 	@Secured('permitAll')
 	def register(User userInstance) {
