@@ -28,10 +28,10 @@ class UserController {
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
-			if (!user.emailConfirmed) {
-				render(view:"homepage_unconfirmed", model:[name:user.first_name + ' ' + user.last_name])
-				return
-			}
+//			if (!user.emailConfirmed) {
+//				render(view:"homepage_unconfirmed", model:[name:user.first_name + ' ' + user.last_name])
+//				return
+//			}
 			
 			def accountLists = DataService.getAccounts(cur_id)
 			def openList = accountLists[0]
