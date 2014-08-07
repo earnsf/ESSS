@@ -8,6 +8,7 @@
   <asset:stylesheet src="editProfile-grid.css"/>
   <asset:stylesheet src="editProfile.css"/>
   <script type="text/javascript">
+
 	function hideEmail() {
         document.getElementById('emailBox').style.display = "block";
         document.getElementById('emailEdit').style.display = "none";
@@ -81,9 +82,8 @@
 		hideAddress();
 		hideLanguage();
 	}
-        
-
   </script>
+	<g:javascript library="jquery"/>
 </head>
 <body class="body index clearfix">
   <div class="editbox clearfix">
@@ -91,9 +91,12 @@
     <div class="menu menu-1 clearfix">
       <p class="text menu">Edit Profile      </p>
     </div>
-    <div class="editcontents clearfix">
-      <g:if test='${flash.message}'>
-          <p class="text errormessage">${flash.message}</p>
+    <div class="editcontents clearfix" id="update">
+      <g:if test='${flash.errormessage}'>
+          <p class="text errormessage">${flash.errormessage}</p>
+      </g:if>
+      <g:if test='${flash.successmessage}'>
+          <p class="text successmessage">${flash.successmessage}</p>
       </g:if>
       <g:else>
           <br/>
@@ -106,7 +109,7 @@
           <p></p>
         </button>
         <p class="text emaillabel">Email        </p>
-        <p class="text curremail">s.saiga@aol.com</p>
+        <p class="text curremail">${user.username}</p>
         <button id="emailedit" class="edit" type="button" onclick="showEmail()">
           <p>edit</p>
           <p></p>
@@ -117,25 +120,23 @@
           <p></p>
         </button>
       </div>
-      <form id="emailEdit" class="editemail clearfix">
+      <div id="emailEdit" class="editemail clearfix">
+        <g:form>
         <div class="element bar"></div>
         <p class="text emaillabel2">Email</p>
         <p class="text primary">Primary Email</p>
-        <p class="text curremail2">s.saiga@aol.com</p>
-        <p class="text newemail">New Email</p>
-        <input id="emailInput" class="emailinput" name="email" placeholder="new@youremail.com" type="email">
-        <button class="savechanges" type="submit">
-          <p>Save Changes</p>
-          <p></p>
-          <p></p>
-        </button>
+        <p class="text curremail2">${user.username}</p>
+   		<p class="text newemail">New Email</p>
+   		<input id="emailInput" class="emailinput" name="email" placeholder="new@youremail.com" type="email" required>
+   		<g:submitToRemote class="savechanges" url="[controller:'user', action:'saveEmail']" update="emailEdit" value="Save Changes" />
         <button class="cancel" type="button" onclick="hideEmail()">
           <p>Cancel</p>
           <p></p>
           <p></p>
           <p></p>
         </button>
-      </form>
+       </g:form>
+      </div>
       <div id="passwordBox" class="password clearfix">
         <button class="box" type="button" onclick="showPassword()">
           <p></p>
@@ -145,7 +146,7 @@
           <p></p>
         </button>
         <p class="text passwordlabel">Password</p>
-        <p class="text updated">Updated about 8 months ago.</p>
+        <p class="text updated">[click for details]</p>
         <button class="edit" onclick="showPassword()">
           <p>edit</p>
           <p></p>
@@ -159,7 +160,8 @@
           <p></p>
         </button>
       </div>
-      <form id="passwordEdit" class="editpassword clearfix">
+      <div id="passwordEdit" class="editpassword clearfix">
+      	<g:form>
         <div class="element bar"></div>
         <p class="text passwordlabel2">Password</p>
         <p class="text currentpasswordlabel">Current Password</p>
@@ -170,18 +172,15 @@
         <p class="text confirmpasswordlabel">Confirm Password</p>
         <p class="text star2">*        </p>
         <input id="confirmpw" class="confirmpassword" name="confirmpassword" type="password">
-        <button class="savechanges" type="submit">
-          <p>Save Changes</p>
-          <p></p>
-          <p></p>
-        </button>
+        <g:submitToRemote class="savechanges" url="[controller:'user', action:'savePassword']" update="passwordEdit" value="Save Changes" />
         <button class="cancel" type="button" onclick="hidePassword()">
           <p>Cancel</p>
           <p></p>
           <p></p>
           <p></p>
         </button>
-      </form>
+        </g:form>
+      </div>
       <div id="phoneBox" class="phonenumber clearfix">
         <button class="box" onclick="showPhone()">
           <p></p>
@@ -189,7 +188,7 @@
           <p></p>
         </button>
         <p class="text phonelabel">Phone Number     </p>
-        <p class="text homenumber">(959) 853-4256&nbsp;</p>
+        <p class="text homenumber">${numbers.home}&nbsp;</p>
         <p class="text phonetype">[home]&nbsp;</p>
         <button class="edit" onclick="showPhone()">
           <p>edit</p>
@@ -205,11 +204,11 @@
       <div id="phoneEdit" class="editphonenumber clearfix">
         <div class="element bar"></div>
         <p class="text phonelabel2">Phone Number</p>
-        <p class="text phoneinstructions">** use digits only (no parantheses or dashes), no field is required</p>
+        <p class="text phoneinstructions">** use digits only (no parentheses or dashes), no field is required</p>
         <form class="home clearfix">
           <p class="text homelabel">Home          </p>
-          <p class="text currhomenumber">(959) 853-4256</p>
-          <input id="newhome" class="newhome" name="newhome" placeholder="9598534256" type="text" maxlength="10">
+          <p class="text currhomenumber">${numbers.home}</p>
+          <input id="newhome" class="newhome" name="newhome" <g:if test='${user.home_phone}'>placeholder='${user.home_phone}'</g:if> <g:else>placeholder="new home #"</g:else> type="text" maxlength="10">
           <button class="save1" type="submit">
             <p>Save&nbsp;</p>
             <p></p>
@@ -222,8 +221,8 @@
         </form>
         <form class="work clearfix">
           <p class="text worklabel">Work</p>
-          <p class="text currworknumber">(959) 234-1234</p>
-          <input id="newwork" class="newwork" name="newwork" placeholder="9592341234" type="text" maxlength="10">
+          <p class="text currworknumber">${numbers.work}</p>
+          <input id="newwork" class="newwork" name="newwork" <g:if test='${user.work_phone}'>placeholder='${user.work_phone}'</g:if> <g:else>placeholder="new work #"</g:else> type="text" maxlength="10">
           <button class="save2" type="submit">
             <p>Save&nbsp;</p>
             <p></p>
@@ -236,8 +235,8 @@
         </form>
         <form class="mobile clearfix">
           <p class="text mobilelabel">Mobile</p>
-          <p class="text currmobilenumber">None</p>
-          <input id="newmobile" class="newmobile" name="newmobile" placeholder="new mobile #" type="text" maxlength="10">
+          <p class="text currmobilenumber">${numbers.mobile}</p>
+          <input id="newmobile" class="newmobile" name="newmobile"  <g:if test='${user.mobile_phone}'>placeholder='${user.mobile_phone}'</g:if> <g:else>placeholder="new mobile #"</g:else> type="text" maxlength="10">
           <button class="save2" type="submit">
             <p>Save&nbsp;</p>
             <p></p>
@@ -250,8 +249,8 @@
         </form>
         <form class="alternate clearfix">
           <p class="text altlabel">Alternate</p>
-          <p class="text curraltnumber">None</p>
-          <input id="newalternate" class="newalternate" name="newalternate" placeholder="new alt. #" type="text" maxlength="10">
+          <p class="text curraltnumber">${numbers.alt}</p>
+          <input id="newalternate" class="newalternate" name="newalternate" <g:if test='${user.alternate_phone}'>placeholder='${user.alternate_phone}'</g:if> <g:else>placeholder="new alternate #"</g:else> type="text" maxlength="10">
           <button class="save2" type="submit">
             <p>Save&nbsp;</p>
             <p></p>
@@ -293,18 +292,18 @@
         <p class="text addresslabel2">Mailing Address</p>
         <p class="text currentaddresslabel">Current Preferred Address:        </p>
         <p class="text newaddresslabeltop">New Preferred Address:</p>
-        <p class="text currstreet">2515 Benvenue Avenue #305</p>
+        <p class="text currstreet">${address.address}</p>
         <p class="text newaddresslabel">Address</p>
         <input id="newaddress" class="newaddress" name="newaddress" placeholder="2515 Benvenue Ave #305" type="text">
-        <p class="text currcity">Berkeley        </p>
+        <p class="text currcity">${address.city}        </p>
         <p class="text comma">,        </p>
-        <p class="textcurrstate">CA        </p>
-        <p class="textzipcode">94704        </p>
-        <p class="text newcitylabel text-40">City</p>
+        <p class="textcurrstate">${address.state}        </p>
+        <p class="textzipcode">${address.zipcode}        </p>
+        <p class="text newcitylabel">City</p>
         <input id=".newcity" class="newcity" name="newcity" placeholder="Berkeley" type="text">
         <p class="text newstatelabel">State</p>
-        <input id="newstate" class="newstate" name="newstate" placeholder="CA" type="text">
-        <p class="text newcitylabel text-42">Zip Code        </p>
+        <input id="newstate" class="newstate" name="newstate" placeholder="CA" type="text" maxlength="2">
+        <p class="text newzipcodelabel">Zip Code        </p>
         <input id="newzipcode" class="newzipcode" name="newzipcode" placeholder="94704" type="text" maxlength="5">
         <select class="newaddresstype" name="addresstype">
           <option value="Home">Home</option>

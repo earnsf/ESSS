@@ -97,6 +97,68 @@ class DataService {
 		
 	}
 	
+	def getPhoneNumbers(Integer cur_id) {
+		log.info "getting phone numbers"
+		def user = getUser(cur_id)
+		def home_number = user.home_phone
+		def work_number = user.work_phone
+		def mobile_number = user.mobile_phone
+		def alternate_number = user.alternate_phone
+		def home = "None"
+		def work = "None"
+		def mobile = "None"
+		def alt = "None"
+		/** try and catch for array out of bounds error, for invalid phone numbers */
+		try {
+			if (home_number) {
+				home = '(' + home_number.substring(0,3) + ')    ' + home_number.substring(3,6) + '-' +
+				home_number.substring(6,)
+			}
+		} catch (Exception e) {
+			home = "invalid home number"
+		}
+		try {
+			if (work_number) {
+				work = '(' + work_number.substring(0,3) + ')    ' + work_number.substring(3,6) + '-' +
+				work_number.substring(6,)
+			}
+		} catch (Exception e) {
+			work = "invalid work number"
+		}
+		try {
+			if (mobile_number) {
+				mobile = '(' + mobile_number.substring(0,3) + ')    ' + mobile_number.substring(3,6) + '-' +
+				mobile_number.substring(6,)
+			}
+		} catch (Exception e) {
+			mobile = "invalid mobile number"
+		}
+		try {
+			if (alternate_number) {
+				alt = '(' + alternate_number.substring(0,3) + ')    ' + alternate_number.substring(3,6) + '-' +
+				alternate_number.substring(6,)
+			}
+		} catch (Exception e) {
+			alt = "invalid alt. number"
+		}
+		[home: home, work: work, mobile: mobile, alt: alt]
+	}
+	
+	def getAddress(Integer cur_id) {
+		log.info "getting address"
+		def user = getUser(cur_id)
+		def address = user.preferred_address
+		def city = user.preferred_city
+		def state = user.preferred_state
+		def zipcode = user.preferred_zip_code
+		if (!address || !city || !state) {
+			address = "Address is incomplete."
+			city = ""
+			state = ""
+			zipcode = ""
+		}
+		[address: address, city: city, state:state, zipcode:zipcode]	
+	}
 }
 
 
