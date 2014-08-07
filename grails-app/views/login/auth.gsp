@@ -25,7 +25,7 @@
           <p class="text text-3 js-{flash.message}">${flash.message}</p>
         </g:if>
         <p class="text text-4">Email</p>
-        <input class="username" name="j_username" placeholder="YourPenny@email.com" type="email">
+        <input class="username" name="j_username" placeholder="YourPenny@email.com" type="email" value="${params.email}">
         <p class="text text-5">Password</p>
         <input class="paswword" name="j_password" placeholder="type your password" type="password">
 		<input type='hidden' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>

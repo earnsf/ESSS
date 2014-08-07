@@ -6,6 +6,7 @@ class UrlMappings {
 		"/registerPart3" (controller: "user", action: "registerPart3")
 		"/register-finish" (controller: "user", action: "registerFinish")
 		"/confirmEmail/$id" (controller:"user", action: "confirmEmail")
+		"/settings" (controller: "user", action: "editProfile")
 		"/"
         "/$controller/$action?/$id?(.$format)?"{
             constraints {

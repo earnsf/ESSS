@@ -9,9 +9,9 @@ body {
   clear: both;
   width: 94.2807625649%;
   height: 40px;
-  margin: 30px 0 0 4.33214%;
+  margin: 30px 0 0 3.1%;
   border: 1px solid rgba(0, 0, 0, 0.13);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: rgb(255, 255, 255);
   display: block;
 }
@@ -275,11 +275,12 @@ body {
   clear: both;
   width: 94.2807625649%;
   height: 226px;
-  margin: 30px 0 0 4.33214%;
+  margin: 30px 0 0 3.1%;
   border: 1px dotted rgb(131, 130, 130);
   border-radius: 1px;
   background-color: rgb(255, 255, 255);
   display: none;
+  border-radius: 3px;
 }
 
 .editaddress .cancel {
@@ -323,6 +324,7 @@ body {
   margin: 15px 0 0 4.07878%;
   border: 1.7px solid rgba(0, 0, 0, 0.09);
   background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
 }
 
 .editemail {
@@ -330,11 +332,11 @@ body {
   clear: both;
   width: 94.0409683426%;
   height: 140px;
-  margin: 15px 0 0 3.88455%;
+  margin: 15px 0 0 3.1%;
   border: 1px dotted rgb(131, 130, 130);
-  border-radius: 1px;
   background-color: rgb(255, 255, 255);
   display: none;
+  border-radius: 3px;
 }
 
 .editemail .cancel {
@@ -360,11 +362,12 @@ body {
   clear: both;
   width: 94.1074523396%;
   height: 139px;
-  margin: 30px 0 0 4.33214%;
+  margin: 30px 0 0 3.1%;
   border: 1px dotted rgb(131, 130, 130);
   border-radius: 1px;
   background-color: rgb(255, 255, 255);
   display: none;
+  border-radius: 3px;
 }
 
 .editlanguage .cancel {
@@ -398,11 +401,12 @@ body {
   clear: both;
   width: 94.04%;
   height: 189px;
-  margin: 30px 0 0 3.88455%;
+  margin: 30px 0 0 3.1%;
   border: 1px dotted rgb(131, 130, 130);
   border-radius: 1px;
   background-color: rgb(255, 255, 255);
   display: none;
+  border-radius: 3px;
 }
 
 .editpassword .cancel {
@@ -428,11 +432,12 @@ body {
   clear: both;
   width: 93.9341421143%;
   height: 268px;
-  margin: 30px 0 0 4.27789%;
+  margin: 30px 0 0 3.1%;
   border: 1px dotted rgb(131, 130, 130);
   border-radius: 1px;
   background-color: rgb(255, 255, 255);
   display: none;
+  border-radius: 3px;
 }
 
 .editphonenumber .cancel {
@@ -460,9 +465,9 @@ body {
   clear: both;
   width: 94.0409683426%;
   height: 41px;
-  margin: 15px 0 0 3.88455%;
+  margin: 15px 0 0 3.1%;
   border: 1px solid rgba(0, 0, 0, 0.13);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: rgb(255, 255, 255);
   display: block;
 }
@@ -553,13 +558,13 @@ body {
   clear: both;
   width: 84.5138888888%;
   height: 23px;
-  margin: 14px 0 0 11.80904%;
+  margin: 14px 0 0 11.80904%;;
 }
 
 .homenumber {
   position: relative;
   z-index: 37;
-  width: 22.1971733287%;
+  width: auto;
   min-height: 23px;
   margin: -30px 0 0 28.72558%;
   font-size: 1.077em;
@@ -572,9 +577,9 @@ body {
   clear: both;
   width: 94.0409683426%;
   height: 40px;
-  margin: 30px 0 0 4.33214%;
+  margin: 30px 0 0 3.1%;
   border: 1px solid rgba(0, 0, 0, 0.13);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: rgb(255, 255, 255);
   display: block;
 }
@@ -787,7 +792,7 @@ body {
 
 .newcitylabel {
   position: absolute;
-  left: 53%;
+  left: 52%;
   top: 372px;
   z-index: 83;
   width: 100px;
@@ -1023,9 +1028,9 @@ body {
   clear: both;
   width: 94.0409683426%;
   height: 41px;
-  margin: 30px 0 0 3.88455%;
+  margin: 30px 0 0 3.1%;
   border: 1px solid rgba(0, 0, 0, 0.13);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: rgb(255, 255, 255);
   display: block;
 }
@@ -1106,9 +1111,9 @@ body {
   clear: both;
   width: 94.0397530329%;
   height: 40px;
-  margin: 30px 0 0 4.27789%;
+  margin: 30px 0 0 3.1%;
   border: 1px solid rgba(0, 0, 0, 0.13);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: rgb(255, 255, 255);
   display: block;
 }
@@ -1131,7 +1136,7 @@ body {
   z-index: 36;
   width: 10.1737044423%;
   min-height: 23px;
-  margin: -30px 0 0 52.933%;
+  margin: -30px 0 0 48.933%;
   font-size: 1.077em;
   line-height: 1.38;
   color: rgba(0, 0, 0, 0.63);
@@ -1304,7 +1309,7 @@ body {
 
 .whitebar {
   clear: both;
-  width: 97.9582406792%;
+  width: 80.9582406792%;
   height: 10px;
   margin: 8px 0 0 1.3082276835%;
   background-color: rgb(255, 255, 255);

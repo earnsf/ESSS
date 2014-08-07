@@ -23,6 +23,7 @@ class UserController {
 	def DataService
 	def EmailVerifService
 	def mailService
+	def ContentService
 	
 	def homepage() {
 		log.info 'in homepage()'
@@ -72,12 +73,12 @@ class UserController {
 	def saveEmail() {
 		log.info "Trying to change email to " + params.email
 		
-		if (DataService.user_exists(params)) {
+		if (ContentService.user_exists(params)) {
 			flash.errormessage = g.message(code: "That email exists. Please try another email.")
-		} else if (DataService.is_invalid(params)) {
+		} else if (ContentService.is_invalid_email(params)) {
 			flash.errormessage = g.message(code: "Invalid entry. Please try again.")
 		} else {
-			DataService.change_email(params)
+			ContentService.change_email(params)
 			flash.successmessage = g.message(code: "Successfully saved email.")
 		}	
 		render (view: "save")
@@ -86,9 +87,9 @@ class UserController {
 	@Transactional
 	def savePassword() {
 		log.info "Trying to change password"
-		if (DataService.is_correct_password(params)) {
-			if (DataService.passwords_match(params)) {
-				DataService.change_password(params)
+		if (ContentService.is_correct_password(params)) {
+			if (ContentService.passwords_match(params)) {
+				ContentService.change_password(params)
 				flash.successmessage = g.message(code: "Successfully saved password.")
 			} else {
 				flash.errormessage = g.message(code: "Passwords do not match.")
@@ -102,8 +103,8 @@ class UserController {
 	@Transactional
 	def saveHomeNumber() {
 		log.info "Trying to save home number"
-		if (DataService.is_valid_number(params)) {
-			DataService.change_number("home", params)
+		if (ContentService.is_valid_number(params) || ContentService.is_blank_number(params)) {
+			ContentService.change_number("home", params)
 			flash.successmessage = g.message(code: "Successfully saved home number.")
 		} else {
 			flash.errormessage = g.message(code: "Invalid home number. Try again.")
@@ -115,8 +116,8 @@ class UserController {
 	@Transactional
 	def saveWorkNumber() {
 		log.info "Trying to save work number"
-		if (DataService.is_valid_number(params)) {
-			DataService.change_number("work", params)
+		if (ContentService.is_valid_number(params) || ContentService.is_blank_number(params)) {
+			ContentService.change_number("work", params)
 			flash.successmessage = g.message(code: "Successfully saved work number.")
 		} else {
 			flash.errormessage = g.message(code: "Invalid work number. Try again.")
@@ -128,8 +129,8 @@ class UserController {
 	@Transactional
 	def saveMobileNumber() {
 		log.info "Trying to save mobile number"
-		if (DataService.is_valid_number(params)) {
-			DataService.change_number("mobile", params)
+		if (ContentService.is_valid_number(params) || ContentService.is_blank_number(params)) {
+			ContentService.change_number("mobile", params)
 			flash.successmessage = g.message(code: "Successfully saved mobile number.")
 		} else {
 			flash.errormessage = g.message(code: "Invalid mobile number. Try again.")
@@ -140,8 +141,8 @@ class UserController {
 	@Transactional
 	def saveAlternateNumber() {
 		log.info "Trying to save alternate number"
-		if (DataService.is_valid_number(params)) {
-			DataService.change_number("alternate", params)
+		if (ContentService.is_valid_number(params) || ContentService.is_blank_number(params)) {
+			ContentService.change_number("alternate", params)
 			flash.successmessage = g.message(code: "Successfully saved alternate home number.")
 		} else {
 			flash.errormessage = g.message(code: "Invalid alternate number. Try again.")
@@ -152,13 +153,17 @@ class UserController {
 	@Transactional
 	def saveAddress() {
 		log.info "Trying to save address"
-		if (DataService.existAll(params)) {
-			DataService.change_address(params)
+		if (ContentService.existAll(params)) {
+			ContentService.change_address(params)
 			flash.successmessage = g.message(code: "Successfully saved address.")
 		} else {
 			flash.errormessage = g.message(code: "Invalid or incomplete address. Try again.")
 		}
 		render (view: "save")
+	}
+	@Transactional
+	def saveLanguage() {
+		log.info "Trying to save address"
 	}
 	def index(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
@@ -220,6 +225,7 @@ class UserController {
 		log.info "Passwords match!"
 		register_user(params)
 		log.info "Successfully created!"
+		render (view: "registerFinish", model: [login_email: params.email])
 	}
 	
 	@Secured('permitAll')
@@ -329,7 +335,7 @@ class UserController {
 		
 		def user = User.findByVistashare_email(params.email)
 		user.username = params.email
-		locked_password = user.vistashare_email + "_accountLocked"
+		def locked_password = user.vistashare_email + "_accountLocked"
 		if (user.password != null || user.password == locked_password) {
 			def msg = g.message(code: "A password has already been set for this account. Please login to change it.")
 			flash.message = msg
