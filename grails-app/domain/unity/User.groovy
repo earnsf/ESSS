@@ -66,6 +66,11 @@ class User {
 	Boolean accountLocked
 	Boolean enabled
 	Boolean passwordExpired
+	Boolean emailConfirmed
+	String emailConfirmCode
+	Date emailCodeDateSent
+	Date emailCodeDateReceived
+
 
 	static mapping = {
 		table "users"
@@ -76,6 +81,10 @@ class User {
 		accountLocked column: 'esss_account_locked', sqlType: 'bit', length: 1
 		enabled column: 'esss_enabled', sqlType: 'bit', length: 1
 		passwordExpired column: 'esss_password_expired', sqlType: 'bit', length: 1
+		emailConfirmed column: 'esss_email_confirmed', sqlType: 'tinyint', length: 1
+		emailConfirmCode column: 'esss_email_confirm_code', sqlType: 'varchar', length: 10
+		emailCodeDateSent column: 'esss_emailcode_date_sent'
+		emailCodeDateReceived column: 'esss_emailcode_date_received'
 		
 	}
 
@@ -136,6 +145,9 @@ class User {
 		password blank: false
 		is_emergency_contact nullable: false
 		is_child nullable: false
+		emailConfirmCode nullable: true
+		emailCodeDateSent nullable: true
+		emailCodeDateReceived nullable: true
 	}
 	
 

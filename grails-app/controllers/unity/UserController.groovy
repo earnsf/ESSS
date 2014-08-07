@@ -6,7 +6,9 @@ import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 import Service.*
 
-@Transactional(readOnly = true)
+import org.apache.commons.lang.RandomStringUtils
+
+@Transactional(readOnly = false)
 class UserController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -17,6 +19,8 @@ class UserController {
 	
 	def springSecurityService
 	def DataService
+	def EmailVerifService
+	def mailService
 	
 	def homepage() {
 		log.info 'in homepage()'
@@ -24,20 +28,31 @@ class UserController {
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
+//			if (user.emailConfirmed) {
+//				render(view:"homepage_unconfirmed", model:[name:user.first_name + ' ' + user.last_name])
+//				return
+//			}
+			
 			def accountLists = DataService.getAccounts(cur_id)
 			def openList = accountLists[0]
 			def closedList = accountLists[1]
-			
-			
-			
-			
-			
-			
 			render(view:"homepage", model: [openList:openList, closedList:closedList, name:user.first_name + ' ' + user.last_name])
+			
 		} else {
 			log.info 'not logged in'
 		}
 		
+	}
+	
+	def sendConfirmEmail(String v_email) {
+		EmailVerifService.persistConfirmEmail(v_email)
+		render(view:"homepage_unconfirmed")
+	}
+	
+	def confirmEmail() {
+		def code = params.id
+		log.info('in confirmEmail(), code is ' + code.toString())
+		sendConfirmEmail('georgeqwu@gmail.com')
 	}
 
 	def index(Integer max) {

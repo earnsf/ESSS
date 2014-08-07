@@ -58,6 +58,7 @@ class BootStrap {
 			user2.accountLocked = false
 			user2.enabled = true
 			user2.passwordExpired = false
+			user2.emailConfirmed = true
 			log.info user2.password
 			log.info 'setting things for Saiga Fam'
 		}

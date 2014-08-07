@@ -1,8 +1,8 @@
 <%@ page import="unity.Account" %>
 <html>
 <head>
-  <meta name="layout" content="main">
-  <g:set var="entityName" value="${message(code: 'account.label', default: 'Account')}" />
+  <%--<meta name="layout" content="main">
+  --%><g:set var="entityName" value="${message(code: 'account.label', default: 'Account')}" />
   <meta charset="utf-8">
   <%-- <meta name="viewport" content="initial-scale=1.0"> --%>
   <title>homepage</title>
