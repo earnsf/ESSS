@@ -1,10 +1,16 @@
 package Service
 
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.transaction.Transactional
 import unity.*
+import grails.plugin.springsecurity.annotation.Secured
 
-@Transactional
+import org.apache.commons.lang.RandomStringUtils
+
+@Transactional(readOnly=false)
 class DataService {
+	
+	def springSecurityService
 
     def serviceMethod() {
 		log.info 'DataService.serviceMethod()'
@@ -12,6 +18,8 @@ class DataService {
 		def two = 'two'
 		return [one, two]
     }
+	
+	
 	
 	def parseDate(String input) {
 		def dateOnly = input[0..9]

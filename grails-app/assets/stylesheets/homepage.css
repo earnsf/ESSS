@@ -1,4 +1,19 @@
+.emailunconfirmed {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
 
+.emailunconfirmed_text {
+  float: left;
+  width: 92.0850083341%;
+  height: 27px;
+  margin: 13px 0 0 3.25032%;
+  font-size: 1.455em;
+  font-weight: 600;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
 
 #wrap {
   width:766px;
