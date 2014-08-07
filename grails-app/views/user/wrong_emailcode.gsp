@@ -19,9 +19,10 @@
   
   <div id ="wrap">
 	  <div class="mainbody clearfix">
-	    <h2 class="welcome">Oops, register your email, please</h2>
+	    <h2 class="welcome">Invalid Link for Email Verification</h2>
 	    <div class="emailunconfirmed clearfix">
-      	<p class="emailunconfirmed_text">Sorry, it looks like your email hasn't been verified yet. Please check your email and click the link. If you need help, blah blah.      </p>
+      	<p class="emailunconfirmed_text">Oops, looks like the link was invalid. Try copying and pasting the link or making sure you got all of the
+      					letters at the end.</p>
     	</div>
 	    
 	  </div>

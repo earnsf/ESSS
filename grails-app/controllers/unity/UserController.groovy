@@ -31,7 +31,7 @@ class UserController {
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
-//			if (user.emailConfirmed) {
+//			if (!user.emailConfirmed) {
 //				render(view:"homepage_unconfirmed", model:[name:user.first_name + ' ' + user.last_name])
 //				return
 //			}
@@ -49,13 +49,20 @@ class UserController {
 	
 	def sendConfirmEmail(String v_email) {
 		EmailVerifService.persistConfirmEmail(v_email)
-		render(view:"homepage_unconfirmed")
+		render(view:"auth")
 	}
 	
+	// url action that comes from the link in the email
+	@Secured('permitAll')
 	def confirmEmail() {
 		def code = params.id
 		log.info('in confirmEmail(), code is ' + code.toString())
-		sendConfirmEmail('georgeqwu@gmail.com')
+		def resp = EmailVerifService.verifyEmailCode(code)
+		if (resp == "no") {
+			render(view:"wrong_emailcode")
+		} else {
+			redirect(uri:'/')
+		}
 	}
 
 	def editProfile() {
@@ -355,6 +362,8 @@ class UserController {
 		if (!user.authorities.contains(adminRole)) {
 			UserRole.create user, adminRole
 		}
+		sendConfirmEmail(user.username)
+		log.info "successfully sent confirmation email"
 	}
 	
 	def show(User userInstance) {
