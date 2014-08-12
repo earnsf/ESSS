@@ -2,6 +2,7 @@ package unity
 
 class Transaction {
 
+	Integer id
 	Date transactionDate
 	BigDecimal amount
 	Integer earnUserId
@@ -20,6 +21,12 @@ class Transaction {
 	Integer fundingSourceGlAccountNumber
 	Integer vistashareTransactionId
 	Long subAmount
+	
+	//added fields for portal
+	String transactionDateString
+	String amountString
+	
+	static transients = ['transactionDateString', 'amountString']
 
 	static mapping = {
 		version false

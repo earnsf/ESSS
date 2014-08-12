@@ -62,9 +62,15 @@ class UserController {
 		if (!accountId) {
 			render (view:"homepage_unconfirmed")
 		} else {
-			
+			def valBoolean = DataService.validateUser(accountId)
+			def acctDetails = DataService.getAccountDetails(accountId.toInteger())
 			log.info('in showtransactions(), accountId = ' + accountId.toString())
-			render (view:"transactions")
+			if (valBoolean == false) {
+				render (view:'homepage_unconfirmed')
+				return
+			}
+			def transList = DataService.getTransactions(accountId.toInteger())
+			render (view:"transactions", model: [name:acctDetails[0], acctNum:acctDetails[1], transList:transList])
 		}
 	}
 	
