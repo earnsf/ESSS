@@ -91,7 +91,7 @@
 			<g:form controller="login" action="auth" method='POST' class='cssform' autocomplete='off'>
 			<p>
 				<label for='Ready'><g:message code="Ready to Login?"/>:</label>
-				<input type='hidden' name='email' class='text' value='${params.email}'/>
+				<input type='hidden' name='email' class='text' value='${login_email}'/>
 			</p>
 			<p>
 				<input type='submit' id="submit" value='Login'/>

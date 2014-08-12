@@ -1,31 +1,55 @@
 body {
   background-color: rgb(255, 255, 255);
-  font: 600 1.125em/1.38 'Open Sans';
+  font: 600 1em/1.38 'Open Sans';
   color: rgba(0, 0, 0, 0.72);
 }
 
-.element {
+.bar {
   position: absolute;
-  top: 71px;
-  left: 5.1298945783%;
+  top: 60px;
+  left: 5.1177687329%;
   z-index: 1;
   width: 91.605839416%;
-  height: NaN;
   border: 1px solid rgba(128, 128, 128, 0.16);
   background-color: rgba(0, 0, 0, 0.68);
+}
+
+.emaillabel {
+  position: relative;
+  clear: both;
+  z-index: 6;
+  width: 18.9911040145%;
+  min-height: 34px;
+  margin: 22px 0 0 14.71926%;
+  font-size: 0.938em;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.errormessage {
+  clear: both;
+  width: 76.700452604%;
+  min-height: 21px;
+  margin: 6px 0 0 9.10436%;
+  font-size: 0.813em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(255, 0, 0);
 }
 
 .forgotpw {
   display: block;
   position: relative;
   float: left;
-  z-index: 5;
-  width: 28.102189781%;
-  height: 39px;
-  margin: 27px 0 0 3.69327%;
+  z-index: 4;
+  width: 26.5588914549%;
+  height: 33px;
+  margin: 28px 0 0 3.52194%;
   border-radius: 3px;
   background-color: rgb(162, 162, 162);
-  font-size: 0.778em;
+  font-size: 0.813em;
   font-weight: 400;
   line-height: 1.38;
   text-align: center;
@@ -40,51 +64,93 @@ body {
   position: relative;
   float: left;
   clear: both;
-  width: 49.7724027882%;
-  height: 327px;
-  margin: 79px 0 0 25.9057697152%;
+  width: 46.0317460317%;
+  height: 303px;
+  margin: 48px 0 0 26.29795%;
   border: 1px solid rgb(179, 179, 179);
   border-radius: 6px;
   background-color: rgb(230, 230, 230);
 }
 
-.paswword {
+.loginlabel {
+  position: relative;
+  z-index: 0;
+  width: 28.313253012%;
+  min-height: 47px;
+  margin: 26px 0 0 5.11692%;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.password {
   display: block;
   position: relative;
   float: left;
   z-index: 3;
   width: 40.9652435511%;
   height: 34px;
-  margin: 22px 0 0 1.0625360046%;
+  margin: 22px 0 0 1.04287%;
   padding: 0 10px;
   border: 1px solid rgb(179, 179, 179);
   border-radius: 3px;
   background-color: rgb(251, 249, 249);
-  font-size: 0.778em;
+  font-size: 0.875em;
   font-weight: 400;
   line-height: 1.38;
   color: rgba(0, 0, 0, 0.72);
 }
 
-.paswword:focus {
-  background-color: rgb(207, 240, 216);
+.password:focus {
+  background-color: rgb(255, 255, 255);
+}
+
+.passwordlabel {
+  position: relative;
+  clear: both;
+  z-index: 7;
+  width: 18.9895072992%;
+  min-height: 34px;
+  margin: 22px 0 0 14.71926%;
+  font-size: 0.938em;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
 }
 
 .registerbox {
   position: relative;
   float: left;
-  width: 69.4179894179%;
-  height: 131px;
-  margin: 56px 0 0 16.5113%;
+  width: 61.0582010582%;
+  height: 114px;
+  margin: 38px 0 0 19.15344%;
   border: 1px dashed rgb(204, 204, 204);
   border-radius: 10px;
   background-color: rgb(230, 230, 230);
 }
 
-.registerbox .text {
-  width: 89.7817488546%;
+.registerbutton {
+  display: block;
+  float: left;
+  clear: both;
+  width: 17.755443886%;
+  height: 32px;
+  margin: 10px 0 0 41.8777199999%;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.registermessage {
+  width: 86.6972477064%;
   min-height: 47px;
-  margin: 17px 0 0 5.9160859465%;
+  margin: 17px 0 0 7.53533%;
   font-size: 1em;
   line-height: 1.38;
   text-align: center;
@@ -92,15 +158,9 @@ body {
 }
 
 .regpluslogin {
-  /* float: left; */
-  clear:both;
-  
-  width: 100%;
-  height: auto;
-  margin-left:0 auto;
-  padding:10px 10px;
-  overflow:auto;
-  
+  float: left;
+  width: 98.4375%;
+  height: 716px;
 }
 
 .signin {
@@ -108,20 +168,20 @@ body {
   position: relative;
   float: left;
   clear: both;
-  z-index: 4;
-  width: 23.905109489%;
-  height: 39px;
-  margin: 27px 0 0 34.7884529219%;
+  z-index: 8;
+  width: 23.5565819861%;
+  height: 34px;
+  margin: 28px 0 0 35.10393%;
   border-radius: 3px;
   background-color: rgb(59, 184, 94);
   font-size: 1em;
   font-weight: 400;
   line-height: 1.38;
   text-align: center;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
 }
 
-._button:hover,
+.registerbutton:hover,
 .signin:hover {
   background-color: rgb(76, 172, 104);
 }
@@ -137,12 +197,12 @@ body {
   z-index: 2;
   width: 40.9652435511%;
   height: 34px;
-  margin: 20px 0 0 1.0625360046%;
+  margin: 22px 0 0 1.04287%;
   padding: 0 10px;
   border: 1px solid rgb(179, 179, 179);
   border-radius: 3px;
   background-color: rgb(251, 249, 249);
-  font-size: 0.778em;
+  font-size: 0.875em;
   font-weight: 400;
   line-height: 1.38;
   color: rgba(0, 0, 0, 0.72);
@@ -155,72 +215,5 @@ body {
 
 .username:focus {
   border-color: rgb(204, 204, 204);
-  background-color: rgb(207, 240, 216);
-}
-
-._button {
-  display: block;
-  float: left;
-  clear: both;
-  width: 23.9329268292%;
-  height: 40px;
-  margin: 10px 0 0 36.53455%;
-  border-radius: 3px;
-  background-color: rgb(59, 184, 94);
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.38;
-  text-align: center;
-  color: rgb(255, 255, 255);
-}
-
-.text-2 {
-  position: relative;
-  z-index: 0;
-  width: 28.313253012%;
-  min-height: 47px;
-  margin: 26px 0 0 5.12066%;
-  font-size: 1.222em;
-  font-weight: 700;
-  line-height: 1.38;
-  color: rgba(0, 0, 0, 0.72);
-}
-
-.text-3 {
-  clear: both;
-  width: 76.700452604%;
-  min-height: 21px;
-  margin: 25px 0 0 12.2671701977%;
-  font-size: 0.778em;
-  font-weight: 400;
-  line-height: 1.38;
-  color: rgb(255, 0, 0);
-}
-
-.text-4 {
-  position: relative;
-  clear: both;
-  z-index: 7;
-  width: 18.9911040145%;
-  min-height: 34px;
-  margin: 20px 0 0 14.73789%;
-  font-size: 0.889em;
-  font-weight: 700;
-  line-height: 2;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.72);
-}
-
-.text-5 {
-  position: relative;
-  clear: both;
-  z-index: 8;
-  width: 18.9895072992%;
-  min-height: 34px;
-  margin: 22px 0 0 14.73789%;
-  font-size: 0.889em;
-  font-weight: 700;
-  line-height: 2;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.72);
+  background-color: rgb(255, 255, 255);
 }

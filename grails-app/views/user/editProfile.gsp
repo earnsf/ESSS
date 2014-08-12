@@ -82,8 +82,13 @@
 		hideAddress();
 		hideLanguage();
 	}
+
+
   </script>
 	<g:javascript library="jquery"/>
+  	<g:if test='${flash.phone}'>
+          <script>showPhone()</script>
+    </g:if>
 </head>
 <body class="body index clearfix">
   <div class="editbox clearfix">
@@ -109,7 +114,7 @@
           <p></p>
         </button>
         <p class="text emaillabel">Email        </p>
-        <p class="text curremail">${user.username}</p>
+        <p class="text curremail">&nbsp;${user.username}</p>
         <button id="emailedit" class="edit" type="button" onclick="showEmail()">
           <p>edit</p>
           <p></p>
@@ -202,65 +207,41 @@
         </button>
       </div>
       <div id="phoneEdit" class="editphonenumber clearfix">
+      	<g:form>
         <div class="element bar"></div>
         <p class="text phonelabel2">Phone Number</p>
-        <p class="text phoneinstructions">** use digits only (no parentheses or dashes), no field is required</p>
-        <form class="home clearfix">
+        <p class="text phoneinstructions">** Use digits only. Leave field blank and click "save" to remove a number.</p>
+        <div class="home clearfix">
           <p class="text homelabel">Home          </p>
           <p class="text currhomenumber">${numbers.home}</p>
-          <input id="newhome" class="newhome" name="newhome" <g:if test='${user.home_phone}'>placeholder='${user.home_phone}'</g:if> <g:else>placeholder="new home #"</g:else> type="text" maxlength="10">
-          <button class="save1" type="submit">
-            <p>Save&nbsp;</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </button>
-        </form>
-        <form class="work clearfix">
+          <input id="newhome" class="newhome" name="number" <g:if test='${user.home_phone}'>placeholder='${user.home_phone}'</g:if> <g:else>placeholder="new home #"</g:else> type="text" maxlength="10">
+          <g:submitToRemote class="save1" url="[controller:'user', action:'saveHomeNumber']" update="phoneEdit" value="Save" />
+        </div>
+        </g:form>
+        <g:form>
+        <div class="work clearfix">
           <p class="text worklabel">Work</p>
           <p class="text currworknumber">${numbers.work}</p>
-          <input id="newwork" class="newwork" name="newwork" <g:if test='${user.work_phone}'>placeholder='${user.work_phone}'</g:if> <g:else>placeholder="new work #"</g:else> type="text" maxlength="10">
-          <button class="save2" type="submit">
-            <p>Save&nbsp;</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </button>
-        </form>
-        <form class="mobile clearfix">
+          <input id="newwork" class="newwork" name="number" <g:if test='${user.work_phone}'>placeholder='${user.work_phone}'</g:if> <g:else>placeholder="new work #"</g:else> type="text" maxlength="10">
+          <g:submitToRemote class="save2" url="[controller:'user', action:'saveWorkNumber']" update="phoneEdit" value="Save" />
+        </div>
+        </g:form>
+        <g:form>
+        <div class="mobile clearfix">
           <p class="text mobilelabel">Mobile</p>
           <p class="text currmobilenumber">${numbers.mobile}</p>
-          <input id="newmobile" class="newmobile" name="newmobile"  <g:if test='${user.mobile_phone}'>placeholder='${user.mobile_phone}'</g:if> <g:else>placeholder="new mobile #"</g:else> type="text" maxlength="10">
-          <button class="save2" type="submit">
-            <p>Save&nbsp;</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </button>
-        </form>
-        <form class="alternate clearfix">
+          <input id="newmobile" class="newmobile" name="number"  <g:if test='${user.mobile_phone}'>placeholder='${user.mobile_phone}'</g:if> <g:else>placeholder="new mobile #"</g:else> type="text" maxlength="10">
+          <g:submitToRemote class="save2" url="[controller:'user', action:'saveMobileNumber']" update="phoneEdit" value="Save" />
+        </div>
+        </g:form>
+        <g:form>
+        <div class="alternate clearfix">
           <p class="text altlabel">Alternate</p>
           <p class="text curraltnumber">${numbers.alt}</p>
-          <input id="newalternate" class="newalternate" name="newalternate" <g:if test='${user.alternate_phone}'>placeholder='${user.alternate_phone}'</g:if> <g:else>placeholder="new alternate #"</g:else> type="text" maxlength="10">
-          <button class="save2" type="submit">
-            <p>Save&nbsp;</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-          </button>
-        </form>
+          <input id="newalternate" class="newalternate" name="number" <g:if test='${user.alternate_phone}'>placeholder='${user.alternate_phone}'</g:if> <g:else>placeholder="new alternate #"</g:else> type="text" maxlength="10">
+          <g:submitToRemote class="save2" url="[controller:'user', action:'saveAlternateNumber']" update="phoneEdit" value="Save" />
+        </div>
+        </g:form>
         <button class="cancel" type="button" onclick="hidePhone()">
           <p>Cancel</p>
           <p></p>
@@ -275,7 +256,7 @@
           <p></p>
         </button>
         <p class="text addresslabel">Address</p>
-        <p class="text lessdetails">[click for details]</p>
+        <p class="text lessdetails">${address.city}, ${address.state} </p>
         <button class="edit" onclick="showAddress()">
           <p>edit</p>
           <p></p>
@@ -287,7 +268,8 @@
           <p></p>
         </button>
       </div>
-      <form id="addressEdit" class="editaddress clearfix">
+      <div id="addressEdit" class="editaddress clearfix">
+      	<g:form>
         <div class="element bar"></div>
         <p class="text addresslabel2">Mailing Address</p>
         <p class="text currentaddresslabel">Current Preferred Address:        </p>
@@ -295,8 +277,7 @@
         <p class="text currstreet">${address.address}</p>
         <p class="text newaddresslabel">Address</p>
         <input id="newaddress" class="newaddress" name="newaddress" placeholder="2515 Benvenue Ave #305" type="text">
-        <p class="text currcity">${address.city}        </p>
-        <p class="text comma">,        </p>
+        <p class="text currcity">${address.city},        </p>
         <p class="textcurrstate">${address.state}        </p>
         <p class="textzipcode">${address.zipcode}        </p>
         <p class="text newcitylabel">City</p>
@@ -309,25 +290,27 @@
           <option value="Home">Home</option>
           <option value="PO Box">PO Box</option>
         </select>
-        <button class="savechanges" type="submit">
-          <p>Save Changes</p>
-          <p></p>
-          <p></p>
-        </button>
+        <p></p>
+        <p></p>
+        <div class="element whitebar"></div>
+		
+		<g:submitToRemote class="savechanges" url="[controller:'user', action:'saveAddress']" update="addressEdit" value="Save Changes" />
         <button class="cancel" type="button" onclick="hideAddress()">
+        
           <p>Cancel</p>
           <p></p>
           <p></p>
           <p></p>
         </button>
-      </form>
+        </g:form>
+      </div>
       <div id="languageBox" class="language clearfix">
         <button class="box" onclick="showLanguage()">
           <p></p>
           <p></p>
         </button>
         <p class="text languagelabel">Language</p>
-        <p class="text currlang">English (US)</p>
+        <p class="text currlang">${language.language}</p>
         <button class="edit" onclick="showLanguage()">
           <p>edit</p>
           <p></p>
@@ -339,27 +322,25 @@
           <p></p>
         </button>
       </div>
-      <form id="languageEdit" class="editlanguage clearfix">
+      <div id="languageEdit" class="editlanguage clearfix">
+      	<g:form>
         <div class="element bar"></div>
         <p class="text languagelabel2">Language</p>
         <p class="text newlanglabel">Preferred Language</p>
         <select class="newlanguage" name="language">
-          <option value="English (US)">English (US)</option>
-          <option value="Chinese">Chinese</option>
-          <option value="Spanish">Spanish</option>
+		  <g:each in="${languages}">
+		  	<option value="${it.key}">${it.value}</option>
+		  </g:each>
         </select>
-        <button class="savechanges" type="submit">
-          <p>Save Changes</p>
-          <p></p>
-          <p></p>
-        </button>
+        <g:submitToRemote class="savechanges" url="[controller:'user', action:'saveLanguage']" update="languageEdit" value="Save Changes" />
         <button class="cancel" type="button" onclick="hideLanguage()">
           <p>Cancel</p>
           <p></p>
           <p></p>
           <p></p>
         </button>
-      </form>
+        </g:form>
+      </div>
     </div>
   </div>
 </body>
