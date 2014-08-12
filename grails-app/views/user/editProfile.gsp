@@ -82,6 +82,8 @@
 		hideAddress();
 		hideLanguage();
 	}
+
+
   </script>
 	<g:javascript library="jquery"/>
   	<g:if test='${flash.phone}'>
@@ -308,7 +310,7 @@
           <p></p>
         </button>
         <p class="text languagelabel">Language</p>
-        <p class="text currlang">English (US)</p>
+        <p class="text currlang">${language.language}</p>
         <button class="edit" onclick="showLanguage()">
           <p>edit</p>
           <p></p>
@@ -326,9 +328,9 @@
         <p class="text languagelabel2">Language</p>
         <p class="text newlanglabel">Preferred Language</p>
         <select class="newlanguage" name="language">
-          <option value="English (US)">English (US)</option>
-          <option value="Chinese">Chinese</option>
-          <option value="Spanish">Spanish</option>
+		  <g:each in="${languages}">
+		  	<option value="${it.key}">${it.value}</option>
+		  </g:each>
         </select>
         <g:submitToRemote class="savechanges" url="[controller:'user', action:'saveLanguage']" update="languageEdit" value="Save Changes" />
         <button class="cancel" type="button" onclick="hideLanguage()">

@@ -60,6 +60,7 @@ body {
   margin-left: -0.01371%;
   font-size: 1em;
   line-height: 1.8;
+  font-weight: bold;
   color: rgba(0, 0, 0, 0.79);
 }
 
@@ -689,6 +690,7 @@ body {
   margin-left: 0.05145%;
   font-size: 1em;
   line-height: 1.8;
+  font-weight: bold;
   color: rgba(0, 0, 0, 0.79);
 }
 
@@ -862,7 +864,7 @@ body {
   position: relative;
   float: left;
   z-index: 99;
-  width: 21.4022140221%;
+  width: 18.40%;
   height: 23px;
   margin: 20px 0 0 1.00975%;
   padding-left: 10px;

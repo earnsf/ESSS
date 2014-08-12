@@ -24,6 +24,7 @@ class UserController {
 	def EmailVerifService
 	def mailService
 	def ContentService
+	def RegisterService
 	
 	def homepage() {
 		log.info 'in homepage()'
@@ -71,15 +72,15 @@ class UserController {
 		def user = DataService.getUser(cur_id)
 		def numbers = DataService.getPhoneNumbers(cur_id)
 		def address = DataService.getAddress(cur_id)
-		render(view:"editProfile", model: [user: user, numbers: numbers, address: address])
-		
+		def language = DataService.getLanguage(cur_id)
+		def language_map = DataService.getAllLanguages()
+		render(view:"editProfile", model: [user: user, numbers: numbers, address: address, language: language, languages: language_map])
 	}
-	
-	
+
+
 	@Transactional
 	def saveEmail() {
 		log.info "Trying to change email to " + params.email
-		
 		if (ContentService.user_exists(params)) {
 			flash.errormessage = g.message(code: "That email exists. Please try another email.")
 		} else if (ContentService.is_invalid_email(params)) {
@@ -171,6 +172,16 @@ class UserController {
 	@Transactional
 	def saveLanguage() {
 		log.info "Trying to save address"
+		if (ContentService.is_language_available(params)) {
+			flash.successmessage = g.message(code: "Successfully saved language.")
+			/** To do : change language of portal here */
+		} else {
+			def language = Language.findById(params.language).name
+			flash.errormessage = g.message(code: "EARN Portal supported languages are " + ContentService.available_languages())
+		}
+		ContentService.change_language(params)
+		render (view: "save")
+		
 	}
 	def index(Integer max) {
 		params.max = Math.min(max ?: 10, 100)
@@ -186,30 +197,35 @@ class UserController {
 	
 	@Secured('permitAll')
 	def registerPart2() {
-		/** You want to log out before you register because the "registerFinish" page is going to
-		 * take you straight back to your home page, not let you log in*/
 		log.info "Trying to check if Logged in"
 		if (springSecurityService.isLoggedIn()) {
-			def msg = g.message(code: "You are logged in. Please log out to register.")
-			flash.message = msg
+			flash.message = g.message(code: "You are logged in. Please log out to register.")
 			redirect action: "register"
-			return
-		}
-		if (params.email == null) {
+		} else if (RegisterService.is_null(params.email)) {
 			render view: "denied"
-			return
+		} else if (!RegisterService.vistashare_user_exists(params)) {
+			flash.message = g.message(code: "Sorry, we were not able to find a user with VistaShare email: ${params.email}")
+			redirect action: 'register'
+		} else if (RegisterService.check_username_exists(params)) {
+			flash.message = g.message(code: "Login exists for this email. Please sign in.")
+			redirect action: 'auth', controller: 'login', params: [email: params.email]
+		} else if (RegisterService.check_user_locked(params)) {
+			flash.message = g.message(code: "You have exceeded the number of attempts to register. Please contact EARN.")
+			redirect action: "register"
+		} else {
+			log.info "verified email"
+			if (!registerAttempts[params.email]) {
+				registerAttempts[params.email] = 1
+			}
 		}
-		log.info "Not logged in, "
-		verify_email(params)
 		log.info "Continuing to Register Part 2"
 	}
 	
 	@Transactional
 	@Secured('permitAll')
 	def registerPart3() {
-		if (params.email == null) {
+		if (RegisterService.is_null(params.email)) {
 			render view: "denied"
-			return
 		}
 		verify_creds(params)
 		log.info "Continuing to Register Part 3"
@@ -234,39 +250,6 @@ class UserController {
 		log.info "Successfully created!"
 		render (view: "registerFinish", model: [login_email: params.email])
 	}
-	
-	@Secured('permitAll')
-	def verify_email(params) {
-		log.info "Trying to verify email"
-		def user = User.findByVistashare_email(params.email)
-		if (!user) {
-			def msg = g.message(code: "Sorry, we were not able to find a user with VistaShare email: ${params.email}")
-			flash.message = msg
-			redirect action: 'register'
-			return
-		}
-		def locked_email = user.vistashare_email + "_accountLocked"
-		def esss_user = User.findByUsername(params.email)
-		if (esss_user && esss_user.username != locked_email) {
-			def msg = g.message(code: "Login exists for this email. Please sign in.")
-			flash.message = msg
-			redirect action: 'auth', controller: 'login', params: [email: params.email]
-			return
-		}
-		if (user.accountLocked) {
-			flash.message = g.message(code: "You have exceeded the number of attempts to register. Please contact EARN.")
-			redirect action: "register"
-			return
-		}
-		if (user && user.vistashare_email != "") {
-			log.info "verified email"
-			if (!registerAttempts[params.email]) {
-				registerAttempts[params.email] = 1
-			}
-			return
-		}
-	}
-	
 	
 	@Transactional
 	@Secured('permitAll')

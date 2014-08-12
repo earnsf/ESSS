@@ -12,30 +12,27 @@
 <body class="body index clearfix">
   <div class="regpluslogin">
     <div class="registerbox clearfix">
-      <g:form action="register" controller="user">
-          <p class="text">EARN has changed systems. If this is your first time on our new system, click here to register.</p>
-          <button class="_button">Register      </button>
-        </g:form>
+      <p class="text registermessage">EARN has changed systems. If this is your first time on our new system, click here to register.</p>
+      <form action='/p1/registerPart1'>
+      	  <button class="registerbutton" type="submit">Register      </button>
+      </form>
     </div>
     <div class="loginbox clearfix">
-      <form action='${postUrl}' method='POST' class='cssform' autocomplete='off'>
-        <p class="text text-2">Login</p>
-        <div class="element"></div>
-        <g:if test='${flash.message}'>
-          <p class="text text-3 js-{flash.message}">${flash.message}</p>
-        </g:if>
-        <p class="text text-4">Email</p>
-        <input class="username" name="j_username" placeholder="YourPenny@email.com" type="email" value="${params.email}">
-        <p class="text text-5">Password</p>
-        <input class="paswword" name="j_password" placeholder="type your password" type="password">
-		<input type='hidden' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-        <button class="signin" type='submit'>Sign in      </button>
-     </form>
-        <button class="forgotpw">Forgot Password</button>
+   	  <form action='${postUrl}' method='POST' class='cssform' autocomplete='off'>
+      <p class="text loginlabel">Login</p>
+      <div class="bar"></div>
+      <g:if test='${flash.message}'>
+            <p class="text errormessage js-{flash.message}">${flash.message}</p>
+      </g:if>
+      <p class="text emaillabel">Email</p>
+      <input class="username" name="j_username" placeholder="yourpenny@email.com" type="email" value="${params.email}">
+      <p class="text passwordlabel">Password</p>
+      <input class="password" name="j_password" placeholder="type your password" type="password">
+      <input type='hidden' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+      <button class="signin">Sign in      </button>
+      <button class="forgotpw">Forgot Password      </button>
+      </form>
     </div>
   </div>
-  <br />
-  <br />
-  <br />
 </body>
 </html>

@@ -159,6 +159,28 @@ class DataService {
 		}
 		[address: address, city: city, state:state, zipcode:zipcode]	
 	}
+	
+	def getLanguage(Integer cur_id) {
+		log.info "getting language"
+		def user = getUser(cur_id)
+		def lang_id = user.household_language_id
+		def language = Language.findById(lang_id).name
+		if (!language) {
+			language = "English"
+		}
+		[language: language]
+	}
+	
+	def getAllLanguages() {
+		log.info "getting all languages"
+		def language_ids = Language.findAll().id
+		def language_map = [:]
+		for (lang_id in language_ids) {
+			language_map[lang_id] = Language.findById(lang_id).name
+		}
+		language_map = language_map.sort{it.key}
+		language_map	
+	}
 }
 
 
