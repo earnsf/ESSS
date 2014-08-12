@@ -27,6 +27,14 @@ class UserController {
 	def homepage() {
 		log.info 'in homepage()'
 		
+//		log.info 'testing email'
+//		mailService.sendMail{
+//			to "georgeqwu@gmail.com"
+//			from "georgeqwu@gmail.com"
+//			subject "hi"
+//			body "hi"
+//		}
+		
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
