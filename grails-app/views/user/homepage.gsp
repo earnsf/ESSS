@@ -55,7 +55,8 @@
         <p class="total_funds_hover_text">Available funds for withdrawl only if eligible        </p>
       </div>
       <a class="req_withdrawl_acct" href="#">Request a Withdrawl</a>
-      <a class="req_trans_acct" href="#">View Transactions</a>
+      <a class="req_trans_acct" href="${createLink(controller:'User',action:'showTransactions',params:[accountId:cur_account.id]) }">View Transactions</a>
+      
     </div>
     </g:each>
     <g:each var="cur_account" in="${closedList}">
@@ -79,4 +80,8 @@
   </div>
   <!-- <footer class="_element"></footer> -->
 </body>
+<form name="submitForm" method="POST" action="${createLink(controller: 'logout')}">
+		<input type="hidden" name="" value=""> 
+		<a HREF="javascript:document.submitForm.submit()">Logout</a>
+		</form> 
 </html>

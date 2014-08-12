@@ -56,6 +56,18 @@ class UserController {
 		
 	}
 	
+	@Secured('isFullyAuthenticated()')
+	def showTransactions() {
+		def accountId = params.accountId
+		if (!accountId) {
+			render (view:"homepage_unconfirmed")
+		} else {
+			
+			log.info('in showtransactions(), accountId = ' + accountId.toString())
+			render (view:"transactions")
+		}
+	}
+	
 	def sendConfirmEmail(String v_email) {
 		EmailVerifService.persistConfirmEmail(v_email)
 		render(view:"auth")
