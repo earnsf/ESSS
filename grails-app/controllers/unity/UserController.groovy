@@ -1,5 +1,7 @@
 package unity
 
+import javax.imageio.spi.RegisterableService;
+
 import org.apache.commons.validator.Msg;
 
 import grails.plugin.springsecurity.SpringSecurityService
@@ -16,8 +18,6 @@ class UserController {
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 	
 	static _auth = []
-	
-	static registerAttempts = [:]
 	
 	def springSecurityService
 	def DataService
@@ -204,7 +204,7 @@ class UserController {
 		} else if (RegisterService.is_null(params.email)) {
 			render view: "denied"
 		} else if (!RegisterService.vistashare_user_exists(params)) {
-			flash.message = g.message(code: "Sorry, we were not able to find a user with VistaShare email: ${params.email}")
+			flash.message = g.message(code: "Sorry, we were not able to find a user with the email: ${params.email}")
 			redirect action: 'register'
 		} else if (RegisterService.check_username_exists(params)) {
 			flash.message = g.message(code: "Login exists for this email. Please sign in.")
@@ -214,8 +214,8 @@ class UserController {
 			redirect action: "register"
 		} else {
 			log.info "verified email"
-			if (!registerAttempts[params.email]) {
-				registerAttempts[params.email] = 1
+			if (!RegisterService.numOfAttempts(params)) {
+				RegisterService.resetAttempts(params)
 			}
 		}
 		log.info "Continuing to Register Part 2"
@@ -224,10 +224,39 @@ class UserController {
 	@Transactional
 	@Secured('permitAll')
 	def registerPart3() {
-		if (RegisterService.is_null(params.email)) {
+		cache false
+		if (RegisterService.is_null(params.email) || RegisterService.check_user_locked(params)) {
 			render view: "denied"
+			return
 		}
-		verify_creds(params)
+		log.info "Trying to verify last 4 digits of SSN, full name, DOB"
+		log.info params
+		try {
+			if (RegisterService.correct_creds(params)) {
+				log.info RegisterService.numOfAttempts(params)
+				RegisterService.addAttempt(params)
+				if (RegisterService.numOfAttempts(params) > 6) { // allow 6 attempts to register
+					RegisterService.register_locked_account(params)
+				}
+				flash.message = g.message(code: "Sorry, we were not able to authenticate you due to missing or incorrect information.")
+				redirect action: 'register'
+			} else {
+				log.info "fully authenticated"
+				_auth = params
+			}
+		} catch (java.lang.IllegalArgumentException e) {
+				RegisterService.addAttempt(params)
+				if (RegisterService.numOfAttempts(params) > 6) { // allow 6 attempts to register
+					RegisterService.register_locked_account(params)
+				}
+				flash.message = g.message(code: "Sorry, we were not able to authenticate you due to missing or incorrect information.")
+				redirect action: 'register'
+				return
+		} catch (Exception e) {
+			flash.message = g.message(code: "We cannot create an account due to incomplete information for your old account. Please contact EARN.")
+			redirect action: 'register'
+			return
+		}
 		log.info "Continuing to Register Part 3"
 		
 	}
@@ -235,118 +264,19 @@ class UserController {
 	@Secured('permitAll')
 	def registerFinish() {
 		log.info "Trying to see if passwords match"
-		if (params.password != params.confirmed_password) {
-			def msg = g.message(code: "Passwords do not match.")
-			flash.message = msg
-			forward action: "registerPart3", params: _auth
-			return
-		}
-		if (params.email == null) {
+		cache false
+		if (RegisterService.is_null(params.email) || RegisterService.check_user_locked(params)) {
 			render view: "denied"
-			return
-		}
-		log.info "Passwords match!"
-		register_user(params)
-		log.info "Successfully created!"
-		render (view: "registerFinish", model: [login_email: params.email])
-	}
-	
-	@Transactional
-	@Secured('permitAll')
-	def verify_creds(params) {
-		log.info "Trying to verify last 4 digits of SSN, full name, DOB"
-		log.info params
-		def user = User.findByVistashare_email(params.email)
-		/**
-		log.info user.first_name
-		log.info params.firstname
-		log.info user.last_name
-		log.info params.lastname
-		log.info user.dob.toString()
-		log.info user.dob.toString().substring(0, 10)
-		log.info params.DOB.toString()
-		log.info user.ssn_last_four
-		log.info params.ssn
-		*/
-		cache false
-		try {
-			if (user.first_name != params.firstname || user.last_name != params.lastname ||
-				user.dob.toString().substring(0, 10) != params.DOB.toString() || user.ssn_last_four != params.ssn) {
-				def msg = g.message(code: "Sorry, we were not able to authenticate you due to missing or incorrect information.")
-				log.info registerAttempts[params.email]
-				registerAttempts[params.email] += 1
-				if (registerAttempts[params.email] > 6) { // allow 6 attempts to register
-					user.username = user.vistashare_email + "_accountLocked"
-					user.password = user.vistashare_email + "_accountLocked"
-					user.accountExpired = false
-					user.accountLocked = true
-					user.enabled = true
-					user.passwordExpired = false
-					registerAttempts[params.email] = 1 // reset in case account becomes unlocked
-					user.save(flush: true, failOnError:true)
-				}
-				flash.message = msg
-				redirect action: 'register'
-				return
-			} else {
-				log.info "fully authenticated"
-				_auth = params
-				return
-			}
-		} catch (java.lang.IllegalArgumentException e) {
-			def msg = g.message(code: "Sorry, we were not able to authenticate you due to missing or incorrect information.")
-				registerAttempts[params.email] += 1
-				if (registerAttempts[params.email] > 6) {
-					user.username = user.vistshare_email + "_accountLocked"
-					user.password = user.vistashare_email + "_accountLocked"
-					user.accountExpired = false
-					user.accountLocked = true
-					user.enabled = true
-					user.passwordExpired = false
-					registerAttempts[params.email] = 1 // reset in case account becomes unlocked
-					user.save(flush: true, failOnError:true)
-				}
-				flash.message = msg
-				redirect action: 'register'
-				return
-		} catch (Exception e) {
-			// in case the user information is null ( EARN made up some users without these params)
-			log.info e.toString()
-			def msg = g.message(code: "We cannot create an account due to incomplete information for your old account. Please contact EARN.")
-			flash.message = msg
-			redirect action: 'register'
-		}
-	}
-	
-	@Secured('permitAll')
-	@Transactional
-	def register_user(params) {
-		cache false
-		
-		def user = User.findByVistashare_email(params.email)
-		user.username = params.email
-		def locked_password = user.vistashare_email + "_accountLocked"
-		if (user.password != null || user.password == locked_password) {
-			def msg = g.message(code: "A password has already been set for this account. Please login to change it.")
-			flash.message = msg
+		} else if (RegisterService.passwords_mismatch(params)) {
+			flash.message = g.message(code: "Passwords do not match.")
+			forward action: "registerPart3", params: _auth
+		} else if (RegisterService.check_password_exists(params)) {
+			flash.message = g.message(code: "A password has already been set for this account. Please login to change it.")
 			redirect action:'auth', controller:'login', params: [email: params.email]
-			return
+		} else {
+			RegisterService.register_user(params)
+			render (view: "registerFinish", model: [login_email: params.email])
 		}
-		user.password = params.password
-		user.accountExpired = false
-		user.accountLocked = false
-		user.enabled = true
-		user.passwordExpired = false
-		user.save(flush: true, failOnError:true)
-		log.info "successfully created an account"
-		
-		log.info "creating a role for this account"
-		def adminRole = Role.findByAuthority('ROLE_ADMIN')
-		if (!user.authorities.contains(adminRole)) {
-			UserRole.create user, adminRole
-		}
-		sendConfirmEmail(user.username)
-		log.info "successfully sent confirmation email"
 	}
 	
 	def show(User userInstance) {

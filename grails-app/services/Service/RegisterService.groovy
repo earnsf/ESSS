@@ -1,8 +1,13 @@
 package Service
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+import grails.transaction.Transactional
 import unity.*
 
 class RegisterService {
-
+	
+	static registerAttempts = [:]
+	
+	def EmailVerifService
 	
 	def is_null(input) {
 		(input == null)
@@ -24,69 +29,75 @@ class RegisterService {
 		def user = User.findByVistashare_email(input.email)
 		(user.accountLocked)
 	}
-	/**
-	def verify_creds(params) {
-		log.info "Trying to verify last 4 digits of SSN, full name, DOB"
-		log.info params
-		def user = User.findByVistashare_email(params.email)
-		/**
+	
+	def correct_creds(input) {
+		
+		def user = User.findByVistashare_email(input.email)
 		log.info user.first_name
-		log.info params.firstname
+		log.info input.firstname
 		log.info user.last_name
-		log.info params.lastname
+		log.info input.lastname
 		log.info user.dob.toString()
 		log.info user.dob.toString().substring(0, 10)
-		log.info params.DOB.toString()
+		log.info input.DOB.toString()
 		log.info user.ssn_last_four
-		log.info params.ssn
-		cache false
-		try {
-			if (user.first_name != params.firstname || user.last_name != params.lastname ||
-				user.dob.toString().substring(0, 10) != params.DOB.toString() || user.ssn_last_four != params.ssn) {
-				def msg = g.message(code: "Sorry, we were not able to authenticate you due to missing or incorrect information.")
-				log.info registerAttempts[params.email]
-				registerAttempts[params.email] += 1
-				if (registerAttempts[params.email] > 6) { // allow 6 attempts to register
-					user.username = user.vistashare_email + "_accountLocked"
-					user.password = user.vistashare_email + "_accountLocked"
-					user.accountExpired = false
-					user.accountLocked = true
-					user.enabled = true
-					user.passwordExpired = false
-					registerAttempts[params.email] = 1 // reset in case account becomes unlocked
-					user.save(flush: true, failOnError:true)
-				}
-				flash.message = msg
-				redirect action: 'register'
-				return
-			} else {
-				log.info "fully authenticated"
-				_auth = params
-				return
-			}
-		} catch (java.lang.IllegalArgumentException e) {
-			def msg = g.message(code: "Sorry, we were not able to authenticate you due to missing or incorrect information.")
-				registerAttempts[params.email] += 1
-				if (registerAttempts[params.email] > 6) {
-					user.username = user.vistshare_email + "_accountLocked"
-					user.password = user.vistashare_email + "_accountLocked"
-					user.accountExpired = false
-					user.accountLocked = true
-					user.enabled = true
-					user.passwordExpired = false
-					registerAttempts[params.email] = 1 // reset in case account becomes unlocked
-					user.save(flush: true, failOnError:true)
-				}
-				flash.message = msg
-				redirect action: 'register'
-				return
-		} catch (Exception e) {
-			// in case the user information is null ( EARN made up some users without these params)
-			log.info e.toString()
-			def msg = g.message(code: "We cannot create an account due to incomplete information for your old account. Please contact EARN.")
-			flash.message = msg
-			redirect action: 'register'
-		}
+		log.info input.ssn
+		(user.first_name != input.firstname || user.last_name != input.lastname ||
+		user.dob.toString().substring(0, 10) != input.DOB.toString() || user.ssn_last_four != input.ssn)
 	}
-*/
+	
+	@Transactional
+	def register_locked_account(input) {
+		def user = User.findByVistashare_email(input.email)
+		user.username = user.vistashare_email + "_accountLocked"
+		user.password = user.vistashare_email + "_accountLocked"
+		user.accountExpired = false
+		user.accountLocked = true
+		user.enabled = true
+		user.passwordExpired = false
+		resetAttempts(input) // reset in case account becomes unlocked
+		user.save(flush: true, failOnError:true)
+	}
+	
+	def resetAttempts(input) {
+		registerAttempts[input.email] = 1
+	}
+	
+	def numOfAttempts(input) {
+		(registerAttempts[input.email])
+	}
+	
+	def addAttempt(input) {
+		registerAttempts[input.email] += 1
+	}
+	
+	def passwords_mismatch(input) {
+		(input.password != input.confirmed_password)
+	}
+	
+	def check_password_exists(input) {
+		def user = User.findByVistashare_email(input.email)
+		def locked_password = user.vistashare_email + "_accountLocked"
+		(user.password != null && user.password != locked_password)
+	}
+	
+	@Transactional
+	def register_user(input) {
+		def user = User.findByVistashare_email(input.email)
+		user.username = input.email
+		user.password = input.password
+		user.accountExpired = false
+		user.accountLocked = false
+		user.enabled = true
+		user.passwordExpired = false
+		user.save(flush: true, failOnError:true)
+		log.info "successfully created an account"
+		log.info "creating a role for this account"
+		def adminRole = Role.findByAuthority('ROLE_ADMIN')
+		if (!user.authorities.contains(adminRole)) {
+			UserRole.create user, adminRole
+		}
+		EmailVerifService.persistConfirmEmail(user.username)
+		log.info "successfully sent confirmation email"
+	}
 }

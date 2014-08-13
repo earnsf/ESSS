@@ -1,0 +1,201 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.938em/1.38 'Open Sans';
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.bar {
+  position: absolute;
+  top: 64px;
+  left: 4.1499310661%;
+  z-index: 1;
+  width: 91.605839416%;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  background-color: rgba(0, 0, 0, 0.68);
+}
+
+.confirmpasswordinput {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 7;
+  width: 24.2647058823%;
+  height: 28px;
+  margin: 23px 0 0 8.85007%;
+  padding: 0 10px;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 3px;
+  background-color: rgb(251, 249, 249);
+  font-size: 0.933em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.confirmpasswordinput:active,
+.confirmpasswordinput:hover,
+.passwordinput:active,
+.passwordinput:hover {
+  border-color: rgb(204, 204, 204);
+}
+
+.confirmpasswordinput:focus {
+  border-color: rgb(204, 204, 204);
+  background-color: rgb(255, 255, 255);
+}
+
+.confirmpasswordlabel {
+  position: relative;
+  clear: both;
+  z-index: 8;
+  width: 27.8382352941%;
+  min-height: 34px;
+  margin: 23px 0 0 16.14993%;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.container {
+  float: left;
+  width: 100%;
+  height: 636px;
+}
+
+.curremail {
+  position: relative;
+  z-index: 9;
+  min-height: 34px;
+  margin: 19px 0 0 12.61765%;
+  font-size: 1em;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.curremail:hover + .pleaseverify {
+	display:block;
+}
+
+.emaillabel {
+  position: relative;
+  clear: both;
+  z-index: 3;
+  width: 24.6323529411%;
+  min-height: 34px;
+  margin: 19px 0 0 16.14775%;
+  font-size: 1.067em;
+  font-weight: 600;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.errormessage {
+  clear: both;
+  width: 80.1470588235%;
+  min-height: 21px;
+  margin: 9px 0 0 9.375%;
+  font-size: 0.933em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgba(255, 9, 9, 0.72);
+}
+
+.passwordinput {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 5;
+  width: 24.2647058823%;
+  height: 28px;
+  margin: 20px 0 0 8.84938%;
+  padding: 0 10px;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 3px;
+  background-color: rgb(251, 249, 249);
+  font-size: 0.933em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.passwordinput:focus {
+  border-color: rgb(204, 204, 204);
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.passwordlabel {
+  position: relative;
+  clear: both;
+  z-index: 6;
+  width: 27.8382352941%;
+  min-height: 34px;
+  margin: 20px 0 0 16.14775%;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.pleaseverify {
+  display: none;
+  clear: both;
+  width: 53.7352941176%;
+  min-height: 21px;
+  margin-left: 43.5906499999%;
+  font-size: 0.867em;
+  font-weight: 300;
+  line-height: 1.38;
+  color: rgba(255, 9, 9, 0.89);
+}
+
+
+.registerbox {
+  position: relative;
+  float: left;
+  width: 56.875%;
+  height: 370px;
+  margin: 70px 0 0 21.14421%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 6px;
+  background-color: rgb(230, 230, 230);
+}
+
+.registerbutton {
+  display: block;
+  float: left;
+  clear: both;
+  width: 21.1397058823%;
+  height: 35px;
+  margin: 31px 0 0 38.73794%;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1.133em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.registerbutton:hover {
+  background-color: rgb(76, 172, 104);
+}
+
+.text {
+  float: left;
+}
+
+.welcomeback {
+  position: relative;
+  z-index: 0;
+  width: 89.423076923%;
+  min-height: 47px;
+  margin: 28px 0 0 6.32468%;
+  font-size: 1.333em;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
