@@ -97,6 +97,48 @@ class DataService {
 		
 	}
 	
+	//validates that current user owns this account, so that we can display their transactions
+	//	prevents someone from trying to see transactions that aren't theirs
+	def validateUser(account_id) {
+		def cur_id = springSecurityService.currentUser.id
+		log.info('validating user with id ' + cur_id.toString() + ' with account_id ' + account_id.toString())
+		def cur_acc = Account.findById(account_id)
+		if (cur_acc) {
+			log.info 'inside block'
+			log.info cur_acc.earnUserId.toString()
+			log.info cur_id.toString()
+			if (cur_acc.earnUserId == cur_id) {
+				log.info 'user successfully validated'
+				return true
+			}
+		}
+		log.info 'user not validated'
+		return false
+	}
+	
+	//get name and external account number associated with account
+	def getAccountDetails(Integer account_id) {
+		def cur_acc = Account.findById(account_id) 
+		def name = ''
+		if (cur_acc.childEarnUserId != null) {
+			def c_user = User.findById(cur_acc.childEarnUserId)
+			name = c_user.first_name + ' ' + c_user.last_name
+		} else {
+			def c_user = User.findById(cur_acc.earnUserId)
+			name = c_user.first_name + ' ' + c_user.last_name
+		}
+		return [name, cur_acc.externalAccountId]
+	}
+	
+	def getTransactions(Integer account_id) {
+		def transList = Transaction.findAllByEarnAccountId(account_id)
+		for (t in transList) {
+			t.transactionDateString = parseDate(t.transactionDate.toString())
+		}
+		log.info('found ' + transList.size() + ' transactions for account: ' + account_id.toString())
+		return transList
+	}
+	
 	def getPhoneNumbers(Integer cur_id) {
 		log.info "getting phone numbers"
 		def user = getUser(cur_id)

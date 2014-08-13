@@ -29,6 +29,14 @@ class UserController {
 	def homepage() {
 		log.info 'in homepage()'
 		
+//		log.info 'testing email'
+//		mailService.sendMail{
+//			to "georgeqwu@gmail.com"
+//			from "georgeqwu@gmail.com"
+//			subject "hi"
+//			body "hi"
+//		}
+		
 		if (springSecurityService.isLoggedIn()) {
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
@@ -46,6 +54,24 @@ class UserController {
 			log.info 'not logged in'
 		}
 		
+	}
+	
+	@Secured('isFullyAuthenticated()')
+	def showTransactions() {
+		def accountId = params.accountId
+		if (!accountId) {
+			render (view:"homepage_unconfirmed")
+		} else {
+			def valBoolean = DataService.validateUser(accountId)
+			def acctDetails = DataService.getAccountDetails(accountId.toInteger())
+			log.info('in showtransactions(), accountId = ' + accountId.toString())
+			if (valBoolean == false) {
+				render (view:'homepage_unconfirmed')
+				return
+			}
+			def transList = DataService.getTransactions(accountId.toInteger())
+			render (view:"transactions", model: [name:acctDetails[0], acctNum:acctDetails[1], transList:transList])
+		}
 	}
 	
 	def sendConfirmEmail(String v_email) {
