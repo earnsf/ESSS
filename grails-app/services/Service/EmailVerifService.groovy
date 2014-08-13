@@ -41,13 +41,14 @@ class EmailVerifService {
 //		def date2 = new Date()
 //		log.info((date1.before(date2)).toString())
 //		log.info((date1.after(date2)).toString())
-		
+	/**	
 		mailService.sendMail {
 			to "georgeqwu@gmail.com"
 			from "earn.support@earn.org"
 			subject "Confirm Your Email!"
 			body "Follow this link: " + link
 		}
+		*/
 	}
 	
 	def verifyEmailCode(String code) {

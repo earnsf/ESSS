@@ -25,6 +25,7 @@ class UserController {
 	def mailService
 	def ContentService
 	def RegisterService
+	def cookieService
 	
 	def homepage() {
 		log.info 'in homepage()'
@@ -218,7 +219,6 @@ class UserController {
 	@Secured('permitAll')
 	def register(User userInstance) {
 		log.info "Trying to register"
-	
 	}
 	
 	@Secured('permitAll')
@@ -251,6 +251,11 @@ class UserController {
 	@Secured('permitAll')
 	def registerPart3() {
 		cache false
+		if (springSecurityService.isLoggedIn()) {
+			flash.message = g.message(code: "You are logged in. Please log out to register.")
+			redirect action: "register"
+			return
+		}
 		if (RegisterService.is_null(params.email) || RegisterService.check_user_locked(params)) {
 			render view: "denied"
 			return
@@ -291,6 +296,11 @@ class UserController {
 	def registerFinish() {
 		log.info "Trying to see if passwords match"
 		cache false
+		if (springSecurityService.isLoggedIn()) {
+			flash.message = g.message(code: "You are logged in. Please log out to register.")
+			redirect action: "register"
+			return
+		}
 		if (RegisterService.is_null(params.email) || RegisterService.check_user_locked(params)) {
 			render view: "denied"
 		} else if (RegisterService.passwords_mismatch(params)) {

@@ -11,26 +11,36 @@
 </head>
 <body class="body index clearfix">
   <div class="regpluslogin">
+  <li><a href="?lang=es">español</a></li>
+  <li><a href="?lang=en">English</a></li>
     <div class="registerbox clearfix">
-      <p class="text registermessage">EARN has changed systems. If this is your first time on our new system, click here to register.</p>
-      <form action='/p1/registerPart1'>
-      	  <button class="registerbutton" type="submit">Register      </button>
-      </form>
+      <p class="text registermessage"><g:message code="register.warning"/></p>
+      <g:if test='${lang}'>
+	      <form action='/p1/registerPart1' method='get'>
+	      	  <input type="hidden" name="lang" value='${lang}'/>
+	      	  <button class="registerbutton" type="submit"><g:message code="register.button"/>      </button>
+	      </form>
+      </g:if>
+       <g:else>
+	      <form action='/p1/registerPart1?lang=en'>
+	      	  <button class="registerbutton" type="submit"><g:message code="register.button"/>      </button>
+	      </form>
+      </g:else>
     </div>
     <div class="loginbox clearfix">
    	  <form action='${postUrl}' method='POST' class='cssform' autocomplete='off'>
-      <p class="text loginlabel">Login</p>
+      <p class="text loginlabel"><g:message code="login.label"/></p>
       <div class="bar"></div>
       <g:if test='${flash.message}'>
             <p class="text errormessage js-{flash.message}">${flash.message}</p>
       </g:if>
-      <p class="text emaillabel">Email</p>
+      <p class="text emaillabel"><g:message code="login.email.label"/></p>
       <input class="username" name="j_username" placeholder="yourpenny@email.com" type="email" value="${params.email}">
-      <p class="text passwordlabel">Password</p>
+      <p class="text passwordlabel"><g:message code="login.password.label"/></p>
       <input class="password" name="j_password" placeholder="type your password" type="password">
       <input type='hidden' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-      <button class="signin">Sign in      </button>
-      <button class="forgotpw">Forgot Password      </button>
+      <button class="signin"><g:message code="login.signin.button"/>      </button>
+      <button class="forgotpw"><g:message code="login.forgotpassword.button"/>      </button>
       </form>
     </div>
   </div>
