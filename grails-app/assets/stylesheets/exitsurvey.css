@@ -1,0 +1,299 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.813em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.accountknowledge {
+  display: block;
+  float: left;
+  width: 41.2119818317%;
+  height: 22px;
+  margin-left: 5.1514977289%;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.accountknowledge:hover,
+.ageinput:hover,
+.expectations:hover,
+.freqeducation:hover,
+.freqmoney:hover,
+.grades:hover {
+  background-color: rgb(173, 255, 196);
+}
+
+.agebox {
+  float: left;
+  clear: both;
+  width: 21.5625%;
+  height: 22px;
+  margin: 15px 0 0 6.55111%;
+}
+
+.agebox .childnamelabel {
+  width: 24.1545893719%;
+  margin-left: 8.18992%;
+}
+
+.ageinput {
+  display: block;
+  float: left;
+  width: 22.2222222222%;
+  height: 22px;
+  margin-left: 7.7663043478%;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.ageinput:active {
+  background-color: rgb(255, 255, 255);
+}
+
+.ageinput:focus {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.childnamelabel {
+  min-height: 20px;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.expectations {
+  display: block;
+  float: left;
+  width: 72.6907630522%;
+  height: 22px;
+  margin-left: 1.5248493975%;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.freqeducation {
+  display: block;
+  float: left;
+  width: 51.5149772897%;
+  height: 22px;
+  margin-left: 5.1514977289%;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.freqmoney {
+  display: block;
+  float: left;
+  width: 60.7140803771%;
+  height: 22px;
+  margin-left: 5.0825044558%;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.grades {
+  display: block;
+  float: left;
+  width: 64.25%;
+  height: 22px;
+  margin-left: 2%;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.next {
+  display: block;
+  float: left;
+  width: 11.3541666666%;
+  height: 32px;
+  margin: 100px 0 0 11.357421875%;
+  border-radius: 4px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1.385em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.next:hover {
+  background-color: rgb(46, 146, 75);
+}
+
+.page1 {
+  float: left;
+  width: 100%;
+  height: 1107px;
+}
+
+.pleaseanswer {
+  width: 91.9791666666%;
+  min-height: 73px;
+  margin: 22px 0 0 4.16016%;
+  border: 2px solid rgb(59, 184, 94);
+  font-size: 1.154em;
+  line-height: 1.38;
+  text-align: center;
+}
+
+.q1 {
+  clear: both;
+  min-height: 21px;
+  margin: 31px 0 0 4.0625%;
+  font-size: 1.077em;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.q2lilbox .text {
+  width: 24.1545893719%;
+  margin-left: 8.1641999999%;
+}
+
+.q4lilbox {
+  float: left;
+  clear: both;
+  width: 51.875%;
+  height: 22px;
+  margin: 15px 0 0 5.72917%;
+}
+
+.q4lilbox .text {
+  width: 13.6546184738%;
+  margin-left: 4.61847%;
+}
+
+.q6 {
+  clear: both;
+  min-height: 21px;
+  margin: 50px 0 0 4.16015625%;
+  font-size: 1.077em;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.q5lilbox,
+.q6lilbox {
+  float: left;
+  clear: both;
+  width: 41.6666666666%;
+  height: 22px;
+  margin: 15px 0 0 5.72917%;
+}
+
+.q5lilbox .text,
+.q6lilbox .text {
+  width: 17%;
+  margin-left: 5.75%;
+}
+
+.q2,
+.q3,
+.q4,
+.q5,
+.q7 {
+  clear: both;
+  min-height: 21px;
+  margin: 50px 0 0 4.0625%;
+  font-size: 1.077em;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.q2lilbox,
+.q3lilbox,
+.q7lilbox {
+  float: left;
+  clear: both;
+  width: 28.3089192708%;
+  height: 22px;
+  margin: 15px 0 0 5.75033%;
+}
+
+.q3lilbox .text,
+.q7lilbox .text {
+  width: 24.1545893719%;
+  margin-left: 8.1527051112%;
+}
+
+.text {
+  float: left;
+  color: rgb(0, 0, 0);
+}
+
+.text-1 p {
+  margin-bottom: 1em;
+}
+
+.yearsold {
+  width: 33.3333333333%;
+  min-height: 22px;
+  margin-left: 4.3260869565%;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.youwillbewithdr {
+  clear: both;
+  min-height: 23px;
+  margin: 28px 0 0 17.49349%;
+  font-size: 1.154em;
+  line-height: 1.38;
+  text-align: center;
+}

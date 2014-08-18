@@ -11,6 +11,7 @@ body {
   height: 131px;
   margin-top: 33px;
   border: 1px dashed rgb(204, 204, 204);
+  border: 2px solid rgb(255, 0, 0);
   border-radius: 10px;
   background-color: rgb(230, 230, 230);
 }
@@ -45,7 +46,6 @@ body {
   width: 83.7751855779%;
   min-height: 47px;
   margin: 18px 0 0 4.98077%;
-  border: 2px solid rgb(255, 0, 0);
   font-size: 1em;
   color: rgb(0, 0, 0);
 }
