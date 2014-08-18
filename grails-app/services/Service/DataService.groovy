@@ -206,8 +206,10 @@ class DataService {
 		log.info "getting language"
 		def user = getUser(cur_id)
 		def lang_id = user.household_language_id
-		def language = Language.findById(lang_id).name
-		if (!language) {
+		def language
+		try {
+			 language = Language.findById(lang_id).name
+		} catch (Exception e) {
 			language = "English"
 		}
 		[language: language]

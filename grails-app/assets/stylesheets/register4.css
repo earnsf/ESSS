@@ -1,0 +1,74 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 'Open Sans';
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.bar {
+  position: absolute;
+  top: 82px;
+  left: 4.1499310661%;
+  z-index: 1;
+  width: 91.605839416%;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  background-color: rgba(0, 0, 0, 0.68);
+}
+
+.congrats {
+  width: 89.423076923%;
+  min-height: 47px;
+  margin: 21px 0 0 6.32468%;
+  font-size: 1.25em;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.container {
+  float: left;
+  width: 100%;
+  height: 636px;
+}
+
+.finish {
+  display: block;
+  float: left;
+  clear: both;
+  width: 21.1397058823%;
+  height: 35px;
+  margin: 54px 0 0 40.14821%;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1.063em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.finish:hover {
+  background-color: rgb(76, 172, 104);
+}
+
+.redirect {
+  clear: both;
+  width: 83.0882352941%;
+  min-height: 21px;
+  margin: 42px 0 0 9.01023%;
+  font-size: 1em;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.registerbox {
+  position: relative;
+  float: left;
+  width: 56.875%;
+  height: 268px;
+  margin: 70px 0 0 21.14583%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 6px;
+  background-color: rgb(230, 230, 230);
+}
+
+.text {
+  float: left;
+  line-height: 1.38;
+}

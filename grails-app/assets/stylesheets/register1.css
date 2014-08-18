@@ -1,0 +1,153 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1.25em/1.38 'Open Sans';
+  color: rgb(0, 0, 0);
+}
+
+.bar {
+  position: absolute;
+  top: 64px;
+  left: 4.1499310661%;
+  z-index: 1;
+  width: 91.605839416%;
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  background-color: rgba(0, 0, 0, 0.68);
+}
+
+.contact {
+  position: absolute;
+  top: 225px;
+  left: 71.3235294117%;
+  z-index: 7;
+  width: 28.8602941176%;
+  min-height: 26px;
+  font-size: 0.75em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  float: left;
+  width: 100%;
+  height: 636px;
+  margin-top: 1px;
+}
+
+.emailinput {
+  display: block;
+  position: relative;
+  float: left;
+  z-index: 2;
+  width: 41.544117647%;
+  height: 28px;
+  margin-top: 17px;
+  padding: 0 10px;
+  border: 1px solid rgb(128, 128, 128);
+  border-radius: 3px;
+  background-color: rgb(251, 249, 249);
+  font-size: 0.7em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.emailinput:active,
+.emailinput:hover {
+  border-color: rgb(204, 204, 204);
+}
+
+.emailinput:focus {
+  border-color: rgb(204, 204, 204);
+  background-color: rgb(255, 255, 255);
+}
+
+.emaillabel {
+  position: relative;
+  clear: both;
+  z-index: 4;
+  width: 15.8088235294%;
+  min-height: 34px;
+  margin: 17px 0 0 17.61834%;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 2;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.errormessage {
+  clear: both;
+  width: 80%;
+  min-height: 21px;
+  margin: 9px 0 0 9.375%;
+  font-size: 0.70em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(255, 0, 0);
+}
+
+.forgotemail {
+  position: absolute;
+  top: 206px;
+  left: 71.3235294117%;
+  z-index: 6;
+  width: 27.2058823529%;
+  min-height: 19px;
+  font-size: 0.55em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.forgotemail:hover {
+  color: rgb(255, 41, 41);
+}
+
+.registerbox {
+  position: relative;
+  float: left;
+  width: 56.875%;
+  height: 258px;
+  margin: 70px 0 0 21.14421%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 6px;
+  background-color: rgb(230, 230, 230);
+}
+
+.registerbutton {
+  display: block;
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 5;
+  width: 21.4852941176%;
+  height: 32px;
+  margin: 20px 0 0 40.14821%;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 0.82em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.registerbutton:hover {
+  background-color: rgb(76, 172, 104);
+}
+
+.registerlabel {
+  position: relative;
+  z-index: 0;
+  width: 89.423076923%;
+  min-height: 47px;
+  margin: 28px 0 0 6.32468%;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.38;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.text {
+  float: left;
+}

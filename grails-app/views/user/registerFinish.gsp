@@ -1,111 +1,48 @@
 <html>
 <head>
-	<meta name='layout' content='main'/>
-	<title><g:message code="springSecurity.login.title"/></title>
-	<style type='text/css' media='screen'>
-	#login {
-		margin: 15px 0px;
-		padding: 0px;
-		text-align: center;
-	}
-
-	#login .inner {
-		width: 340px;
-		padding-bottom: 6px;
-		margin: 60px auto;
-		text-align: left;
-		border: 1px solid #aab;
-		background-color: #f0f0fa;
-		-moz-box-shadow: 2px 2px 2px #eee;
-		-webkit-box-shadow: 2px 2px 2px #eee;
-		-khtml-box-shadow: 2px 2px 2px #eee;
-		box-shadow: 2px 2px 2px #eee;
-	}
-
-	#login .inner .fheader {
-		padding: 18px 26px 14px 26px;
-		background-color: #f7f7ff;
-		margin: 0px 0 14px 0;
-		color: #2e3741;
-		font-size: 18px;
-		font-weight: bold;
-	}
-
-	#login .inner .cssform p {
-		clear: left;
-		margin: 0;
-		padding: 4px 0 3px 0;
-		padding-left: 105px;
-		margin-bottom: 20px;
-		height: 1%;
-	}
-
-	#login .inner .cssform input[type='text'] {
-		width: 120px;
-	}
-
-	#login .inner .cssform label {
-		font-weight: bold;
-		float: left;
-		text-align: right;
-		margin-left: -105px;
-		width: 110px;
-		padding-top: 3px;
-		padding-right: 10px;
-	}
-
-	#login #remember_me_holder {
-		padding-left: 120px;
-	}
-
-	#login #submit {
-		margin-left: 15px;
-	}
-
-	#login #remember_me_holder label {
-		float: none;
-		margin-left: 0;
-		text-align: left;
-		width: 200px
-	}
-
-	#login .inner .login_message {
-		padding: 6px 25px 20px 25px;
-		color: #c33;
-	}
-
-	#login .inner .text_ {
-		width: 120px;
-	}
-
-	#login .inner .chk {
-		height: 12px;
-	}
-	</style>
+  <meta charset="utf-8">
+  <meta name="layout" content="main">
+  <title>register4</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400,inherit" rel="stylesheet" type="text/css">
+  <meta http-equiv="refresh" content="15;url=/" />
+  <asset:stylesheet src="standardize.css"/>
+  <asset:stylesheet src="register4-grid.css"/>
+  <asset:stylesheet src="register4.css"/>
+  <script type="text/javascript">
+	  window.onload=function(){ 
+		    window.setTimeout(document.finish.submit.bind(document.finish), 15000);
+		};
+	  var count = 15;
+	  var counter=setInterval(timer, 1000);
+	  function timer()
+	  {
+	    count=count-1;
+	    if (count <= 0)
+	    {
+	       clearInterval(counter);
+	       return;
+	    }
+	    document.getElementById("timer").innerHTML=count
+	  }
+  </script>
 </head>
-
-<body>
-<div id='login'>
-	<div class='inner'>
-		<div class='fheader'><g:message code="Congratulations! Welcome back!"/><br></div>
-			<g:form controller="login" action="auth" method='POST' class='cssform' autocomplete='off'>
-			<p>
-				<label for='Ready'><g:message code="Ready to Login?"/>:</label>
-				<input type='hidden' name='email' class='text' value='${login_email}'/>
-			</p>
-			<p>
-				<input type='submit' id="submit" value='Login'/>
-			</p>
-		</g:form>
-			
-	</div>
-</div>
-<script type='text/javascript'>
-	<!--
-	(function() {
-		document.forms['loginForm'].elements['j_username'].focus();
-	})();
-	// -->
-</script>
+<body class="body register4 clearfix">
+  <div class="container registerpage">
+    <div class="registerbox clearfix">
+      <p class="text congrats">Congratulations. You have been successfully registered!</p>
+      <div class="bar"></div>
+      <p class="text redirect">You will be redirected to the Login page in <span id="timer">15</span> seconds. &nbsp; Click "Finish" to do so immediately.</p>
+      <g:form controller="login" action="auth" method='POST' class='cssform' autocomplete='off' name="finish">
+	      <input type='hidden' name='email' class='text' value='${login_email}'/>
+	      <button class="finish">
+	        <p>Finish</p>
+	        <p></p>
+	        <p></p>
+	        <p></p>
+	        <p></p>
+	      </button>
+      </g:form>
+    </div>
+  </div>
 </body>
 </html>

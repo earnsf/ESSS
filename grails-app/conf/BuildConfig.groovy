@@ -57,6 +57,9 @@ grails.project.dependency.resolution = {
 
     plugins {
 		
+		// compile cookie plugin
+		compile ":cookie:0.51"
+		
 		// compile ":webxml:1.4.1"
 		
         // plugins for the build system only

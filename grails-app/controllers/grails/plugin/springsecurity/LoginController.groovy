@@ -60,7 +60,6 @@ class LoginController {
 	def auth() {
 		
 		log.info "inside auth() of LoginController"
-		
 		def config = SpringSecurityUtils.securityConfig
 
 		if (springSecurityService.isLoggedIn()) {
@@ -69,9 +68,9 @@ class LoginController {
 		}
 		String view = 'auth'
 		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
-
 		render view: view, model: [postUrl: postUrl,
-		                           rememberMeParameter: config.rememberMe.parameter]
+		                           rememberMeParameter: config.rememberMe.parameter,
+								   lang: session["org.springframework.web.servlet.i18n.SessionLocaleResolver.LOCALE"]]
 	}
 
 	/**
