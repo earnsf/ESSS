@@ -19,7 +19,7 @@
     <div class="agebox clearfix">
       <p class="text childnamelabel">Apple :&nbsp;      </p>
       <select class="ageinput" name="child_age">
-        <option value="----">----</option>
+        <option value="----" disabled selected>--</option>
         <option value="10">10</option>
         <option value="11">11</option>
         <option value="12">12</option>
@@ -39,7 +39,7 @@
     <div class="q2lilbox clearfix">
       <p class="text childnamelabel">Apple &nbsp;:</p>
       <select class="freqmoney" name="frequency_talk_about_money">
-        <option value="Select answer">Select answer</option>
+        <option value="Select answer" disabled selected>Select answer</option>
         <option value="Almost every day.">Almost every day.</option>
         <option value="At least once a week.">At least once a week.</option>
         <option value="At least once a month.">At least once a month.</option>
@@ -51,7 +51,7 @@
     <div class="q3lilbox clearfix">
       <p class="text childnamelabel">Apple &nbsp;:</p>
       <select class="freqeducation" name="frequency_talk_about_education">
-        <option value="Select answer">Select answer</option>
+        <option value="Select answer" disabled selected>Select answer</option>
         <option value="Less than an hour">Less than an hour</option>
         <option value="1 or 2 hours">1 or 2 hours</option>
         <option value="3 or more hours">3 or more hours</option>
@@ -61,7 +61,7 @@
     <div class="q4lilbox clearfix">
       <p class="text childnamelabel">Apple &nbsp;:</p>
       <select class="expectations" name="child_educational_expectations">
-        <option value="Select answer">Select answer</option>
+        <option value="Select answer" disabled selected>Select answer</option>
         <option value="Leave high school prior to graduation with a GED.">Leave high school prior to graduation with a GED.</option>
         <option value="Graduate from high school or get a GED.">Graduate from high school or get a GED.</option>
         <option value="Attend some college.">Attend some college.</option>
@@ -74,7 +74,7 @@
     <div class="q5lilbox clearfix">
       <p class="text childnamelabel">Apple &nbsp;:</p>
       <select class="grades" name="child_grades_math">
-        <option value="Select answer">Select answer</option>
+        <option value="Select answer" disabled selected>Select answer</option>
         <option value="A+, A, or A-">A+, A, or A-</option>
         <option value="B+, B, or B-">B+, B, or B-</option>
         <option value="C+, C, or C-">C+, C, or C-</option>
@@ -87,7 +87,7 @@
     <div class="q6lilbox clearfix">
       <p class="text childnamelabel">Apple &nbsp;:</p>
       <select class="grades" name="child_grades_reading_writing">
-        <option value="Select answer">Select answer</option>
+        <option value="Select answer" disabled selected>Select answer</option>
         <option value="A+, A, or A-">A+, A, or A-</option>
         <option value="B+, B, or B-">B+, B, or B-</option>
         <option value="C+, C, or C-">C+, C, or C-</option>
@@ -100,7 +100,7 @@
     <div class="q7lilbox clearfix">
       <p class="text childnamelabel">Apple &nbsp;:</p>
       <select class="accountknowledge" name="child_account_knowledge">
-        <option value="Select answer">Select answer</option>
+        <option value="Select answer" disabled selected>Select answer</option>
         <option value="Yes">Yes</option>
         <option value="No">No</option>
       </select>

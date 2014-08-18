@@ -7,9 +7,9 @@ body {
 .accountknowledge {
   display: block;
   float: left;
-  width: 41.2119818317%;
+  width: 43.7877306962%;
   height: 22px;
-  margin-left: 5.1514977289%;
+  margin-left: 5.1515%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -82,10 +82,13 @@ body {
 
 .expectations {
   display: block;
+  position: relative;
   float: left;
-  width: 72.6907630522%;
+  clear: both;
+  z-index: 17;
+  width: 76.7097966728%;
   height: 22px;
-  margin-left: 1.5248493975%;
+  margin: -20px 0 0 16.8207%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -102,9 +105,8 @@ body {
 .freqeducation {
   display: block;
   float: left;
-  width: 51.5149772897%;
+  width: 57.4024032656%;
   height: 22px;
-  margin-left: 5.1514977289%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -121,9 +123,9 @@ body {
 .freqmoney {
   display: block;
   float: left;
-  width: 60.7140803771%;
+  width: 56.5445026178%;
   height: 22px;
-  margin-left: 5.0825044558%;
+  margin-left: 1.4797499999%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -140,9 +142,8 @@ body {
 .grades {
   display: block;
   float: left;
-  width: 64.25%;
+  width: 71%;
   height: 22px;
-  margin-left: 2%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -161,7 +162,7 @@ body {
   float: left;
   width: 11.3541666666%;
   height: 32px;
-  margin: 100px 0 0 11.357421875%;
+  margin: 100px 0 0 11.35417%;
   border-radius: 4px;
   background-color: rgb(59, 184, 94);
   font-size: 1.385em;
@@ -178,7 +179,7 @@ body {
 .page1 {
   float: left;
   width: 100%;
-  height: 1107px;
+  height: 1281px;
 }
 
 .pleaseanswer {
@@ -200,28 +201,52 @@ body {
   line-height: 1.38;
 }
 
+.q2lilbox {
+  float: left;
+  clear: both;
+  width: 33.6458333333%;
+  height: 22px;
+  margin: 15px 0 0 7.60417%;
+}
+
 .q2lilbox .text {
+  width: 18.3982061748%;
+  margin-left: 2.69943%;
+}
+
+.q3 {
+  clear: both;
+  min-height: 21px;
+  margin: 49px 0 0 4.0625%;
+  font-size: 1.077em;
+  font-weight: 600;
+  line-height: 1.38;
+}
+
+.q3lilbox .text {
   width: 24.1545893719%;
-  margin-left: 8.1641999999%;
+  margin-left: 9.21635%;
 }
 
 .q4lilbox {
   float: left;
   clear: both;
-  width: 51.875%;
+  width: 56.3541666666%;
   height: 22px;
-  margin: 15px 0 0 5.72917%;
+  margin: 15px 0 0 5.7291666666%;
 }
 
 .q4lilbox .text {
+  position: relative;
+  z-index: 16;
   width: 13.6546184738%;
-  margin-left: 4.61847%;
+  margin-left: 4.6153%;
 }
 
 .q6 {
   clear: both;
   min-height: 21px;
-  margin: 50px 0 0 4.16015625%;
+  margin: 50px 0 0 4.16016%;
   font-size: 1.077em;
   font-weight: 600;
   line-height: 1.38;
@@ -233,7 +258,7 @@ body {
   clear: both;
   width: 41.6666666666%;
   height: 22px;
-  margin: 15px 0 0 5.72917%;
+  margin: 15px 0 0 5.7291666666%;
 }
 
 .q5lilbox .text,
@@ -243,7 +268,6 @@ body {
 }
 
 .q2,
-.q3,
 .q4,
 .q5,
 .q7 {
@@ -255,20 +279,18 @@ body {
   line-height: 1.38;
 }
 
-.q2lilbox,
 .q3lilbox,
 .q7lilbox {
   float: left;
   clear: both;
   width: 28.3089192708%;
   height: 22px;
-  margin: 15px 0 0 5.75033%;
+  margin: 15px 0 0 5.7503255208%;
 }
 
-.q3lilbox .text,
 .q7lilbox .text {
   width: 24.1545893719%;
-  margin-left: 8.1527051112%;
+  margin-left: 8.15271%;
 }
 
 .text {
