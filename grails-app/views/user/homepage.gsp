@@ -1,8 +1,8 @@
 <%@ page import="unity.Account" %>
 <html>
 <head>
-  <%--<meta name="layout" content="main">
-  --%><g:set var="entityName" value="${message(code: 'account.label', default: 'Account')}" />
+  <meta name="layout" content="main">
+  <g:set var="entityName" value="${message(code: 'account.label', default: 'Account')}" />
   <meta charset="utf-8">
   <%-- <meta name="viewport" content="initial-scale=1.0"> --%>
   <title>homepage</title>
@@ -26,7 +26,7 @@
       <g:form action="editProfile" controller="user">
       <button class="edit_profile">Edit Profile</button>
       </g:form>
-      <a class="req_withdrawl" href="#">Request Withdrawl</a>
+      <a class="req_withdrawl" href="#">Request Withdrawal</a>
       <a class="faq" href="https://earn.zendesk.com/hc/en-us/categories/200128880-TripleBoost-Account">FAQ</a>
       <a class="contact_us" href="#">Contact Us</a>
     </div>
@@ -52,9 +52,9 @@
       <div class="total_funds_div"><p class="total_funds">Total Funds</p></div>
       <div class="c_total_funds_div"><p class="c_totalfunds"><g:formatNumber number="${cur_account.totalFunds}" type="currency" currencyCode="USD" /></p></div>
       <div class="total_funds_hover clearfix">
-        <p class="total_funds_hover_text">Available funds for withdrawl only if eligible        </p>
+        <p class="total_funds_hover_text">Available funds for withdrawal only if eligible        </p>
       </div>
-      <a class="req_withdrawl_acct" href="#">Request a Withdrawl</a>
+      <a class="req_withdrawl_acct" href="#">Request a Withdrawal</a>
       <a class="req_trans_acct" href="${createLink(controller:'User',action:'showTransactions',params:[accountId:cur_account.id]) }">View Transactions</a>
       
     </div>

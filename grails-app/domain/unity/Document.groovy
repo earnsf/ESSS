@@ -36,7 +36,8 @@ class Document {
 	
 	def void encryptDoc() {
 		log.info "encrypting file"
-		content_aes = AESencrp.encrypt(content_aes)
+		//content_aes = AESencrp.encrypt(content_aes)
+		
 	}
 
 }
