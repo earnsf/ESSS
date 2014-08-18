@@ -39,16 +39,27 @@ class UserController {
 //		}
 		
 		if (springSecurityService.isLoggedIn()) {
-			def cur_id = springSecurityService.currentUser.id
-			def user = DataService.getUser(cur_id)
+			
 //			if (!user.emailConfirmed) {
 //				render(view:"homepage_unconfirmed", model:[name:user.first_name + ' ' + user.last_name])
 //				return
 //			}
+			def cur_id = springSecurityService.currentUser.id
+			def user = DataService.getUser(cur_id)
+			def openList = null
+			def closedList = null
+			if (!session?.openList) {
+				def accountLists = DataService.getAccounts(cur_id)
+				session.openList = accountLists[0]
+				session.closedList = accountLists[1]
+				openList = session.openList
+				closedList = session.closedList
+			} else {
+				log.info('got lists from session')
+				openList = session.openList
+				closedList = session.closedList
+			}
 			
-			def accountLists = DataService.getAccounts(cur_id)
-			def openList = accountLists[0]
-			def closedList = accountLists[1]
 			render(view:"homepage", model: [openList:openList, closedList:closedList, name:user.first_name + ' ' + user.last_name])
 			
 		} else {

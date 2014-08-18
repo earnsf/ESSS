@@ -26,7 +26,7 @@
       <g:form action="editProfile" controller="user">
       <button class="edit_profile">Edit Profile</button>
       </g:form>
-      <a class="req_withdrawl" href="#">Request Withdrawal</a>
+      <a class="req_withdrawl" href="${createLink(controller:'Withdrawal',action:'withdrawal_home',params:[openList:openList,closedList:closedList])}">Request Withdrawal</a>
       <a class="faq" href="https://earn.zendesk.com/hc/en-us/categories/200128880-TripleBoost-Account">FAQ</a>
       <a class="contact_us" href="#">Contact Us</a>
     </div>
@@ -42,19 +42,20 @@
       <p class="c_status">Open</p>
       
       <p class="saver_balance">Saver Funds Balance</p>
-      <p class="c_saver_balance"><g:formatNumber number="${cur_account.transactionSaverFunds}" type="currency" currencyCode="USD" /></p>
+      <p class="c_saver_balance"><g:formatNumber number="${cur_account.transactionSaverFunds}" format="\$#.##" /></p>
       <p class="incen_balance">Incentives Balance</p>
-      <p class="c_incen_balance"><g:formatNumber number="${cur_account.transactionIncentiveBalance}" type="currency" currencyCode="USD" /></p>
+      <p class="c_incen_balance"><g:formatNumber number="${cur_account.transactionIncentiveBalance}" format="\$#.##" /></p>
       <p class="open_date">ACCT OPEN DATE</p>
       <p class="exp_date">ACCT EXPIR DATE</p>
       <p class="c_opendate">${cur_account.earnAccountOpenedDateString}</p>
       <p class="c_expdate">${cur_account.earnAccountDeadlineString}</p>
       <div class="total_funds_div"><p class="total_funds">Total Funds</p></div>
-      <div class="c_total_funds_div"><p class="c_totalfunds"><g:formatNumber number="${cur_account.totalFunds}" type="currency" currencyCode="USD" /></p></div>
+      <div class="c_total_funds_div"><p class="c_totalfunds"><g:formatNumber number="${cur_account.totalFunds}" format="\$#.##" /></p></div>
       <div class="total_funds_hover clearfix">
-        <p class="total_funds_hover_text">Available funds for withdrawal only if eligible        </p>
+        <p class="total_funds_hover_text">Available funds for withdrawal only if eligible</p>
       </div>
-      <a class="req_withdrawl_acct" href="#">Request a Withdrawal</a>
+      
+      <a class="req_withdrawl_acct" href="${createLink(controller:'Withdrawal',action:'withdrawal_home')}">Request a Withdrawal</a>
       <a class="req_trans_acct" href="${createLink(controller:'User',action:'showTransactions',params:[accountId:cur_account.id]) }">View Transactions</a>
       
     </div>

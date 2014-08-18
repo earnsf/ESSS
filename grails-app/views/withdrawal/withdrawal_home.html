@@ -16,27 +16,24 @@
     <p class="select">&nbsp; Select Account(s) for Withdrawal</p>
     <p class="amount_avail amount_avail-1">Account</p>
     <p class="amount_avail amount_avail-2">Available Amount    </p>
-    <g:each var="cur_ida" in="${idaList}" status="i">
+    <g:each var="cur_ida" in="${idaList}">
     <div class="ida_container clearfix">
       <label class="checkbox-label clearfix">
-        <%--<input class="checkbox" type="checkbox">
-        --%><g:checkBox class="checkbox" name="checkBoxIda_${cur_ida.id}" />
+        <input class="checkbox" type="checkbox">
         <span class="point-text">IDA for ${cur_ida.firstName}</span>
       </label>
       <%--<p class="ida_amount">${cur_ida.totalFunds}</p>
-      --%><p class="ida_amount"><g:formatNumber number="${cur_ida.totalFunds}" format="\$#.##" /></p>
+      --%><p class="ida_amount"><g:formatNumber number="${cur_ida.totalFunds}" type="currency" currencyCode="USD" /></p>
     </div>
     </g:each>
-    <g:each var="cur_triple" in="${tripleList}" status="i">
+    <g:each var="cur_triple" in="${tripleList}]">
     <div class="tb_container clearfix">
       <label class="checkbox-label clearfix">
-        <%--<input class="checkbox" type="checkbox">
-        --%>
-        <g:checkBox class="checkbox" name="checkBoxTriple_${cur_triple.id}" />
+        <input class="checkbox" type="checkbox">
         <span class="point-text">TripleBoost for ${cur_triple.firstName}</span>
       </label>
       <%--<p class="ida_amount">${cur_triple.totalFunds }</p>
-      --%><p class="ida_amount"><g:formatNumber number="${cur_triple.totalFunds}" format="\$#.##" /></p>
+      --%><p class="ida_amount"><g:formatNumber number="${cur_triple.totalFunds}" type="currency" currencyCode="USD" /></p>
     </div>
     </g:each>
     <button class="_button">
@@ -45,8 +42,6 @@
       <p></p>
       <p></p>
     </button>
-    <g:hiddenField name="idaListSize" value="${idaList.size}" />
-    <g:hiddenField name="tripleListSize" value="${tripleList.size}" />
     </g:form>
   </div>
 

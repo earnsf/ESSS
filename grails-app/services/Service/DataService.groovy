@@ -58,25 +58,25 @@ class DataService {
 						i.transactionSaverFunds = balsList[0]
 						i.transactionIncentiveBalance = balsList[1]
 						i.totalFunds = i.transactionSaverFunds + i.transactionIncentiveBalance
-						log.info('found child name, ' + i.firstName + ' ' + i.lastName)
+						//log.info('found child name, ' + i.firstName + ' ' + i.lastName)
 					} else {
-						log.info 'could not find child by id ' + i.childEarnUserId
+						//log.info 'could not find child by id ' + i.childEarnUserId
 					}
 				} else {
 					def curUser = User.findById(i.earnUserId)
 					if (curUser) {
 						i.firstName = curUser.first_name
 						i.lastName = curUser.last_name
-						log.info('found user name, ' + i.firstName + ' ' + i.lastName)
+						//log.info('found user name, ' + i.firstName + ' ' + i.lastName)
 					} else {
-						log.info 'could not find user by id ' + i.earnUserId
+						//log.info 'could not find user by id ' + i.earnUserId
 					}
 				}
 			}
 		}
-		log.info('finished populating lists')
-		log.info(closedList.size() + ' closed accounts')
-		log.info(openList.size() + ' open accounts')
+		//log.info('finished populating lists')
+		//log.info(closedList.size() + ' closed accounts')
+		//log.info(openList.size() + ' open accounts')
 		return [openList, closedList]
 	}
 	
