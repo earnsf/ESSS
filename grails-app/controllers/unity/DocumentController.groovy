@@ -1,8 +1,10 @@
 package unity
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.BufferedWriter
+import java.io.File
+import java.io.FileWriter
+import java.io.IOException
+import java.io.FileOutputStream
 import Service.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.plugin.springsecurity.SpringSecurityService
@@ -49,8 +51,15 @@ class DocumentController {
 	}
 	
 	def getDocument() {
-		def doc = Document.findById(1)
+		def doc = Document.findById(2)
 		log.info(doc.filename)
+		FileInputStream fileInputStream=null
+		File file = new File("/Users/georgeqwu/Documents/workspace-ggts/p1/logs/"+doc.filename)
+		FileOutputStream fos = new FileOutputStream(file)
+		doc.decryptDoc()
+		fos.write(doc.content_aes)
+		fos.flush()
+		fos.close()
 	}
 	
 }
