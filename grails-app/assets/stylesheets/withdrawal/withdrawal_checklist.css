@@ -1,0 +1,254 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.75em/1.38 'Open Sans';
+  color: rgb(70, 70, 70);
+}
+
+.c_invoice_expand p {
+  margin-bottom: 1em;
+}
+
+.c_1040_image {
+  display: block;
+  float: left;
+  clear: both;
+  width: 566px;
+  height: auto;
+  margin: 5px 0 0 19px;
+  overflow: hidden;
+}
+
+.c_1040,
+.c_invoice,
+.c_time {
+  width: 624px;
+  height: 40px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(101, 101, 101);
+}
+
+.c_invoice_expand {
+  display:none;
+  width: 624px;
+  height: 1168px;
+  margin: 0 auto;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.c_invoice_expand_text,
+.c_tax_expand_text,
+.c_time_expand_text {
+  width: 600px;
+  min-height: 30px;
+  margin: 8px auto 0;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
+
+.c_invoice_image {
+  display: block;
+  width: 604px;
+  height: auto;
+  margin: 8px auto 0;
+  overflow: hidden;
+}
+
+.c_parent {
+  width: 624px;
+  height: 40px;
+  margin: 14px auto 0;
+  border-bottom: 1px solid rgb(101, 101, 101);
+}
+
+.c_tax_expand {
+  display:none;
+  width: 624px;
+  height: 334px;
+  margin: 0 auto;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.c_time_expand {
+  display:none;
+  width: 624px;
+  height: 49px;
+  margin: 0 auto;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.checklist_main {
+  width: 653px;
+  height: auto;
+  margin: 23px auto 30px;
+  padding-bottom:10px;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 6px;
+  background-color: rgb(231, 231, 231);
+  overflow: auto;
+}
+
+.expand_invoice {
+  display: block;
+  float: left;
+  width: 142px;
+  height: 14px;
+  margin: 14px 0 0 165px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 0.833em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(70, 70, 70);
+}
+
+.expand_invoice:hover,
+.expand_tax:hover,
+.expand_time:hover {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.expand_tax {
+  display: block;
+  float: left;
+  width: 142px;
+  height: 14px;
+  margin: 14px 0 0 291px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 0.833em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(70, 70, 70);
+}
+
+.expand_time {
+  display: block;
+  float: left;
+  width: 142px;
+  height: 14px;
+  margin: 14px 0 0 222px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 0.833em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(70, 70, 70);
+}
+
+.main {
+  /*float: left;*/
+  width: 766px;
+  /*height: 1930px;*/
+  /*margin-left: 96px;*/
+  height:auto;
+  overflow:auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.point-text,
+.point_1040_text,
+.point_invoice_text,
+.point_time_text {
+  display: block;
+  float: left;
+  margin: 4px 0 0 6px;
+  font-size: 1em;
+  line-height: 1.38;
+}
+
+.checkbox {
+  display: block;
+  float: left;
+  margin-top: 3px;
+}
+
+.checkbox-label {
+  display: block;
+  float: left;
+  width: 294px;
+  height: 22px;
+  margin: 10px 0 0 8px;
+}
+
+.checkbox_1040 {
+  display: block;
+  float: left;
+  width: 161px;
+  height: 22px;
+  margin: 10px 0 0 8px;
+}
+
+.checkbox_invoice {
+  display: block;
+  float: left;
+  width: 288px;
+  height: 22px;
+  margin: 10px 0 0 8px;
+}
+
+.checkbox_time {
+  display: block;
+  float: left;
+  width: 231px;
+  height: 22px;
+  margin: 10px 0 0 8px;
+}
+
+.ready {
+  display: block;
+  float: left;
+  clear: both;
+  width: 168px;
+  height: 24px;
+  margin: 11px 0 0 394px;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1.333em;
+  font-weight: 600;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.ready:hover {
+  background-color: rgb(76, 172, 104);
+}
+
+.welcome {
+  width: 653px;
+  height: 115px;
+  margin: 36px auto 0;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 6px;
+  background-color: rgb(231, 231, 231);
+}
+
+.welcome_text {
+  width: 607px;
+  min-height: 45px;
+  margin: 10px auto 0;
+  font-size: 1.333em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
+
+.welcome_title {
+  width: 623px;
+  min-height: 35px;
+  margin: 12px auto 0;
+  border-bottom: 1px solid rgb(70, 70, 70);
+  font-size: 2.167em;
+  font-weight: 600;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
