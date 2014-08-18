@@ -1,5 +1,8 @@
 package unity
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import Service.*
 import grails.plugin.springsecurity.annotation.Secured
 import grails.plugin.springsecurity.SpringSecurityService
@@ -19,6 +22,7 @@ class DocumentController {
 	def upload() {
 		log.info "uploading"
 	}
+	
 	def uploaded() {
 		def uploadedFile = request.getFile('file')
 		def contentType = uploadedFile.contentType
@@ -42,6 +46,11 @@ class DocumentController {
 		u.content_aes = uploadedFile.getBytes()
 		u.save(flush: true, failOnError: true)
 		
-		
 	}
+	
+	def getDocument() {
+		def doc = Document.findById(1)
+		log.info(doc.filename)
+	}
+	
 }
