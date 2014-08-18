@@ -263,7 +263,7 @@ class UserController {
 		log.info "Trying to verify last 4 digits of SSN, full name, DOB"
 		log.info params
 		try {
-			if (RegisterService.correct_creds(params)) {
+			if (RegisterService.incorrect_creds(params)) {
 				log.info RegisterService.numOfAttempts(params)
 				RegisterService.addAttempt(params)
 				if (RegisterService.numOfAttempts(params) > 6) { // allow 6 attempts to register

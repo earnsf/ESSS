@@ -30,7 +30,7 @@ class RegisterService {
 		(user.accountLocked)
 	}
 	
-	def correct_creds(input) {
+	def incorrect_creds(input) {
 		
 		def user = User.findByVistashare_email(input.email)
 		log.info user.first_name
