@@ -4,53 +4,11 @@ body {
   color: rgb(0, 0, 0);
 }
 
-.accountknowledge {
-  display: block;
-  float: left;
-  width: 43.7877306962%;
-  height: 22px;
-  margin-left: 5.1515%;
-  padding-left: 10px;
-  border: 1px solid rgb(119, 119, 119);
-  border-radius: 3px;
-  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
-  background-repeat: no-repeat;
-  background-size: auto auto;
-  background-position: right center;
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.38;
-  color: rgb(0, 0, 0);
-}
-
-.accountknowledge:hover,
-.ageinput:hover,
-.expectations:hover,
-.freqeducation:hover,
-.freqmoney:hover,
-.grades:hover {
-  background-color: rgb(173, 255, 196);
-}
-
-.agebox {
-  float: left;
-  clear: both;
-  width: 21.5625%;
-  height: 22px;
-  margin: 15px 0 0 6.55111%;
-}
-
-.agebox .childnamelabel {
-  width: 24.1545893719%;
-  margin-left: 8.18992%;
-}
-
 .ageinput {
   display: block;
   float: left;
-  width: 22.2222222222%;
+  width: 6.7080745341%;
   height: 22px;
-  margin-left: 7.7663043478%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -64,31 +22,39 @@ body {
   color: rgb(0, 0, 0);
 }
 
-.ageinput:active {
-  background-color: rgb(255, 255, 255);
+
+.answerbox {
+  float: left;
+  clear: both;
+  width: 84.3815513626%;
+  height: 22px;
+  margin-top: 15px;
 }
 
-.ageinput:focus {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+.bottomspace {
+  float: left;
+  clear: both;
+  width: 100.6289308176%;
+  height: 50px;
+  margin-left: -0.3144654089%;
+  background-color: rgba(222, 222, 222, 0);
 }
 
 .childnamelabel {
+  width: 12.7950310559%;
   min-height: 20px;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.6;
+  text-transform: uppercase;
 }
 
 .expectations {
   display: block;
-  position: relative;
   float: left;
-  clear: both;
-  z-index: 17;
-  width: 76.7097966728%;
+  width: 53.7888198757%;
   height: 22px;
-  margin: -20px 0 0 16.8207%;
+  margin-left: 0.0347826086%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -105,8 +71,9 @@ body {
 .freqeducation {
   display: block;
   float: left;
-  width: 57.4024032656%;
+  width: 19.2565993788%;
   height: 22px;
+  margin-left: 0.0329968944%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -123,9 +90,9 @@ body {
 .freqmoney {
   display: block;
   float: left;
-  width: 56.5445026178%;
+  width: 22.5446428571%;
   height: 22px;
-  margin-left: 1.4797499999%;
+  margin-left: 0.0329968944%;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 3px;
@@ -142,7 +109,7 @@ body {
 .grades {
   display: block;
   float: left;
-  width: 71%;
+  width: 35.0582298136%;
   height: 22px;
   padding-left: 10px;
   border: 1px solid rgb(119, 119, 119);
@@ -157,12 +124,53 @@ body {
   color: rgb(0, 0, 0);
 }
 
+.howinvolved {
+  display: block;
+  float: left;
+  width: 53.5403726708%;
+  height: 22px;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.ageinput:hover,
+.expectations:hover,
+.freqeducation:hover,
+.freqmoney:hover,
+.grades:hover,
+.howinvolved:hover,
+.yesno:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+/*
+.ageinput:active,
+.expectations:focus,
+.freqeducation:focus,
+.freqmoney:focus,
+.grades:focus,
+.howinvolved:focus,
+.yesno:focus {
+  background-color: rgb(239, 254, 243);
+}
+*/
+
 .next {
   display: block;
   float: left;
-  width: 11.3541666666%;
+  clear: both;
+  width: 11.3535115303%;
   height: 32px;
-  margin: 100px 0 0 11.35417%;
+  margin: 50px 0 0 44.6835691823%;
   border-radius: 4px;
   background-color: rgb(59, 184, 94);
   font-size: 1.385em;
@@ -179,14 +187,18 @@ body {
 .page1 {
   float: left;
   width: 100%;
-  height: 1281px;
+  height: 100%;
+  border: 3px solid rgba(153, 153, 153, 0.91);
+  background-color: rgb(239, 254, 243);
 }
 
 .pleaseanswer {
   width: 91.9791666666%;
   min-height: 73px;
-  margin: 22px 0 0 4.16016%;
-  border: 2px solid rgb(59, 184, 94);
+  margin: 22px 0 0 4.1601153039%;
+  border: 2px solid rgb(66, 66, 66);
+  border-radius: 5px;
+  background-color: rgb(242, 242, 242);
   font-size: 1.154em;
   line-height: 1.38;
   text-align: center;
@@ -195,102 +207,58 @@ body {
 .q1 {
   clear: both;
   min-height: 21px;
-  margin: 31px 0 0 4.0625%;
+  margin: 31px 0 0 4.0585699999%;
   font-size: 1.077em;
   font-weight: 600;
   line-height: 1.38;
 }
 
-.q2lilbox {
-  float: left;
-  clear: both;
-  width: 33.6458333333%;
-  height: 22px;
-  margin: 15px 0 0 7.60417%;
-}
-
-.q2lilbox .text {
-  width: 18.3982061748%;
-  margin-left: 2.69943%;
-}
-
-.q3 {
+.q2 {
   clear: both;
   min-height: 21px;
-  margin: 49px 0 0 4.0625%;
+  margin: 50px 0 0 4.0585691823%;
   font-size: 1.077em;
   font-weight: 600;
   line-height: 1.38;
 }
 
-.q3lilbox .text {
-  width: 24.1545893719%;
-  margin-left: 9.21635%;
-}
-
-.q4lilbox {
-  float: left;
+.q4 {
   clear: both;
-  width: 56.3541666666%;
-  height: 22px;
-  margin: 15px 0 0 5.7291666666%;
+  min-height: 21px;
+  margin: 32px 0 0 4.06021%;
+  font-size: 1.077em;
+  font-weight: 600;
+  line-height: 1.38;
 }
 
-.q4lilbox .text {
-  position: relative;
-  z-index: 16;
-  width: 13.6546184738%;
-  margin-left: 4.6153%;
+.q3,
+.q5 {
+  clear: both;
+  min-height: 21px;
+  margin: 50px 0 0 4.05366%;
+  font-size: 1.077em;
+  font-weight: 600;
+  line-height: 1.38;
 }
 
 .q6 {
   clear: both;
   min-height: 21px;
-  margin: 50px 0 0 4.16016%;
+  margin: 50px 0 0 4.16012%;
   font-size: 1.077em;
   font-weight: 600;
   line-height: 1.38;
 }
 
-.q5lilbox,
-.q6lilbox {
-  float: left;
-  clear: both;
-  width: 41.6666666666%;
-  height: 22px;
-  margin: 15px 0 0 5.7291666666%;
-}
-
-.q5lilbox .text,
-.q6lilbox .text {
-  width: 17%;
-  margin-left: 5.75%;
-}
-
-.q2,
-.q4,
-.q5,
-.q7 {
+.q7,
+.q8,
+.q9 {
   clear: both;
   min-height: 21px;
-  margin: 50px 0 0 4.0625%;
+  margin: 50px 0 0 4.0536556603%;
   font-size: 1.077em;
   font-weight: 600;
   line-height: 1.38;
-}
-
-.q3lilbox,
-.q7lilbox {
-  float: left;
-  clear: both;
-  width: 28.3089192708%;
-  height: 22px;
-  margin: 15px 0 0 5.7503255208%;
-}
-
-.q7lilbox .text {
-  width: 24.1545893719%;
-  margin-left: 8.15271%;
 }
 
 .text {
@@ -303,19 +271,66 @@ body {
 }
 
 .yearsold {
-  width: 33.3333333333%;
+  width: 7.8260869565%;
   min-height: 22px;
-  margin-left: 4.3260869565%;
+  margin-left: 2.84161%;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.6;
 }
 
+.yesno {
+  display: block;
+  float: left;
+  width: 15.2795031055%;
+  height: 22px;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
 .youwillbewithdr {
   clear: both;
   min-height: 23px;
-  margin: 28px 0 0 17.49349%;
+  margin: 28px 0 0 17.49214%;
   font-size: 1.154em;
   line-height: 1.38;
   text-align: center;
+  text-decoration: underline;
+}
+
+.answerbox-1 {
+  position: relative;
+  margin-left: 5.7651991614%;
+}
+
+.answerbox-2,
+.answerbox-3,
+.answerbox-4,
+.answerbox-5,
+.answerbox-6,
+.answerbox-7,
+.answerbox-8 {
+  margin-left: 5.7652%;
+}
+
+.answerbox-9 {
+  margin-left: 5.7651991614%;
+}
+
+.text-11,
+.text-13,
+.text-15,
+.text-17,
+.text-19,
+.text-21 {
+  margin-top: 2px;
 }

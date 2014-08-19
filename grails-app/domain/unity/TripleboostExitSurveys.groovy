@@ -78,6 +78,7 @@ class TripleboostExitSurveys {
 	String recommendTripleboost
 	String customerComments
 	String surveyMonkeyRespondentId
+	Integer childAge
 
 	static mapping = {
 		version false
@@ -104,7 +105,7 @@ class TripleboostExitSurveys {
 		childGraduatedCollege nullable: true, maxSize: 64
 		childAccountKnowledge nullable: true, maxSize: 64
 		childAccountContribution nullable: true, maxSize: 64
-		childAccountDecision nullable: true, maxSize: 64
+		childAccountDecision nullable: true, maxSize:128
 		childName nullable: true, maxSize: 64
 		maritalStatus nullable: true, maxSize: 64
 		employmentStatus nullable: true, maxSize: 64
@@ -159,5 +160,6 @@ class TripleboostExitSurveys {
 		recommendTripleboost nullable: true, maxSize: 64
 		customerComments nullable: true, maxSize: 65535
 		surveyMonkeyRespondentId nullable: true, maxSize: 64
+		childAge nullable: true
 	}
 }
