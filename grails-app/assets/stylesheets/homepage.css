@@ -488,10 +488,10 @@ body {
 
 .total_funds_hover_text {
   float: left;
-  width: 96.2575171821%;
+  width: 100%;
   min-height: 16px;
   margin: 8px 0 0 2.07796%;
-  font-size: 1.182em;
+  font-size: 1.13em;
   font-weight: 600;
   line-height: 1.38;
   color: rgb(70, 70, 70);
