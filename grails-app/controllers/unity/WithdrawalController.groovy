@@ -88,7 +88,7 @@ class WithdrawalController {
 		}
 		log.info('size of tripleList: ' + tripleList.size().toString())
 		log.info(tripleList[0].firstName)
-		render(view:'withdrawal_home', model: [idaList:idaList,tripleList:tripleList])
+		render view:'withdrawal_home', model: [idaList:idaList,tripleList:tripleList]
 	}
 	
 	def withdrawal_checklist() {
@@ -125,6 +125,33 @@ class WithdrawalController {
 				return
 			}
 		}
+		//gonna copy and paste what's above, but need to create service for the following:
+		//need to have session object for "active withdrawal process"
+//		def openList = null
+//		def closedList = null
+//		if (!session?.openList) {
+//			def accountLists = DataService.getAccounts(cur_id)
+//			session.openList = accountLists[0]
+//			session.closedList = accountLists[1]
+//		} else {
+//			log.info('got lists from session')
+//			openList = session.openList
+//			closedList = session.closedList
+//		}
+//		
+//		def idaList = []
+//		def tripleList = []
+//		for (t in openList) {
+//			if (t.accountType == 'TripleBoost') {
+//				log.info(t.firstName)
+//				tripleList.add(t)
+//			} else {
+//				idaList.add(t)
+//			}
+//		}
+		
+		
+		render view:'withdrawal_checklist'
 	}
 	
 	def withdrawal_upload() {}
