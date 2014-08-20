@@ -88,7 +88,7 @@
           <p>Eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim. Quinta decima eodem modo typi qui nunc nobis videntur parum, clari fiant sollemnes. Nam liber tempor cum soluta nobis assum typi. Nulla facilisis at vero eros et accumsan et iusto odio dignissim qui. Eum iriure dolor in hendrerit in vulputate velit esse. Etiam processus dynamicus qui sequitur mutationem consuetudium lectorum mirum est. Claritatem Investigationes demonstraverunt lectores legere me lius, quod ii legunt.</p>
         </div>
         <%--<img class="c_invoice_image" src="images/Screen Shot 2014-08-14 at 11.01.34 AM-604x923.png" data-rimage data-src="images/Screen Shot 2014-08-14 at 11.01.34 AM-604x923.png">
-        --%><asset:image class="c_1040_image" src="withdrawal/ValidExpenses-604x923.png"/>
+        --%><asset:image class="c_invoice_image" src="withdrawal/ValidExpenses-604x923.png"/>
       </div>
       <button class="ready">
         <p>I'm Ready!</p>

@@ -1,0 +1,180 @@
+.form_fieldset {
+  
+}
+
+.upload_name {
+  float: left;
+  width: 295px;
+  min-height: 20px;
+  margin: 9px 0 0 8px;
+  font-size: 1.167em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
+
+.file_upload {
+  float:right;
+  /* font-size: 1.2em; */
+  margin: 9px 10px 0px 0px;
+  
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.75em/1.38 'Open Sans';
+  color: rgb(70, 70, 70);
+}
+
+.c_invoice_expand p {
+  margin-bottom: 1em;
+}
+
+.c_invoice_expand {
+  display:none;
+  width: 624px;
+  height: 1168px;
+  margin: 27px auto 0;
+  border: 1px solid rgb(71, 71, 71);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.c_invoice_expand_text {
+  width: 600px;
+  min-height: 30px;
+  margin: 8px auto 0;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
+
+.c_invoice_image {
+  display: block;
+  width: 604px;
+  height: auto;
+  margin: 8px auto 0;
+  overflow: hidden;
+}
+
+.expand_invoice {
+  display: block;
+  float: left;
+  width: 142px;
+  height: 14px;
+  margin: 7px 0 0 495px;
+  background-color: rgba(222, 222, 222, 0);
+  font-size: 0.833em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(70, 70, 70);
+}
+
+.expand_invoice:hover {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.main {
+  /*float: left;*/
+  width: 766px;
+  height: auto;
+  overflow:auto;
+  margin: 20px auto 40px;
+}
+
+.main_upload {
+  float: left;
+  clear: both;
+  width: 653px;
+  height: auto;
+  overflow: auto;
+  margin: 20px 0 0 57px;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 6px;
+  background-color: rgb(231, 231, 231);
+}
+
+.ready {
+  display: block;
+  float: right;
+  width: 80px;
+  height: 20px;
+  margin: 9px 7px 0 0;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1.167em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.submit {
+  display: block;
+  float: left;
+  clear: both;
+  width: 143px;
+  height: 25px;
+  margin: 15px 0 15px 464px;
+  border-radius: 3px;
+  background-color: rgb(59, 184, 94);
+  font-size: 1.333em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.ready:hover,
+.submit:hover {
+  background-color: rgb(76, 172, 104);
+}
+
+.upload {
+  float: left;
+  clear: both;
+  width: 625px;
+  height: 39px;
+  margin-left: 13px;
+  border: 1px solid rgb(171, 171, 171);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.welcome {
+  width: 653px;
+  height: 94px;
+  margin: 31px auto 0;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 6px;
+  background-color: rgb(231, 231, 231);
+}
+
+.welcome_text {
+  width: 607px;
+  min-height: 25px;
+  margin: 10px auto 0;
+  font-size: 1.333em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
+
+.welcome_title {
+  width: 623px;
+  min-height: 35px;
+  margin: 12px auto 0;
+  border-bottom: 1px solid rgb(70, 70, 70);
+  font-size: 2.167em;
+  font-weight: 600;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
+
+.upload-1 {
+  margin-top: 12px;
+}
+
+.upload-2 {
+  margin-top: 8px;
+}
