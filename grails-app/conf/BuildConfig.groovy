@@ -72,7 +72,7 @@ grails.project.dependency.resolution = {
 		// plugin to engineer domain classes from database
 		// for some reason this is derpy and doesn't work in conjunction to hibernate, so
 			//we have to comment this out when not using it. Look in config for more settings!
-		//compile ':db-reverse-engineer:0.5'
+		compile ':db-reverse-engineer:0.5'
 		// security plugin
 		compile ":spring-security-core:2.0-RC3"
 		

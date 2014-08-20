@@ -125,7 +125,8 @@ class WithdrawalController {
 				return
 			}
 		}
-		
-		
 	}
+	
+	def withdrawal_upload() {}
+
 }
