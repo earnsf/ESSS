@@ -14,41 +14,45 @@ class WithdrawalController {
 		def children = ["Phil", "Victor", "Isabella"]
 		def children_list_string = "['Phil', 'Victor', 'Isabella']"
 		def children_string = "Phil, Victor, and Isabella" // create method in Service that appends "and"
+		def cur_id = springSecurityService.currentUser.id
+		def user = DataService.getUser(cur_id)
+		
 		
 		render view: "exitsurvey", model:[children: children, children_string: children_string, children_list_string:children_list_string]
 	}
 	
-	def checkParams() {
+	def submitSurvey() {
 		def cur_id = springSecurityService.currentUser.id
 		def user = DataService.getUser(cur_id)
 		log.info params
 		def children = Eval.me(params["children_list_string"])
-		for (param in params.keySet()) {
-			if (!(param in ["children_list_string", "action", "format", "controller" ])) {
-				if (param.size() != children.size()) {
-					flash.message = "incomplete information"
-					redirect action:"exitsurvey"
-					return
-				}
-			}
-		}
 			
 		for (int i=0; i < children.size(); i++) {
 			def survey = new TripleboostExitSurveys(earnUserId: user.id, vistashareUserId: user.vistashare_user_id, firstName: user.first_name,
 				lastName: user.last_name, childName: children[i])
-			
 			for (param in params.keySet()) {
-				log.info param
-				if (param == "childAge") {
-					survey[param] = params[param][i].toInteger()
-				} else if (!(param in ["children_list_string", "action", "format", "controller" ])) {
-					survey[param] = params[param][i]
+
+				if (!(param in ["children_list_string", "action", "format", "controller" ])) {
+					if (!isCollectionOrArray(params[param])) {
+						survey[param] = params[param]
+					} else if (params[param][i] == "null") {
+						survey[param] = null
+					} else if (param == "childAge") {
+						survey[param] = params[param][i].toInteger()
+					} else {
+						survey[param] = params[param][i]
+					}
 				}
 			}
-			survey.save(failOnError: true)
+			survey.save(failOnError: true, flush: true)
 			log.info survey.id
 		}
+		redirect action: "exitsurvey"
 		
+	}
+	
+	boolean isCollectionOrArray(object) {
+		[Collection, Object[]].any { it.isAssignableFrom(object.getClass()) }
 	}
 	
 	def withdrawal_home() {
