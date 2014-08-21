@@ -50,7 +50,7 @@
 	<g:if test='${flash.message}'>
           <p class="text errormessage">${flash.message}</p>
       </g:if>
-    <p class="text youwillbewithdr">You will be withdrawing from 3 TripleBoost account(s), whose names are: ${children_string}</p>
+    <p class="text youwillbewithdr">You will be withdrawing from ${children_size} TripleBoost account(s), whose names are: ${children_string}</p>
     <p class="text q1">1. How old is/are ${children_string}?</p>
     <g:each in="${children}">
 	    <div class="answerbox answerbox-1 clearfix">

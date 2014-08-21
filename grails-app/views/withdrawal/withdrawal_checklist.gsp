@@ -90,9 +90,11 @@
         <%--<img class="c_invoice_image" src="images/Screen Shot 2014-08-14 at 11.01.34 AM-604x923.png" data-rimage data-src="images/Screen Shot 2014-08-14 at 11.01.34 AM-604x923.png">
         --%><asset:image class="c_invoice_image" src="withdrawal/ValidExpenses-604x923.png"/>
       </div>
+      <g:form action="exitsurvey" controller="withdrawal">
       <button class="ready">
         <p>I'm Ready!</p>
       </button>
+      </g:form>
     </div>
   </div>
 

@@ -1,6 +1,7 @@
 package Service
 
 import grails.test.mixin.TestFor
+import Service.EmailVerifService;
 import spock.lang.Specification
 
 /**
