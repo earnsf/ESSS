@@ -37,11 +37,113 @@
 		  document.getElementById('helpgross').style.display="block"
       }
 	}
+
+	function validatePage1() {
+
+	    /**
+		for (i = 0; i < 3; i++) {
+			var x = document.forms["exitsurvey"]["childAge"][i].value;
+		    if (x == "null") {
+		        alert("All of the children's ages must be filled out");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["frequencyTalkAboutMoney"][i].value;
+		    if (x == "null") {
+		        alert("Question 2 must be filled out for each children");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["frequencyTalkAboutEducation"][i].value;
+		    if (x == "null") {
+		        alert("Question 3 must be filled out for each children");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["childEducationalExpectations"][i].value;
+		    if (x == "null") {
+		        alert("Question 4 must be filled out for each children");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["childGradesMath"][i].value;
+		    if (x == "null") {
+		        alert("Question 5 must be filled out for each children");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["childGradesReadingWriting"][i].value;
+		    if (x == "null") {
+		        alert("Question 6 must be filled out for each children");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["childAccountKnowledge"][i].value;
+		    if (x == "null") {
+		        alert("Question 7 must be filled out for each children");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["childAccountContribution"][i].value;
+		    if (x == "null") {
+		        alert("Question 8 must be filled out for each children");
+		        return false;
+		    }
+		}
+		for (i = 0; i < 3; i++) {
+		    var x = document.forms["exitsurvey"]["childAccountDecision"][i].value;
+		    if (x == "null") {
+		        alert("Question 9 must be filled out for each children");
+		        return false;
+		    }
+		}
+		*/
+	    showPage2();   
+	}
+	function validatePage2() {
+		var x = document.forms["exitsurvey"]["maritalStatus"].value;
+		if (x == "Select answer") {
+	        alert("Please enter your marital status.");
+	        return false;
+		}
+	    var x = document.forms["exitsurvey"]["employmentStatus"].value;
+	    if (x == "Select answer") {
+	        alert("Please enter your employment status.");
+	        return false;
+	    }
+	    var x = document.forms["exitsurvey"]["annualHouseholdIncome"].value;
+	    if (x == "")  {
+	        alert("Please enter your annual household income.");
+	        return false;
+	    }
+	    var x = document.forms["exitsurvey"]["householdSize"].value;
+	    if (x == "" || x == null)  {
+	        alert("Please enter your household size.");
+	        return false;
+	    }
+	    var savings = document.forms["exitsurvey"]["savingsAccountBalance"].value;
+	    var checking = document.forms["exitsurvey"]["checkingAccountBalance"].value;
+	    var retirement = document.forms["exitsurvey"]["retirementAccountBalance"].value;
+	    var cash = document.forms["exitsurvey"]["cashOtherInvestmentsBalance"].value;
+	    if (savings == "" || checking == "" || retirement == "" || cash == "") {
+	    	alert("Please enter a balance for each type of account. Enter 0, if you do not have money in that account or you don't have that type of account.");
+	        return false;
+		}
+		/** to be done */
+		showPage3()
+	}
  </script>
 
 </head>
 <body class="body index clearfix">
-  <g:form controller="Withdrawal" action="submitSurvey">
+  <g:form name="exitsurvey" controller="Withdrawal" action="submitSurvey">
   <div id="page1" class="page1 clearfix">
     <div class="text pleaseanswer text-1">
       <p>Please answer the following questions as honestly as you can. There are no right or wrong answers.&nbsp;<br>Your answers within this survey will not affect your ability to withdraw your funds.</p>
@@ -116,7 +218,7 @@
 	    </div>
     </g:each>
     <input type="hidden" name="children_list_string" value="${children_list_string}">
-    <button class="next" type="button" onClick="showPage2()">
+    <button class="next" type="button" onClick="validatePage1()">
       <p>Next</p>
       <p></p>
     </button>
@@ -126,7 +228,7 @@
     <p class="text pleaseanswercont">Please answer these following questions.</p>
     <p class="text q10">10. Your current marital status is :&nbsp;</p>
     <select class="maritalstatus maritalstatus-1" name="maritalStatus">
-      <option value="Select answer">Select answer</option>
+      <option value="Select answer" disabled selected>Select answer</option>
       <option value="Single (never married)">Single (never married)</option>
       <option value="Married">Married</option>
       <option value="Live with Domestic Partner">Live with Domestic Partner</option>
@@ -148,7 +250,7 @@
     <p class="text q12">12. What was the Adjusted Gross Income your household reported on your Form 1040 of your most recent tax return(s) ?</p>
     <p class="text adjustedgrosslabel">Adjusted gross income: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $</p>
     <input class="grossincome" name="annualHouseholdIncome" type="text">
-    <button class="helpgrossbutton" onClick="showhideHelp()">
+    <button class="helpgrossbutton" type="button" onClick="showhideHelp()">
       <p>help</p>
       <p></p>
     </button>
@@ -251,7 +353,7 @@
       <p></p>
       <p></p>
     </button>
-    <button class="next2" type="button" onClick="showPage3()">
+    <button class="next2" type="button" onClick="validatePage2()">
       <p>Next</p>
       <p></p>
     </button>
