@@ -1,6 +1,7 @@
 package Service
 
 import grails.test.mixin.TestFor
+import Service.DataService;
 import spock.lang.Specification
 
 /**

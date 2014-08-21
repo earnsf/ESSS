@@ -43,18 +43,14 @@
         <asset:image class="c_invoice_image" src="withdrawal/ValidExpenses-604x923.png"/>
       </div>
       <g:uploadForm controller="Document" action="uploaded">
+      <g:each var="cur_child" in="${child_list}">
       <div class="upload upload-1 clearfix">
-        <p class="upload_name">for Hubert Wu        </p>
+        <p class="upload_name">for ${cur_child.first_name}</p>
         <fieldset class="form_fieldset">
-        <input class="file_upload" type="file" name="file1" />
+        <input class="file_upload" type="file" name="file_${cur_child.id}" />
         </fieldset>
       </div>
-      <div class="upload upload-2 clearfix">
-        <p class="upload_name">for Daphne Wu        </p>
-        <fieldset class="form_fieldset">
-        <input class="file_upload" type="file" name="file2" />
-        </fieldset>
-      </div>
+      </g:each>
       <input class="submit" type="submit" value="Upload">
       </g:uploadForm>
     </div>
