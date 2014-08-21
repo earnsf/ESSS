@@ -136,6 +136,25 @@
 	    	alert("Please enter a balance for each type of account. Enter 0, if you do not have money in that account or you don't have that type of account.");
 	        return false;
 		}
+		var ccdebt = document.forms["exitsurvey"]["creditCardBalance"].value;
+		var loansdebt = document.forms["exitsurvey"]["studentLoanDebt"].value;
+		var mortgagedebt = document.forms["exitsurvey"]["mortgageLoans"].value;
+		var otherloans = document.forms["exitsurvey"]["otherLoansDebtBalance"].value;
+		if (ccdebt == "" || loansdebt == "" || mortgagedebt == "" || otherloans == "") {
+			alert("Please enter a balance for each type of debt. Enter 0, if you do not have money in that account or you don't have that type of account.");
+	        return false;
+		}
+		var homeowner = document.forms["exitsurvey"]["homeOwner"].value;
+		if (homeowner == "" || homeowner == null) {
+			alert("Please choose whether you own or are renting your home.");
+	        return false;
+		}
+		var spendinghabits = document.forms["exitsurvey"]["spendingHabits"].value;
+		if (spendinghabits == "Select answer") {
+			alert("Please select your spending habits.");
+	        return false;
+		}
+		
 		/** to be done */
 		showPage3()
 	}
@@ -532,7 +551,7 @@
       <p></p>
     </button>
     <button class="finish" type="submit">
-      <p>Finish</p>
+      <p>Next</p>
       <p></p>
       <p></p>
     </button>
