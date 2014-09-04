@@ -131,12 +131,38 @@ class DataService {
 	}
 	
 	def getTransactions(Integer account_id) {
+		getNewTransactions(account_id)
 		def transList = Transaction.findAllByEarnAccountId(account_id)
 		for (t in transList) {
 			t.transactionDateString = parseDate(t.transactionDate.toString())
 		}
 		log.info('found ' + transList.size() + ' transactions for account: ' + account_id.toString())
 		return transList
+	}
+	
+	//trying to do things differently
+	def getNewTransactions(Integer account_id) {
+		def transList = Transaction.findAllByEarnAccountId(account_id)
+		log.info('length of transList: ' + transList.size())
+		int i = 0
+		for (t in transList) {
+			t.transactionDateString = parseDate(t.transactionDate.toString())
+			//log.info(t.transactionDate.toString())
+			//strange, some logs are missing, oh well
+			//log.info(i)
+			i++
+		}
+		def map = [:]
+		for (t in transList) {
+			if (map[t.transactionDateString] == null) {
+				def new_list = []
+				new_list.add(t)
+				map[t.transactionDateString] = new_list
+			} else {
+				map[t.transactionDateString].add(t.transactionDateString)
+			}
+		}
+		log.info('map size is: ' + map.size())
 	}
 	
 	def getPhoneNumbers(Integer cur_id) {

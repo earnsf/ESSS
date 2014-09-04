@@ -25,17 +25,28 @@
           <p class="t_id">ID #</p>
           <p class="t_id_val">${cur_trans.id}</p>
         </div>
-        <p class="t_status">STATUS</p>
+        <%--<p class="t_status">STATUS</p>
         <p class="t_status_val">${cur_trans.status}</p>
         <p class="t_type">TYPE</p>
         <div class="t_type_val"><span class="t_type_val_span">${cur_trans.type}</span></div>
         <p class="t_fund_source">FUNDING SOURCE</p>
-        <p class="t_fund_source_val">${cur_trans.fundingSource}
-</p>
+        <p class="t_fund_source_val">${cur_trans.fundingSource}</p>
         <p class="t_total_funds">Amount</p>
         <p class="t_total_funds_val">${cur_trans.amount}</p>
-        <%--<p class="t_total_funds_val"><g:formatNumber number="${cur_trans.amount}" type="currency" currencyCode="USD" /></p>
-      --%></div>
+        --%><%--<p class="t_total_funds_val"><g:formatNumber number="${cur_trans.amount}" type="currency" currencyCode="USD" /></p>
+      --%>
+      
+        <p class="t_type">TYPE:</p>
+        <p class="t_type_val"><span class="t_type_val_span">${cur_trans.type}</span></p>
+        <p class="t_sub_deposited">Amount Deposited</p>
+        <p class="t_sub_deposited_val">+$2000.00</p>
+        <p class="t_sub_incen">Incentive Earned</p>
+        <p class="t_status">STATUS:        </p>
+        <p class="t_status_val">Incentive Pending</p>
+        <p class="t_sub_incen_val">+$6000.00</p>
+      
+      
+      </div>
       </g:each>
       <div class="t_subtotals clearfix">
         <p class="t_sub2">Saver Funds Balance</p>
