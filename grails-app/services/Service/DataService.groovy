@@ -19,8 +19,6 @@ class DataService {
 		return [one, two]
     }
 	
-	
-	
 	def parseDate(String input) {
 		def dateOnly = input[0..9]
 		def year = dateOnly[0..3]

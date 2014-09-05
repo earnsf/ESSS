@@ -26,7 +26,6 @@ class UserController {
 	def ContentService
 	def RegisterService
 	def cookieService
-	def SessionService
 	
 	def homepage() {
 		log.info 'in homepage()'
@@ -50,7 +49,8 @@ class UserController {
 			//	session if exists, and if not getting from database
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
-			def bothLists = SessionService.getLists(cur_id)
+			//doesn't make sense to put session in services, so it'll just be a method
+			def bothLists = getLists(cur_id)
 			
 			render(view:"homepage", model: [openList:bothLists[0], closedList:bothLists[1], name:user.first_name + ' ' + user.last_name])
 			
@@ -58,6 +58,27 @@ class UserController {
 			log.info 'not logged in'
 		}
 		
+	}
+	
+	//store lists of ida and tripleboost accounts in session for purposes of showing
+	//homepage, etc.
+	//returns a tuple of open and closed list
+	def getLists (cur_id) {
+		//def session = RequestContextHolder.currentRequestAttributes().getSession()
+		def openList = null
+		def closedList = null
+		if (!session?.openList) {
+			def accountLists = DataService.getAccounts(cur_id)
+			session.openList = accountLists[0]
+			session.closedList = accountLists[1]
+			openList = session.openList
+			closedList = session.closedList
+		} else {
+			log.info('got lists from session')
+			openList = session.openList
+			closedList = session.closedList
+		}
+		return [openList, closedList]
 	}
 	
 	@Secured('isFullyAuthenticated()')

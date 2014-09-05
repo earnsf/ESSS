@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <%--<meta name="layout" content="main">
-  --%><title>index</title>
+  <meta name="layout" content="main">
+  <title>index</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,400,700" rel="stylesheet" type="text/css">
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="auth-grid.css"/>
@@ -11,9 +11,9 @@
 </head>
 <body class="body index clearfix">
   <div class="regpluslogin">
-  <li><a href="?lang=es">español</a></li>
+  <%--<li><a href="?lang=es">español</a></li>
   <li><a href="?lang=en">English</a></li>
-    <div class="registerbox clearfix">
+    --%><div class="registerbox clearfix">
       <p class="text registermessage"><g:message code="register.warning"/></p>
       <g:if test='${lang}'>
 	      <form action='/p1/registerPart1' method='get'>
