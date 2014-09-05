@@ -26,6 +26,20 @@
           document.getElementById(which).style.display = "block";
         }
       }
+      function validate() {
+	  	var checkboxes = document.getElementsByClassName('checkbox');
+	  	//console.log(checkboxes.length)
+	  	for (var c in checkboxes) {
+		  	if (!c.checked) {
+				console.log('not checked!');
+				alert('Sorry, you need to have all these ready before proceeding');
+				returnToPreviousPage();
+				return false;
+			}
+		}
+		return true;
+      }
+      
   </script>
 </head>
 <body class="body withdrawal_checklist clearfix">
@@ -90,7 +104,7 @@
         <%--<img class="c_invoice_image" src="images/Screen Shot 2014-08-14 at 11.01.34 AM-604x923.png" data-rimage data-src="images/Screen Shot 2014-08-14 at 11.01.34 AM-604x923.png">
         --%><asset:image class="c_invoice_image" src="withdrawal/ValidExpenses-604x923.png"/>
       </div>
-      <g:form action="exitsurvey" controller="withdrawal">
+      <g:form action="exitsurvey" controller="withdrawal" before="return validate()">
       <button class="ready">
         <p>I'm Ready!</p>
       </button>

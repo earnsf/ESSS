@@ -26,6 +26,7 @@ class UserController {
 	def ContentService
 	def RegisterService
 	def cookieService
+	def SessionService
 	
 	def homepage() {
 		log.info 'in homepage()'
@@ -44,23 +45,14 @@ class UserController {
 //				render(view:"homepage_unconfirmed", model:[name:user.first_name + ' ' + user.last_name])
 //				return
 //			}
+			
+			//grabbing both the open and closed list of accounts from
+			//	session if exists, and if not getting from database
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
-			def openList = null
-			def closedList = null
-			if (!session?.openList) {
-				def accountLists = DataService.getAccounts(cur_id)
-				session.openList = accountLists[0]
-				session.closedList = accountLists[1]
-				openList = session.openList
-				closedList = session.closedList
-			} else {
-				log.info('got lists from session')
-				openList = session.openList
-				closedList = session.closedList
-			}
+			def bothLists = SessionService.getLists(cur_id)
 			
-			render(view:"homepage", model: [openList:openList, closedList:closedList, name:user.first_name + ' ' + user.last_name])
+			render(view:"homepage", model: [openList:bothLists[0], closedList:bothLists[1], name:user.first_name + ' ' + user.last_name])
 			
 		} else {
 			log.info 'not logged in'
