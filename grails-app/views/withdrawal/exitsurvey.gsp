@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta name="layout" content="main">
   <title>Exit Survey</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400,700,600" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400,600,inherit,300" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400,700,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400,600,inherit,300" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400,600" rel="stylesheet" type="text/css">
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="exitsurvey-grid.css"/>
   <asset:stylesheet src="exitsurvey.css"/>

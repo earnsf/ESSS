@@ -9,7 +9,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 import Service.*
-
+import grails.converters.JSON
 import org.apache.commons.lang.RandomStringUtils
 
 @Transactional(readOnly = false)
@@ -27,8 +27,30 @@ class UserController {
 	def RegisterService
 	def cookieService
 	
+	@Secured('permitAll')
+	def rest() {
+		def cur_id = null
+		if (params.containsKey('id')) {
+			cur_id = params.id
+		} 
+		def type = request.method
+		log.info('type: ' + type + ' id: ' + cur_id)
+		if (type == 'GET') {
+			if (cur_id == null) {
+				render(status:400, text:'Sorry, need an id for GET')
+			} else {
+				def user_obj = User.findById(cur_id)
+				def convert = new JSON(target:user_obj)
+				render(text:convert.toString(),contentType:'application/json',encoding:'UTF-8')
+				return
+			}
+		}
+	}
+	
 	def homepage() {
 		log.info 'in homepage()'
+//		render 'homepage'
+//		return
 		
 //		log.info 'testing email'
 //		mailService.sendMail{

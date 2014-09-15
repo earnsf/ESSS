@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="layout" content="main">
   <title>index</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,400,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,400,700" rel="stylesheet" type="text/css">
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="auth-grid.css"/>
   <asset:stylesheet src="auth.css"/>

@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="layout" content="main">
   <title>edit</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400,600" rel="stylesheet" type="text/css">
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="editProfile-grid.css"/>
   <asset:stylesheet src="editProfile.css"/>

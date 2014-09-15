@@ -7,7 +7,7 @@
   --%>
   <meta name="viewport" content="initial-scale=1.0">
   <title>transactions</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,400,300" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,400,400,300" rel="stylesheet" type="text/css">
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="transactions-grid.css"/>
   <asset:stylesheet src="transactions.css"/>

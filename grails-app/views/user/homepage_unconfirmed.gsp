@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <%-- <meta name="viewport" content="initial-scale=1.0"> --%>
   <title>homepage</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400,300,600" rel="stylesheet" type="text/css">
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="homepage-grid.css"/>
   <asset:stylesheet src="homepage.css"/>

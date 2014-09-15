@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
   <title>withdrawal_checklist</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400,600" rel="stylesheet" type="text/css">
   <asset:stylesheet src="withdrawal/standardize.css"/>
   <asset:stylesheet src="withdrawal/withdrawal_checklist-grid.css"/>
   <asset:stylesheet src="withdrawal/withdrawal_checklist.css"/>

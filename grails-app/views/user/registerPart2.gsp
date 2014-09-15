@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="layout" content="main">
   <title>register2</title>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400,inherit" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,400,inherit" rel="stylesheet" type="text/css">
   <asset:stylesheet src="standardize.css"/>
   <asset:stylesheet src="register2-grid.css"/>
   <asset:stylesheet src="register2.css"/>
