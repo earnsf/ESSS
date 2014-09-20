@@ -75,13 +75,15 @@ grails.project.dependency.resolution = {
 		//compile ':db-reverse-engineer:0.5'
 		// security plugin
 		compile ":spring-security-core:2.0-RC3"
-		//rest api stuff
-		//http://alvarosanchez.github.io/grails-spring-security-rest/docs/guide/single.html#authentication
-		compile ":spring-security-rest:1.4.0.RC5", {
-		    excludes: 'spring-security-core'
-		}
-		//from restapi documentation:
-		compile ":cors:1.1.6"
+		
+		
+//		//rest api stuff
+//		//http://alvarosanchez.github.io/grails-spring-security-rest/docs/guide/single.html#authentication
+//		compile ":spring-security-rest:1.4.0.RC5", {
+//		    excludes: 'spring-security-core'
+//		}
+//		//from restapi documentation:
+//		compile ":cors:1.1.6"
 		
 		//dependencies used by spring security ui
 		compile ":mail:1.0.6"
