@@ -72,7 +72,7 @@ class UserController {
 			def cur_id = springSecurityService.currentUser.id
 			def user = DataService.getUser(cur_id)
 			//doesn't make sense to put session in services, so it'll just be a method
-			def bothLists = getLists(cur_id)
+			def bothLists = getAccountLists(cur_id)
 			
 			render(view:"homepage", model: [openList:bothLists[0], closedList:bothLists[1], name:user.first_name + ' ' + user.last_name])
 			
@@ -85,7 +85,7 @@ class UserController {
 	//store lists of ida and tripleboost accounts in session for purposes of showing
 	//homepage, etc.
 	//returns a tuple of open and closed list
-	def getLists (cur_id) {
+	def getAccountLists (cur_id) {
 		//def session = RequestContextHolder.currentRequestAttributes().getSession()
 		def openList = null
 		def closedList = null

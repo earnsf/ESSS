@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="//www.w3.org/1999/xhtml">
 <head>
     <title>EARN Saver Portal</title>
-<link rel="stylesheet" type="text/css" media="all" href="http://earn.org/static/css/earn.css" />
-<link rel="stylesheet" href="http://earn.org/static/css/uniform.default.css" type="text/css" />
-<link rel="stylesheet" href="http://earn.org/static/css/wygwam.css" type="text/css" />
+<link rel="stylesheet" type="text/css" media="all" href="//earn.org/static/css/earn.css" />
+<link rel="stylesheet" href="//earn.org/static/css/uniform.default.css" type="text/css" />
+<link rel="stylesheet" href="//earn.org/static/css/wygwam.css" type="text/css" />
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://earn.org/js/earn"></script>
-<script type="text/javascript" src="http://earn.org/static/js/pretty_date.js"></script>
-<script type="text/javascript" src="http://earn.org/static/js/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+<script type="text/javascript" src="//earn.org/js/earn"></script>
+<script type="text/javascript" src="//earn.org/static/js/pretty_date.js"></script>
+<script type="text/javascript" src="//earn.org/static/js/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js"></script>
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-4300117-4']);
     _gaq.push(['_trackPageview']);
     (function () {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : '//www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 </script>
@@ -99,17 +99,17 @@
             <div id="outer">
                 <div id="header">
                     <div style="float: left">
-                        <a href="/"><img src="http://earn.org/static/img/logo.png" alt="logo" /></a>
+                        <a href="/"><img src="//earn.org/static/img/logo.png" alt="logo" /></a>
                     </div>
                     
                     <br clear="both" />
                 </div>
                 <%--<div id="menu">
-                    <a href="http://earn.org/financial_services"><img src="http://earn.org/static/img/menu_services.png" alt="Financial Services" /></a>
-                    <a href="http://earn.org/policy_innovation"><img src="http://earn.org/static/img/menu_policy.png" alt="Policy &amp; Innovation" /></a>
-                    <a href="http://earn.org/how_you_can_help"><img src="http://earn.org/static/img/menu_help.png" alt="How You Can Help" /></a>
-                    <a href="http://earn.org/about_earn"><img src="http://earn.org/static/img/menu_about.png" alt="About" /></a>
-                    <a href="http://earn.org/earn_news"><img src="http://earn.org/static/img/menu_news.png" alt="News" /></a>
+                    <a href="//earn.org/financial_services"><img src="//earn.org/static/img/menu_services.png" alt="Financial Services" /></a>
+                    <a href="//earn.org/policy_innovation"><img src="//earn.org/static/img/menu_policy.png" alt="Policy &amp; Innovation" /></a>
+                    <a href="//earn.org/how_you_can_help"><img src="//earn.org/static/img/menu_help.png" alt="How You Can Help" /></a>
+                    <a href="//earn.org/about_earn"><img src="//earn.org/static/img/menu_about.png" alt="About" /></a>
+                    <a href="//earn.org/earn_news"><img src="//earn.org/static/img/menu_news.png" alt="News" /></a>
                     <br clear="both" />
                 </div>
 --%><form name="submitForm" method="POST" action="${createLink(controller: 'logout')}">
@@ -122,20 +122,20 @@
 
     <div id="footer">
         <div class="left" style="width:10%;height:10%;">
-            <a target="_blank" href="http://www.citigroup.com/citi/citizen/community/"><img src="http://earn.org/static/img/logo_citi.png" alt="" /></a>
+            <a target="_blank" href="//www.citigroup.com/citi/citizen/community/"><img src="//earn.org/static/img/logo_citi.png" alt="" /></a>
         </div>
         <div class="right">
-            <a href="http://earn.org/about_earn">About Us</a> &bull;
-            <a href="http://earn.org/about/contact_us/">Contact Us</a> &bull;
-            <a href="http://earn.org/news/press_resources/">Press Resources</a> &bull;
-            <a href="http://earn.org/about/privacy_policy/">Privacy Policy</a>
+            <a href="//earn.org/about_earn">About Us</a> &bull;
+            <a href="//earn.org/about/contact_us/">Contact Us</a> &bull;
+            <a href="//earn.org/news/press_resources/">Press Resources</a> &bull;
+            <a href="//earn.org/about/privacy_policy/">Privacy Policy</a>
 
             &copy;2014 EARN
             <br />
             <div id="footerButtons">
-                <a class="button" target="_blank" href="http://twitter.com/earn"><img src="http://earn.org/static/img/button/twitter.jpg" alt="" /></a>
-                <a class="button" target="_blank" href="http://www.facebook.com/earnorg"><img src="http://earn.org/static/img/button/facebook.jpg" alt="" /></a>
-                <a class="button" target="_blank" href="http://www.youtube.com/earn"><img src="http://earn.org/static/img/button/youtube.jpg" alt="" /></a>
+                <a class="button" target="_blank" href="//twitter.com/earn"><img src="//earn.org/static/img/button/twitter.jpg" alt="" /></a>
+                <a class="button" target="_blank" href="//www.facebook.com/earnorg"><img src="//earn.org/static/img/button/facebook.jpg" alt="" /></a>
+                <a class="button" target="_blank" href="//www.youtube.com/earn"><img src="//earn.org/static/img/button/youtube.jpg" alt="" /></a>
                 <!--a class="button" target="_blank" href="javascript:void(0)"><img src="/static/img/button/rss.jpg" alt="" /></a-->
             </div>
             <br clear="both" />
