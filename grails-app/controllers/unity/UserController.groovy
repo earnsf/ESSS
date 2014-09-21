@@ -27,25 +27,6 @@ class UserController {
 	def RegisterService
 	def cookieService
 	
-	@Secured('permitAll')
-	def rest() {
-		def cur_id = null
-		if (params.containsKey('id')) {
-			cur_id = params.id
-		} 
-		def type = request.method
-		log.info('type: ' + type + ' id: ' + cur_id)
-		if (type == 'GET') {
-			if (cur_id == null) {
-				render(status:400, text:'Sorry, need an id for GET')
-			} else {
-				def user_obj = User.findById(cur_id)
-				def convert = new JSON(target:user_obj)
-				render(text:convert.toString(),contentType:'application/json',encoding:'UTF-8')
-				return
-			}
-		}
-	}
 	
 	def homepage() {
 		log.info 'in homepage()'
