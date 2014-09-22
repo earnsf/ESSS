@@ -122,6 +122,9 @@ class WithdrawalController {
 	
 	def withdrawal_checklist() {
 		log.info 'in withdrawal checklist'
+		
+		//code for processing selecting which accounts for withdrawal
+		
 		//log.info('len of checkBoxIDA_: ' + 'checkBoxIDA_'.length())
 		def cur_id = springSecurityService.currentUser.id
 		// account ids for children or ida selected
