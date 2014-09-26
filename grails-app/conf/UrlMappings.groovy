@@ -15,6 +15,6 @@ class UrlMappings {
         "/"(controller:'User',action:'homepage')
 		// "/register"(view:"/user/register")
         "500"(view:'/error')
-		"/rest/$domain?/$id?"(controller:'Rest', action:'rest')
+		"/api/v1/$domain?/$id?"(controller:'Rest', action:'rest')
 	}
 }

@@ -14,8 +14,9 @@
   <div class="main clearfix">
     <g:form controller="withdrawal" action="withdrawal_checklist" method="POST">
     <p class="select">&nbsp; Select Account(s) for Withdrawal</p>
-    <p class="amount_avail amount_avail-1">Account</p>
-    <p class="amount_avail amount_avail-2">Available Amount    </p>
+    <p class="account">Account</p>
+    <p class="amount_avail amount_avail-1">Amount</p>
+    <p class="amount_avail amount_avail-2">Withdrawal Type</p>
     <g:each var="cur_ida" in="${idaList}" status="i">
     <div class="ida_container clearfix">
       <label class="checkbox-label clearfix">
@@ -25,8 +26,13 @@
       </label>
       <%--<p class="ida_amount">${cur_ida.totalFunds}</p>
       --%><p class="ida_amount"><g:formatNumber number="${cur_ida.totalFunds}" format="\$#.##" /></p>
+      <select class="_select">
+        <option value="Option">Option</option>
+      </select>
+      
     </div>
     </g:each>
+    
     <g:each var="cur_triple" in="${tripleList}" status="i">
     <div class="tb_container clearfix">
       <label class="checkbox-label clearfix">

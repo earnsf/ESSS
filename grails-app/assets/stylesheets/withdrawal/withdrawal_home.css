@@ -4,13 +4,28 @@ body {
   color: rgb(70, 70, 70);
 }
 
+.account {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 14;
+  width: 68px;
+  min-height: 20px;
+  margin: 23px 0 0 66px;
+  border-bottom: 1px solid rgb(101, 101, 101);
+  font-size: 1em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(70, 70, 70);
+}
+
 .amount_avail {
   position: relative;
   float: left;
   min-height: 20px;
   margin-top: 23px;
   border-bottom: 1px solid rgb(101, 101, 101);
-  font-size: 1.167em;
+  font-size: 1em;
   line-height: 1.38;
   text-align: center;
   color: rgb(70, 70, 70);
@@ -20,8 +35,8 @@ body {
   float: left;
   width: 100px;
   min-height: 21px;
-  margin: 6px 0 0 24px;
-  font-size: 1.333em;
+  margin: 6px 0 0 19px;
+  font-size: 1.143em;
   font-weight: 400;
   line-height: 1.38;
   text-align: center;
@@ -31,13 +46,17 @@ body {
 .ida_container {
   float: left;
   clear: both;
-  width: 423px;
+  width: 620px;
   height: 32px;
-  margin: 11px 0 0 12px;
+  margin: 11px 0 0 14px;
+}
+
+.ida_container .checkbox-label {
+  margin-left: 12px;
 }
 
 .main {
-  width: 460px;
+  width: 69.5833333333%;
   height: auto;
   overflow:auto;
   margin: 40px auto 40px;
@@ -63,12 +82,38 @@ body {
 .checkbox-label {
   display: block;
   float: left;
+  width: 203px;
+  height: 22px;
+  margin-top: 6px;
+}
+
+.select {
+  width: 93.2389937106%;
+  min-height: 26px;
+  margin: 25px auto 0;
+  border-bottom: 1px solid rgb(101, 101, 101);
+  font-size: 1.286em;
+  font-weight: 600;
+  line-height: 1.38;
+  color: rgb(70, 70, 70);
+}
+
+/*
+.checkbox {
+  display: block;
+  float: left;
+  margin-top: 3px;
+}
+
+.checkbox-label {
+  display: block;
+  float: left;
   width: 258px;
   height: 22px;
   margin: 6px 0 0 11px;
 }
 
-.select {
+ .select {
   width: 93.2389937106%;
   min-height: 26px;
   margin: 25px auto 0;
@@ -77,14 +122,14 @@ body {
   font-weight: 600;
   line-height: 1.38;
   color: rgb(70, 70, 70);
-}
+} */
 
 .tb_container {
   float: left;
   clear: both;
-  width: 423px;
+  width: 620px;
   height: 32px;
-  margin: 5px 0 0 12px;
+  margin: 5px 0 0 18px;
 }
 
 .tb_container .point-text {
@@ -93,12 +138,12 @@ body {
 
 ._button {
   display: block;
-  float: left;
+  float: right;
   clear: both;
   width: 160px;
   height: 24px;
   min-height: 24px;
-  margin: 10px 0px 15px 252px;
+  margin: 10px 30px 10px 0px; 
   border-radius: 3px;
   background-color: rgb(59, 184, 94);
   font-size: 1.167em;
@@ -112,15 +157,41 @@ body {
   background-color: rgb(76, 172, 104);
 }
 
+._select {
+  display: block;
+  float: left;
+  width: 34.693877551%;
+  margin-top: 7px;
+  padding-left: 10px;
+  border: 1px solid rgb(119, 119, 119);
+  border-radius: 3px;
+  background: url('../images/select-arrows.svg') rgb(242, 242, 242);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: right center;
+  font-size: 0.929em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0, 0, 0);
+}
+
+.ida_container ._select {
+  margin-left: 10.88354%;
+}
+
+.tb_container ._select {
+  margin-left: 69px;
+}
+
+
 .amount_avail-1 {
-  clear: both;
-  z-index: 23;
-  width: 73px;
-  margin-left: 66px;
+  z-index: 13;
+  width: 65px;
+  margin-left: 126px;
 }
 
 .amount_avail-2 {
-  z-index: 21;
-  width: 132px;
-  margin-left: 150px;
+  z-index: 16;
+  width: 126px;
+  margin-left: 130px;
 }
